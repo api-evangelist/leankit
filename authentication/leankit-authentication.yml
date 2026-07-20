@@ -1,0 +1,22 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/leankit-agileplace-api-openapi.yml, openapi/leankit-user-provisioning-api-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: bearerToken
+  type: http
+  scheme: bearer
+  description: API token created via POST /io/auth/token or the "My API Tokens" tab in the AgilePlace
+    user profile. Tokens do not expire; revoke unused tokens.
+  sources:
+  - openapi/leankit-agileplace-api-openapi.yml
+  - openapi/leankit-user-provisioning-api-openapi.yml
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: Base64-encoded AgilePlace email and password.
+  sources:
+  - openapi/leankit-agileplace-api-openapi.yml
+  - openapi/leankit-user-provisioning-api-openapi.yml
