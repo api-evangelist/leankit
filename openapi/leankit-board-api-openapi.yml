@@ -1,0 +1,851 @@
+openapi: 3.1.0
+info:
+  title: Planview AgilePlace API (LeanKit) v2 account board API
+  version: v2
+  description: RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference — no endpoints invented.
+  contact:
+    name: Planview AgilePlace Support
+    url: https://success.planview.com/Planview_AgilePlace/Support
+  x-generated-by: API Evangelist enrichment pipeline — transcribed from the published Planview AgilePlace API reference
+servers:
+- url: https://{account}.leankit.com/io
+  description: Per-account AgilePlace host
+  variables:
+    account:
+      default: myaccount
+      description: Your AgilePlace account subdomain
+security:
+- bearerToken: []
+- basicAuth: []
+tags:
+- name: board
+paths:
+  /board:
+    post:
+      operationId: boardCreate
+      summary: Create a new board
+      tags:
+      - board
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/create
+      description: Create a new board. Requires at least Board Creator account role.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+    get:
+      operationId: boardList
+      summary: List all boards
+      tags:
+      - board
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/list
+      description: List all boards. Query Params
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+  /board/access:
+    delete:
+      operationId: boardRemoveRolesBulk
+      summary: Bulk remove board members and roles
+      tags:
+      - board
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/remove-roles-bulk
+      description: 'Bulk remove board members and roles. Warning: this endpoint can be destructive to user subscriptions. If you remove a user''s access to a board they will lose any of their subscriptions to changes on cards, lanes, and boards.'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+        '204':
+          description: Deleted
+    post:
+      operationId: boardUpdateRolesBulk
+      summary: Bulk update board members and roles
+      tags:
+      - board
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/update-roles-bulk
+      description: 'Bulk update board members and roles. Warning: this endpoint can be destructive to user assignments and user subscriptions. If you reduce a user''s role to'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+  /board/{boardId}:
+    delete:
+      operationId: boardDelete
+      summary: Delete a board in your organization
+      tags:
+      - board
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/delete
+      description: Delete a board in your organization. Requires the Account Administrator account role.
+      parameters:
+      - name: boardId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: boardId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+        '204':
+          description: Deleted
+    get:
+      operationId: boardGet
+      summary: Get the details of a board
+      tags:
+      - board
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/get
+      description: Get the details of a board. Example Request
+      parameters:
+      - name: boardId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: boardId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+    patch:
+      operationId: boardUpdate
+      summary: Update the settings of a board
+      tags:
+      - board
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/update
+      description: Update the settings of a board. Requires at least Board Manager account role.
+      parameters:
+      - name: boardId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: boardId identifier
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+  /board/{boardId}/archive:
+    post:
+      operationId: boardArchive
+      summary: Archive a board
+      tags:
+      - board
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/archive
+      description: Archive a board. Administrators will retain read-only access. Example Request
+      parameters:
+      - name: boardId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: boardId identifier
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+  /board/{boardId}/assignedUsers:
+    get:
+      operationId: boardAssignedUsers
+      summary: List top 50 assigned users on a board
+      tags:
+      - board
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/assigned-users
+      description: 'List top 50 assigned users on a board. Only assignments to cards on the board or recent archive are counted. If more than 50 users have assigned cards, those with the fewest assignments will be excluded. Return values are sorted first by assignment count, then by full name. Note: This has been depre'
+      parameters:
+      - name: boardId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: boardId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+  /board/{boardId}/card:
+    get:
+      operationId: boardCards
+      summary: Get cards on a board
+      tags:
+      - board
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/cards
+      description: 'Get cards on a board. Note: This has been deprecated in favor of our'
+      parameters:
+      - name: boardId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: boardId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+  /board/{boardId}/export:
+    get:
+      operationId: boardExport
+      summary: Download a board's history
+      tags:
+      - board
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/export
+      description: 'Download a board''s history. This is used by the "Export Board History" option on the Board Settings menu. Note: "Data" is intentionally null for board exports.'
+      parameters:
+      - name: boardId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: boardId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+  /board/{boardId}/laneCount:
+    get:
+      operationId: boardLaneCount
+      summary: Get the count of cards in a board's lanes
+      tags:
+      - board
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/lane-count
+      description: Get the count of cards in a board's lanes. Query Params
+      parameters:
+      - name: boardId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: boardId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+  /board/{boardId}/layout:
+    put:
+      operationId: boardUpdateLayout
+      summary: Update a board's layout by replacing the entire layout object
+      tags:
+      - board
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/update-layout
+      description: Update a board's layout by replacing the entire layout object. Requires at least manager role on the board specified.
+      parameters:
+      - name: boardId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: boardId identifier
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+  /board/{boardId}/leafLanes:
+    get:
+      operationId: boardLeafLanes
+      summary: Get details about the lanes on a board that can hold cards Example Request
+      tags:
+      - board
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/leaf-lanes
+      parameters:
+      - name: boardId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: boardId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+  /board/{boardId}/parent-card:
+    get:
+      operationId: boardParentCards
+      summary: Get parent cards on a board
+      tags:
+      - board
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/parent-cards
+      description: Get parent cards on a board. Query Params
+      parameters:
+      - name: boardId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: boardId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+  /board/{boardId}/planningIncrementCardCount:
+    get:
+      operationId: boardPlanningIncrementCardCount
+      summary: Get card counts and sizes for planning increments on a board
+      tags:
+      - board
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/planning-increment-card-count
+      description: Get card counts and sizes for planning increments on a board. Returns counts per planning increment plus an unplanned
+      parameters:
+      - name: boardId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: boardId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+  /board/{boardId}/roles:
+    patch:
+      operationId: boardUpdateRoles
+      summary: Create or update board roles for multiple users
+      tags:
+      - board
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/update-roles
+      description: 'Create or update board roles for multiple users. Note: This has been deprecated in favor of our'
+      parameters:
+      - name: boardId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: boardId identifier
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+  /board/{boardId}/unarchive:
+    post:
+      operationId: boardUnarchive
+      summary: Restore a board from the board archive
+      tags:
+      - board
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/unarchive
+      description: Restore a board from the board archive. Requires the Account Administrator account role.
+      parameters:
+      - name: boardId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: boardId identifier
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+  /board/{boardId}/user:
+    get:
+      operationId: boardUserRoles
+      summary: List board users and roles
+      tags:
+      - board
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/user-roles
+      description: List board users and roles. Query Params
+      parameters:
+      - name: boardId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: boardId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+components:
+  securitySchemes:
+    bearerToken:
+      type: http
+      scheme: bearer
+      description: API token created via POST /io/auth/token or the "My API Tokens" tab in the AgilePlace user profile. Tokens do not expire; revoke unused tokens.
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Base64-encoded AgilePlace email and password.
+externalDocs:
+  description: Planview AgilePlace API reference
+  url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API

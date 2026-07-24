@@ -1,0 +1,56 @@
+openapi: 3.1.0
+info:
+  title: Planview AgilePlace API (LeanKit) v2 account config API
+  version: v2
+  description: RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference — no endpoints invented.
+  contact:
+    name: Planview AgilePlace Support
+    url: https://success.planview.com/Planview_AgilePlace/Support
+  x-generated-by: API Evangelist enrichment pipeline — transcribed from the published Planview AgilePlace API reference
+servers:
+- url: https://{account}.leankit.com/io
+  description: Per-account AgilePlace host
+  variables:
+    account:
+      default: myaccount
+      description: Your AgilePlace account subdomain
+security:
+- bearerToken: []
+- basicAuth: []
+tags:
+- name: config
+paths:
+  /ServiceProviderConfigs:
+    get:
+      operationId: scimGetServiceProviderConfigs
+      summary: Service provider configuration
+      description: Configuration information about the API including supported operations and authentication. AgilePlace reports patch, bulk, changePassword, etag, and xmlDataFormat as unsupported; filter is supported with maxResults 200 and sort is supported.
+      tags:
+      - config
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+      responses:
+        '200':
+          description: Service provider configuration
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden - administrator access required
+components:
+  securitySchemes:
+    bearerToken:
+      type: http
+      scheme: bearer
+      description: API token created via POST /io/auth/token or the "My API Tokens" tab in the AgilePlace user profile. Tokens do not expire; revoke unused tokens.
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Base64-encoded AgilePlace email and password.
+externalDocs:
+  description: Planview AgilePlace API reference
+  url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API

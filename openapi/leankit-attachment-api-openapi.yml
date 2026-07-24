@@ -1,0 +1,224 @@
+openapi: 3.1.0
+info:
+  title: Planview AgilePlace API (LeanKit) v2 account attachment API
+  version: v2
+  description: RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference — no endpoints invented.
+  contact:
+    name: Planview AgilePlace Support
+    url: https://success.planview.com/Planview_AgilePlace/Support
+  x-generated-by: API Evangelist enrichment pipeline — transcribed from the published Planview AgilePlace API reference
+servers:
+- url: https://{account}.leankit.com/io
+  description: Per-account AgilePlace host
+  variables:
+    account:
+      default: myaccount
+      description: Your AgilePlace account subdomain
+security:
+- bearerToken: []
+- basicAuth: []
+tags:
+- name: attachment
+paths:
+  /card/{cardId}/attachment:
+    post:
+      operationId: attachmentCreate
+      summary: Create an attachment
+      tags:
+      - attachment
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/attachment/create
+      description: Create an attachment. Example Request
+      parameters:
+      - name: cardId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: cardId identifier
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+    get:
+      operationId: attachmentList
+      summary: Get a list of attachments for a card
+      tags:
+      - attachment
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/attachment/list
+      description: Get a list of attachments for a card. Example Request
+      parameters:
+      - name: cardId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: cardId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+  /card/{cardId}/attachment/{attachmentId}:
+    delete:
+      operationId: attachmentDelete
+      summary: Delete an attachment
+      tags:
+      - attachment
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/attachment/delete
+      description: Delete an attachment. Example Request
+      parameters:
+      - name: cardId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: cardId identifier
+      - name: attachmentId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: attachmentId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+        '204':
+          description: Deleted
+  /card/{cardId}/attachment/{attachmentId}/content:
+    get:
+      operationId: attachmentGet
+      summary: Get an attachment's contents
+      tags:
+      - attachment
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/attachment/get
+      description: Get an attachment's contents. Example Request
+      parameters:
+      - name: cardId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: cardId identifier
+      - name: attachmentId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: attachmentId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+components:
+  securitySchemes:
+    bearerToken:
+      type: http
+      scheme: bearer
+      description: API token created via POST /io/auth/token or the "My API Tokens" tab in the AgilePlace user profile. Tokens do not expire; revoke unused tokens.
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Base64-encoded AgilePlace email and password.
+externalDocs:
+  description: Planview AgilePlace API reference
+  url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API

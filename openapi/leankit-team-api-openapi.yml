@@ -1,0 +1,554 @@
+openapi: 3.1.0
+info:
+  title: Planview AgilePlace API (LeanKit) v2 account team API
+  version: v2
+  description: RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference — no endpoints invented.
+  contact:
+    name: Planview AgilePlace Support
+    url: https://success.planview.com/Planview_AgilePlace/Support
+  x-generated-by: API Evangelist enrichment pipeline — transcribed from the published Planview AgilePlace API reference
+servers:
+- url: https://{account}.leankit.com/io
+  description: Per-account AgilePlace host
+  variables:
+    account:
+      default: myaccount
+      description: Your AgilePlace account subdomain
+security:
+- bearerToken: []
+- basicAuth: []
+tags:
+- name: team
+paths:
+  /team:
+    post:
+      operationId: teamCreate
+      summary: Create a team
+      tags:
+      - team
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/team/create
+      description: Create a team. Teams are enabled by default. Teams are not associated with any other teams, boards, or users when created. You must add parent teams, subteams, users and boards to the team after it is created. Requires authentication as account administrator or team manager.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+    get:
+      operationId: teamList
+      summary: Get a list of all teams for the organization
+      tags:
+      - team
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/team/list
+      description: Get a list of all teams for the organization. Query Params
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+  /team/{teamId}:
+    delete:
+      operationId: teamDelete
+      summary: Delete a team
+      tags:
+      - team
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/team/delete
+      description: Delete a team. Teams and all associated data such as board memberships, user membership, and subteam relationships are permanantly deleted and cannot be recovered. Requires authentication as account administrator or team manager who created the team.
+      parameters:
+      - name: teamId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: teamId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+        '204':
+          description: Deleted
+    get:
+      operationId: teamGet
+      summary: Get a team
+      tags:
+      - team
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/team/get
+      description: Get a team. Example Request
+      parameters:
+      - name: teamId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: teamId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+    patch:
+      operationId: teamUpdate
+      summary: Update a team
+      tags:
+      - team
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/team/update
+      description: Update a team. The team title, the team description and the enabled status can be updated. Requires authentication as account administrator or team manager who created the team.
+      parameters:
+      - name: teamId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: teamId identifier
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+  /team/{teamId}/board:
+    get:
+      operationId: teamListBoards
+      summary: Get a list of all boards the team has been assigned to either directly or inherited via nested teams
+      tags:
+      - team
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/team/list-boards
+      description: Get a list of all boards the team has been assigned to either directly or inherited via nested teams. Query Params
+      parameters:
+      - name: teamId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: teamId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+  /team/{teamId}/subteam:
+    post:
+      operationId: teamAddSubteams
+      summary: Add subteams to a team
+      tags:
+      - team
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/team/add-subteams
+      description: Add subteams to a team. All subteams and its members (subteams and users) are granted the same privileges assigned to the team. Requires authentication as account administrator or team manager who created the team.
+      parameters:
+      - name: teamId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: teamId identifier
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+    get:
+      operationId: teamListSubteams
+      summary: Get a list of subteams assigned directly to the team
+      tags:
+      - team
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/team/list-subteams
+      description: Get a list of subteams assigned directly to the team. Query Params
+      parameters:
+      - name: teamId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: teamId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+    delete:
+      operationId: teamRemoveSubteams
+      summary: Remove directly assigned subteams from a team
+      tags:
+      - team
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/team/remove-subteams
+      description: Remove directly assigned subteams from a team. Any permissions granted to the subteams and their members through membership in the parent team are removed. Requires authentication as account administrator or team manager who created the team.
+      parameters:
+      - name: teamId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: teamId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+        '204':
+          description: Deleted
+  /team/{teamId}/user:
+    post:
+      operationId: teamAddUsers
+      summary: Add users to a team
+      tags:
+      - team
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/team/add-users
+      description: Add users to a team.  All users of a team are granted the same privileges assigned to the team. Requires authentication as account administrator or team manager who created the team.
+      parameters:
+      - name: teamId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: teamId identifier
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+    get:
+      operationId: teamListUsers
+      summary: Get a list of users assigned directly to the team - does not include users assigned to subteams
+      tags:
+      - team
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/team/list-users
+      description: Get a list of users assigned directly to the team - does not include users assigned to subteams. Query Params
+      parameters:
+      - name: teamId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: teamId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+    delete:
+      operationId: teamRemoveUsers
+      summary: Remove users from a team
+      tags:
+      - team
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/team/remove-users
+      description: Remove users from a team. This will only work with direct assignments, it will not remove a user that is part of the team via their assignment to a subteam. Any permissions granted to the user as a member of the team are removed. Requires authentication as account administrator or team manager who c
+      parameters:
+      - name: teamId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: teamId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+        '204':
+          description: Deleted
+components:
+  securitySchemes:
+    bearerToken:
+      type: http
+      scheme: bearer
+      description: API token created via POST /io/auth/token or the "My API Tokens" tab in the AgilePlace user profile. Tokens do not expire; revoke unused tokens.
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Base64-encoded AgilePlace email and password.
+externalDocs:
+  description: Planview AgilePlace API reference
+  url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API

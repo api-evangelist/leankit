@@ -1,0 +1,583 @@
+openapi: 3.1.0
+info:
+  title: Planview AgilePlace API (LeanKit) v2 account planning-series API
+  version: v2
+  description: RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference — no endpoints invented.
+  contact:
+    name: Planview AgilePlace Support
+    url: https://success.planview.com/Planview_AgilePlace/Support
+  x-generated-by: API Evangelist enrichment pipeline — transcribed from the published Planview AgilePlace API reference
+servers:
+- url: https://{account}.leankit.com/io
+  description: Per-account AgilePlace host
+  variables:
+    account:
+      default: myaccount
+      description: Your AgilePlace account subdomain
+security:
+- bearerToken: []
+- basicAuth: []
+tags:
+- name: planning-series
+paths:
+  /series:
+    post:
+      operationId: planningSeriesCreateSeries
+      summary: Create a new planning series
+      tags:
+      - planning-series
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/planning-series/create-series
+      description: Create a new planning series. Requires the Account Administrator or Team Organizer account role.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+    get:
+      operationId: planningSeriesListSeries
+      summary: Get a list of planning series for an account
+      tags:
+      - planning-series
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/planning-series/list-series
+      description: Get a list of planning series for an account. Query Params
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+  /series/{seriesId}:
+    delete:
+      operationId: planningSeriesDeleteSeries
+      summary: Delete a series by id
+      tags:
+      - planning-series
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/planning-series/delete-series
+      description: Delete a series by id. Requires the Account Administrator or Team Organizer account role.
+      parameters:
+      - name: seriesId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: seriesId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+        '204':
+          description: Deleted
+    get:
+      operationId: planningSeriesGetSeries
+      summary: Get a planning series by id
+      tags:
+      - planning-series
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/planning-series/get-series
+      description: Get a planning series by id. Example Request
+      parameters:
+      - name: seriesId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: seriesId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+    patch:
+      operationId: planningSeriesUpdateSeries
+      summary: Update an existing planning series
+      tags:
+      - planning-series
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/planning-series/update-series
+      description: Update an existing planning series. Requires the Account Administrator or Team Organizer account role.
+      parameters:
+      - name: seriesId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: seriesId identifier
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+  /series/{seriesId}/increment:
+    post:
+      operationId: planningSeriesCreateIncrement
+      summary: Create a new planning increment
+      tags:
+      - planning-series
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/planning-series/create-increment
+      description: Create a new planning increment. Requires the Account Administrator or Team Organizer account role.
+      parameters:
+      - name: seriesId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: seriesId identifier
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+    get:
+      operationId: planningSeriesListIncrement
+      summary: Get a list of increments and child increments for a planning series
+      tags:
+      - planning-series
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/planning-series/list-increment
+      description: Get a list of increments and child increments for a planning series. Query Params
+      parameters:
+      - name: seriesId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: seriesId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+  /series/{seriesId}/increment/{incrementId}:
+    delete:
+      operationId: planningSeriesDeleteIncrement
+      summary: Delete a planning increment by id
+      tags:
+      - planning-series
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/planning-series/delete-increment
+      description: Delete a planning increment by id. Requires the Account Administrator or Team Organizer account role.
+      parameters:
+      - name: seriesId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: seriesId identifier
+      - name: incrementId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: incrementId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+        '204':
+          description: Deleted
+    get:
+      operationId: planningSeriesGetIncrement
+      summary: Get a planning increment by series and increment ids
+      tags:
+      - planning-series
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/planning-series/get-increment
+      description: Get a planning increment by series and increment ids. Example Request
+      parameters:
+      - name: seriesId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: seriesId identifier
+      - name: incrementId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: incrementId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+    patch:
+      operationId: planningSeriesUpdateIncrement
+      summary: Update an existing planning increment
+      tags:
+      - planning-series
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/planning-series/update-increment
+      description: Update an existing planning increment. Requires the Account Administrator or Team Organizer account role.
+      parameters:
+      - name: seriesId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: seriesId identifier
+      - name: incrementId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: incrementId identifier
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+  /series/{seriesId}/increment/{incrementId}/status:
+    get:
+      operationId: planningSeriesGetIncrementStatus
+      summary: Enumerates the total number of cards and the number of blocked cards in the increment by status category
+      tags:
+      - planning-series
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/planning-series/get-increment-status
+      description: Enumerates the total number of cards and the number of blocked cards in the increment by status category. Path Parameters
+      parameters:
+      - name: seriesId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: seriesId identifier
+      - name: incrementId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: incrementId identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+  /series/{seriesId}/increment/{incrementId}/status/{category}:
+    get:
+      operationId: planningSeriesGetIncrementStatusCategoryCards
+      summary: List the cardIds of cards in the increment that are currently in the increment status category specified by the :categor
+      tags:
+      - planning-series
+      externalDocs:
+        description: Provider reference
+        url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/planning-series/get-increment-status-category-cards
+      description: List the cardIds of cards in the increment that are currently in the increment status category specified by the :category
+      parameters:
+      - name: seriesId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: seriesId identifier
+      - name: incrementId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: incrementId identifier
+      - name: category
+        in: path
+        required: true
+        schema:
+          type: string
+        description: category identifier
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized - missing or invalid Basic/Bearer credentials
+        '403':
+          description: Forbidden - authenticated user lacks permission
+        '404':
+          description: Not found
+        '422':
+          description: Unprocessable entity - required information was missing or invalid
+        '429':
+          description: Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers
+          headers:
+            Retry-After:
+              description: HTTP-date after which the client may retry
+              schema:
+                type: string
+        '500':
+          description: Server error on the AgilePlace side
+components:
+  securitySchemes:
+    bearerToken:
+      type: http
+      scheme: bearer
+      description: API token created via POST /io/auth/token or the "My API Tokens" tab in the AgilePlace user profile. Tokens do not expire; revoke unused tokens.
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Base64-encoded AgilePlace email and password.
+externalDocs:
+  description: Planview AgilePlace API reference
+  url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API
