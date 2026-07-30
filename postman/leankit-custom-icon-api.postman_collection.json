@@ -1,0 +1,2206 @@
+{
+  "info": {
+    "_postman_id": "baac25c6-6a0f-4e32-af4f-1a915ef92c12",
+    "name": "Planview AgilePlace API (LeanKit) v2 account custom-icon API",
+    "description": "RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference \u2014 no endpoints invented.\n\nContact Support:\n Name: Planview AgilePlace Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:05:43.000Z",
+    "updatedAt": "2026-07-28T02:05:43.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-baac25c6-6a0f-4e32-af4f-1a915ef92c12"
+  },
+  "item": [
+    {
+      "name": "board",
+      "item": [
+        {
+          "name": "{boardId}",
+          "item": [
+            {
+              "name": "customIcon",
+              "item": [
+                {
+                  "name": "{customIconId}",
+                  "item": [
+                    {
+                      "name": "Delete a custom icon on a board",
+                      "id": "ef33e55a-3c99-4c35-afa5-bf61f134ab3c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customIcon/:customIconId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customIcon",
+                            ":customIconId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "f77f4c70-cdfa-4acb-a4b2-9c8993feee14",
+                              "key": "boardId",
+                              "value": "<string>",
+                              "description": "(Required) boardId identifier"
+                            },
+                            {
+                              "id": "e41bd682-21f2-4802-b264-8809d8d68186",
+                              "key": "customIconId",
+                              "value": "<string>",
+                              "description": "(Required) customIconId identifier"
+                            }
+                          ]
+                        },
+                        "description": "Delete a custom icon on a board. Example Request"
+                      },
+                      "response": [
+                        {
+                          "id": "651a5830-7489-426f-9435-43b95be03e88",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/customIcon/:customIconId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "customIcon",
+                                ":customIconId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "customIconId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T02:05:43.000Z",
+                          "updatedAt": "2026-07-28T02:05:43.000Z",
+                          "uid": "35240-651a5830-7489-426f-9435-43b95be03e88"
+                        },
+                        {
+                          "id": "b51e8bdc-7b7e-4323-bdab-d6d1a383e6e0",
+                          "name": "Deleted",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/customIcon/:customIconId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "customIcon",
+                                ":customIconId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "customIconId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:05:43.000Z",
+                          "updatedAt": "2026-07-28T02:05:43.000Z",
+                          "uid": "35240-b51e8bdc-7b7e-4323-bdab-d6d1a383e6e0"
+                        },
+                        {
+                          "id": "beadeeda-6c7e-4713-b6cf-44cb920e312a",
+                          "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/customIcon/:customIconId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "customIcon",
+                                ":customIconId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "customIconId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:05:43.000Z",
+                          "updatedAt": "2026-07-28T02:05:43.000Z",
+                          "uid": "35240-beadeeda-6c7e-4713-b6cf-44cb920e312a"
+                        },
+                        {
+                          "id": "7f9ef2c8-5fb2-4b80-ad40-c7bd405bdca5",
+                          "name": "Forbidden - authenticated user lacks permission",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/customIcon/:customIconId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "customIcon",
+                                ":customIconId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "customIconId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:05:43.000Z",
+                          "updatedAt": "2026-07-28T02:05:43.000Z",
+                          "uid": "35240-7f9ef2c8-5fb2-4b80-ad40-c7bd405bdca5"
+                        },
+                        {
+                          "id": "397261ab-697e-42ea-adf7-345ad22a1abe",
+                          "name": "Not found",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/customIcon/:customIconId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "customIcon",
+                                ":customIconId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "customIconId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:05:43.000Z",
+                          "updatedAt": "2026-07-28T02:05:43.000Z",
+                          "uid": "35240-397261ab-697e-42ea-adf7-345ad22a1abe"
+                        },
+                        {
+                          "id": "4404e929-e715-4739-9579-b7a704983ce1",
+                          "name": "Unprocessable entity - required information was missing or invalid",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/customIcon/:customIconId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "customIcon",
+                                ":customIconId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "customIconId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:05:43.000Z",
+                          "updatedAt": "2026-07-28T02:05:43.000Z",
+                          "uid": "35240-4404e929-e715-4739-9579-b7a704983ce1"
+                        },
+                        {
+                          "id": "a7393e20-334e-4e3c-bbd9-57c956c03ea0",
+                          "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/customIcon/:customIconId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "customIcon",
+                                ":customIconId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "customIconId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Too Many Requests",
+                          "code": 429,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "HTTP-date after which the client may retry",
+                                "type": "text/plain"
+                              },
+                              "key": "Retry-After",
+                              "value": "<string>"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:05:43.000Z",
+                          "updatedAt": "2026-07-28T02:05:43.000Z",
+                          "uid": "35240-a7393e20-334e-4e3c-bbd9-57c956c03ea0"
+                        },
+                        {
+                          "id": "410173c9-daf7-4f69-b03a-7ca9992a5ea4",
+                          "name": "Server error on the AgilePlace side",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/customIcon/:customIconId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "customIcon",
+                                ":customIconId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "customIconId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:05:43.000Z",
+                          "updatedAt": "2026-07-28T02:05:43.000Z",
+                          "uid": "35240-410173c9-daf7-4f69-b03a-7ca9992a5ea4"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:05:43.000Z",
+                      "updatedAt": "2026-07-28T02:05:43.000Z",
+                      "uid": "35240-ef33e55a-3c99-4c35-afa5-bf61f134ab3c"
+                    },
+                    {
+                      "name": "Get a single custom icon on a board",
+                      "id": "2e178a03-9371-47be-b5d0-40a049a901a6",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customIcon/:customIconId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customIcon",
+                            ":customIconId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "3b29794b-901a-484b-8547-4e5ce8c78a89",
+                              "key": "boardId",
+                              "value": "<string>",
+                              "description": "(Required) boardId identifier"
+                            },
+                            {
+                              "id": "680051bb-f483-486a-952b-158a391a548b",
+                              "key": "customIconId",
+                              "value": "<string>",
+                              "description": "(Required) customIconId identifier"
+                            }
+                          ]
+                        },
+                        "description": "Get a single custom icon on a board. Example Request"
+                      },
+                      "response": [
+                        {
+                          "id": "83a26b13-fc62-48a1-9764-97b18e15f121",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/customIcon/:customIconId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "customIcon",
+                                ":customIconId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "customIconId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T02:05:43.000Z",
+                          "updatedAt": "2026-07-28T02:05:43.000Z",
+                          "uid": "35240-83a26b13-fc62-48a1-9764-97b18e15f121"
+                        },
+                        {
+                          "id": "4e9dc591-943a-4f7c-b3e2-325ca2b73806",
+                          "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/customIcon/:customIconId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "customIcon",
+                                ":customIconId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "customIconId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:05:43.000Z",
+                          "updatedAt": "2026-07-28T02:05:43.000Z",
+                          "uid": "35240-4e9dc591-943a-4f7c-b3e2-325ca2b73806"
+                        },
+                        {
+                          "id": "c1fc1030-95ed-465b-96b8-d6b34c6d3b76",
+                          "name": "Forbidden - authenticated user lacks permission",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/customIcon/:customIconId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "customIcon",
+                                ":customIconId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "customIconId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:05:43.000Z",
+                          "updatedAt": "2026-07-28T02:05:43.000Z",
+                          "uid": "35240-c1fc1030-95ed-465b-96b8-d6b34c6d3b76"
+                        },
+                        {
+                          "id": "c1067793-0d0d-48ce-ae82-9dd9cd5e42a0",
+                          "name": "Not found",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/customIcon/:customIconId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "customIcon",
+                                ":customIconId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "customIconId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:05:43.000Z",
+                          "updatedAt": "2026-07-28T02:05:43.000Z",
+                          "uid": "35240-c1067793-0d0d-48ce-ae82-9dd9cd5e42a0"
+                        },
+                        {
+                          "id": "c427d915-237a-43c6-b71a-6da66a840d02",
+                          "name": "Unprocessable entity - required information was missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/customIcon/:customIconId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "customIcon",
+                                ":customIconId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "customIconId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:05:43.000Z",
+                          "updatedAt": "2026-07-28T02:05:43.000Z",
+                          "uid": "35240-c427d915-237a-43c6-b71a-6da66a840d02"
+                        },
+                        {
+                          "id": "6e5d6ff7-dd94-475d-b9fc-38347667a0b9",
+                          "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/customIcon/:customIconId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "customIcon",
+                                ":customIconId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "customIconId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Too Many Requests",
+                          "code": 429,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "HTTP-date after which the client may retry",
+                                "type": "text/plain"
+                              },
+                              "key": "Retry-After",
+                              "value": "<string>"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:05:43.000Z",
+                          "updatedAt": "2026-07-28T02:05:43.000Z",
+                          "uid": "35240-6e5d6ff7-dd94-475d-b9fc-38347667a0b9"
+                        },
+                        {
+                          "id": "3ca550ca-e474-4c85-bf5b-89a1a9737282",
+                          "name": "Server error on the AgilePlace side",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/customIcon/:customIconId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "customIcon",
+                                ":customIconId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "customIconId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:05:43.000Z",
+                          "updatedAt": "2026-07-28T02:05:43.000Z",
+                          "uid": "35240-3ca550ca-e474-4c85-bf5b-89a1a9737282"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:05:43.000Z",
+                      "updatedAt": "2026-07-28T02:05:43.000Z",
+                      "uid": "35240-2e178a03-9371-47be-b5d0-40a049a901a6"
+                    },
+                    {
+                      "name": "Update a custom icon on a board",
+                      "id": "d524a942-f8af-404d-9941-60bcacafc504",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customIcon/:customIconId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customIcon",
+                            ":customIconId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "75195129-8d85-41fa-9af9-5a8f404a5b99",
+                              "key": "boardId",
+                              "value": "<string>",
+                              "description": "(Required) boardId identifier"
+                            },
+                            {
+                              "id": "99a100cb-2921-4a55-87dd-a07c3aeea0c1",
+                              "key": "customIconId",
+                              "value": "<string>",
+                              "description": "(Required) customIconId identifier"
+                            }
+                          ]
+                        },
+                        "description": "Update a custom icon on a board. Request Properties"
+                      },
+                      "response": [
+                        {
+                          "id": "2a53c389-cecd-4fdb-bf81-aca75f019cd9",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/customIcon/:customIconId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "customIcon",
+                                ":customIconId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "customIconId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T02:05:43.000Z",
+                          "updatedAt": "2026-07-28T02:05:43.000Z",
+                          "uid": "35240-2a53c389-cecd-4fdb-bf81-aca75f019cd9"
+                        },
+                        {
+                          "id": "5c8fac53-f466-4a6f-a776-f4bd23c1dda1",
+                          "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/customIcon/:customIconId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "customIcon",
+                                ":customIconId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "customIconId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:05:43.000Z",
+                          "updatedAt": "2026-07-28T02:05:43.000Z",
+                          "uid": "35240-5c8fac53-f466-4a6f-a776-f4bd23c1dda1"
+                        },
+                        {
+                          "id": "f5d42ff3-ca69-4e39-8296-b92b9505eb6d",
+                          "name": "Forbidden - authenticated user lacks permission",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/customIcon/:customIconId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "customIcon",
+                                ":customIconId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "customIconId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:05:43.000Z",
+                          "updatedAt": "2026-07-28T02:05:43.000Z",
+                          "uid": "35240-f5d42ff3-ca69-4e39-8296-b92b9505eb6d"
+                        },
+                        {
+                          "id": "f0db6e30-bb4e-44b0-bf2c-5678ca23929f",
+                          "name": "Not found",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/customIcon/:customIconId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "customIcon",
+                                ":customIconId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "customIconId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:05:43.000Z",
+                          "updatedAt": "2026-07-28T02:05:43.000Z",
+                          "uid": "35240-f0db6e30-bb4e-44b0-bf2c-5678ca23929f"
+                        },
+                        {
+                          "id": "e2c4b838-8918-4495-942c-9a6d85484eb7",
+                          "name": "Unprocessable entity - required information was missing or invalid",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/customIcon/:customIconId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "customIcon",
+                                ":customIconId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "customIconId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:05:43.000Z",
+                          "updatedAt": "2026-07-28T02:05:43.000Z",
+                          "uid": "35240-e2c4b838-8918-4495-942c-9a6d85484eb7"
+                        },
+                        {
+                          "id": "00201813-585a-4739-b13d-6238fd8df009",
+                          "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/customIcon/:customIconId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "customIcon",
+                                ":customIconId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "customIconId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Too Many Requests",
+                          "code": 429,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "HTTP-date after which the client may retry",
+                                "type": "text/plain"
+                              },
+                              "key": "Retry-After",
+                              "value": "<string>"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:05:43.000Z",
+                          "updatedAt": "2026-07-28T02:05:43.000Z",
+                          "uid": "35240-00201813-585a-4739-b13d-6238fd8df009"
+                        },
+                        {
+                          "id": "26102417-011e-42f3-b850-39555a981e61",
+                          "name": "Server error on the AgilePlace side",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/customIcon/:customIconId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "customIcon",
+                                ":customIconId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "customIconId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:05:43.000Z",
+                          "updatedAt": "2026-07-28T02:05:43.000Z",
+                          "uid": "35240-26102417-011e-42f3-b850-39555a981e61"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:05:43.000Z",
+                      "updatedAt": "2026-07-28T02:05:43.000Z",
+                      "uid": "35240-d524a942-f8af-404d-9941-60bcacafc504"
+                    }
+                  ],
+                  "id": "8af25447-6547-4138-b5c3-2a3d6e7eb311",
+                  "createdAt": "2026-07-28T02:05:43.000Z",
+                  "updatedAt": "2026-07-28T02:05:43.000Z",
+                  "uid": "35240-8af25447-6547-4138-b5c3-2a3d6e7eb311"
+                },
+                {
+                  "name": "Create a custom icon on a board",
+                  "id": "3661e0da-3c9f-4de9-bdc7-96d6bd18cbd9",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/board/:boardId/customIcon",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "board",
+                        ":boardId",
+                        "customIcon"
+                      ],
+                      "variable": [
+                        {
+                          "id": "171ef052-6dce-49e8-b431-34b166f24fa7",
+                          "key": "boardId",
+                          "value": "<string>",
+                          "description": "(Required) boardId identifier"
+                        }
+                      ]
+                    },
+                    "description": "Create a custom icon on a board. Request Properties"
+                  },
+                  "response": [
+                    {
+                      "id": "472ad7e8-93f3-4981-8006-fde6cd58b08a",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customIcon",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customIcon"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T02:05:43.000Z",
+                      "updatedAt": "2026-07-28T02:05:43.000Z",
+                      "uid": "35240-472ad7e8-93f3-4981-8006-fde6cd58b08a"
+                    },
+                    {
+                      "id": "e5a3b01a-b7b1-4d9d-b9fc-78aa54ebbc92",
+                      "name": "Created",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customIcon",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customIcon"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T02:05:43.000Z",
+                      "updatedAt": "2026-07-28T02:05:43.000Z",
+                      "uid": "35240-e5a3b01a-b7b1-4d9d-b9fc-78aa54ebbc92"
+                    },
+                    {
+                      "id": "475050dd-a79c-43d6-81f2-c23ddc61a828",
+                      "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customIcon",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customIcon"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:05:43.000Z",
+                      "updatedAt": "2026-07-28T02:05:43.000Z",
+                      "uid": "35240-475050dd-a79c-43d6-81f2-c23ddc61a828"
+                    },
+                    {
+                      "id": "cb8cc398-5cf2-45d1-8738-e8ff120a201b",
+                      "name": "Forbidden - authenticated user lacks permission",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customIcon",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customIcon"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:05:43.000Z",
+                      "updatedAt": "2026-07-28T02:05:43.000Z",
+                      "uid": "35240-cb8cc398-5cf2-45d1-8738-e8ff120a201b"
+                    },
+                    {
+                      "id": "014c5025-a015-4fb7-8275-d1a38b6acd7b",
+                      "name": "Not found",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customIcon",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customIcon"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:05:43.000Z",
+                      "updatedAt": "2026-07-28T02:05:43.000Z",
+                      "uid": "35240-014c5025-a015-4fb7-8275-d1a38b6acd7b"
+                    },
+                    {
+                      "id": "5f74a72c-5de9-49e5-8564-a9abb499dbdc",
+                      "name": "Unprocessable entity - required information was missing or invalid",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customIcon",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customIcon"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:05:43.000Z",
+                      "updatedAt": "2026-07-28T02:05:43.000Z",
+                      "uid": "35240-5f74a72c-5de9-49e5-8564-a9abb499dbdc"
+                    },
+                    {
+                      "id": "3f10f393-0fb6-4302-82d9-7743a2b90723",
+                      "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customIcon",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customIcon"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "HTTP-date after which the client may retry",
+                            "type": "text/plain"
+                          },
+                          "key": "Retry-After",
+                          "value": "<string>"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:05:43.000Z",
+                      "updatedAt": "2026-07-28T02:05:43.000Z",
+                      "uid": "35240-3f10f393-0fb6-4302-82d9-7743a2b90723"
+                    },
+                    {
+                      "id": "55ab7f5a-836d-49d8-9036-3f3f7235ab29",
+                      "name": "Server error on the AgilePlace side",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customIcon",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customIcon"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:05:43.000Z",
+                      "updatedAt": "2026-07-28T02:05:43.000Z",
+                      "uid": "35240-55ab7f5a-836d-49d8-9036-3f3f7235ab29"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:05:43.000Z",
+                  "updatedAt": "2026-07-28T02:05:43.000Z",
+                  "uid": "35240-3661e0da-3c9f-4de9-bdc7-96d6bd18cbd9"
+                },
+                {
+                  "name": "Get a list of custom icons for a board",
+                  "id": "f37e900f-1a15-4498-a9b1-8a56e048e38d",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/board/:boardId/customIcon",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "board",
+                        ":boardId",
+                        "customIcon"
+                      ],
+                      "variable": [
+                        {
+                          "id": "58b26162-47a9-4a5b-b987-b58b91334279",
+                          "key": "boardId",
+                          "value": "<string>",
+                          "description": "(Required) boardId identifier"
+                        }
+                      ]
+                    },
+                    "description": "Get a list of custom icons for a board. Example Request"
+                  },
+                  "response": [
+                    {
+                      "id": "06886349-e80f-4197-bd1e-981e72eac86c",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customIcon",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customIcon"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T02:05:43.000Z",
+                      "updatedAt": "2026-07-28T02:05:43.000Z",
+                      "uid": "35240-06886349-e80f-4197-bd1e-981e72eac86c"
+                    },
+                    {
+                      "id": "bdfa96a9-0130-4460-b35a-cc046925a893",
+                      "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customIcon",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customIcon"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:05:43.000Z",
+                      "updatedAt": "2026-07-28T02:05:43.000Z",
+                      "uid": "35240-bdfa96a9-0130-4460-b35a-cc046925a893"
+                    },
+                    {
+                      "id": "683ba4d5-de50-4dc4-99cb-596b92b06851",
+                      "name": "Forbidden - authenticated user lacks permission",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customIcon",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customIcon"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:05:43.000Z",
+                      "updatedAt": "2026-07-28T02:05:43.000Z",
+                      "uid": "35240-683ba4d5-de50-4dc4-99cb-596b92b06851"
+                    },
+                    {
+                      "id": "f45e1c3f-a76b-47ec-8640-d7cb15bc368d",
+                      "name": "Not found",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customIcon",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customIcon"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:05:43.000Z",
+                      "updatedAt": "2026-07-28T02:05:43.000Z",
+                      "uid": "35240-f45e1c3f-a76b-47ec-8640-d7cb15bc368d"
+                    },
+                    {
+                      "id": "0aa99be5-b06e-49fa-9a29-2df51865fb95",
+                      "name": "Unprocessable entity - required information was missing or invalid",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customIcon",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customIcon"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:05:43.000Z",
+                      "updatedAt": "2026-07-28T02:05:43.000Z",
+                      "uid": "35240-0aa99be5-b06e-49fa-9a29-2df51865fb95"
+                    },
+                    {
+                      "id": "a36945d7-e73a-4014-a2ed-7330eb3751c9",
+                      "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customIcon",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customIcon"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "HTTP-date after which the client may retry",
+                            "type": "text/plain"
+                          },
+                          "key": "Retry-After",
+                          "value": "<string>"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:05:43.000Z",
+                      "updatedAt": "2026-07-28T02:05:43.000Z",
+                      "uid": "35240-a36945d7-e73a-4014-a2ed-7330eb3751c9"
+                    },
+                    {
+                      "id": "c2c3f59a-afb3-4773-adce-84d3a89d080d",
+                      "name": "Server error on the AgilePlace side",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customIcon",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customIcon"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:05:43.000Z",
+                      "updatedAt": "2026-07-28T02:05:43.000Z",
+                      "uid": "35240-c2c3f59a-afb3-4773-adce-84d3a89d080d"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:05:43.000Z",
+                  "updatedAt": "2026-07-28T02:05:43.000Z",
+                  "uid": "35240-f37e900f-1a15-4498-a9b1-8a56e048e38d"
+                }
+              ],
+              "id": "de5266b0-cfbf-4b7e-a788-a7bb3b97b32d",
+              "createdAt": "2026-07-28T02:05:43.000Z",
+              "updatedAt": "2026-07-28T02:05:43.000Z",
+              "uid": "35240-de5266b0-cfbf-4b7e-a788-a7bb3b97b32d"
+            }
+          ],
+          "id": "34f15c7a-7e5d-44e2-9b1d-cb11e1ce5451",
+          "createdAt": "2026-07-28T02:05:43.000Z",
+          "updatedAt": "2026-07-28T02:05:43.000Z",
+          "uid": "35240-34f15c7a-7e5d-44e2-9b1d-cb11e1ce5451"
+        }
+      ],
+      "id": "9a67b023-03bd-4c48-94f6-8ffc3413186d",
+      "createdAt": "2026-07-28T02:05:43.000Z",
+      "updatedAt": "2026-07-28T02:05:43.000Z",
+      "uid": "35240-9a67b023-03bd-4c48-94f6-8ffc3413186d"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "account",
+      "value": "myaccount"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{account}}.leankit.com/io"
+    }
+  ]
+}

@@ -1,0 +1,777 @@
+{
+  "info": {
+    "_postman_id": "2fc84bd7-f1f9-4991-a0ab-4d11433dc8d8",
+    "name": "Planview AgilePlace API (LeanKit) v2 account user-invitation API",
+    "description": "RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference \u2014 no endpoints invented.\n\nContact Support:\n Name: Planview AgilePlace Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:06:33.000Z",
+    "updatedAt": "2026-07-28T02:06:33.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-2fc84bd7-f1f9-4991-a0ab-4d11433dc8d8"
+  },
+  "item": [
+    {
+      "name": "invitation",
+      "item": [
+        {
+          "name": "{invitationId}",
+          "item": [
+            {
+              "name": "Revoke an open user invitation",
+              "id": "51b329fb-84b0-4148-b6fd-122844dc0e40",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/invitation/:invitationId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "invitation",
+                    ":invitationId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "8953f6e4-d1f9-4976-ac97-77caf33fdaeb",
+                      "key": "invitationId",
+                      "value": "<string>",
+                      "description": "(Required) invitationId identifier"
+                    }
+                  ]
+                },
+                "description": "Revoke an open user invitation. (You can also un-revoke if you like.) Example Request Body"
+              },
+              "response": [
+                {
+                  "id": "68b58452-2faf-40c6-bd6c-0c3784d33c4c",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/invitation/:invitationId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "invitation",
+                        ":invitationId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "invitationId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T02:06:33.000Z",
+                  "updatedAt": "2026-07-28T02:06:33.000Z",
+                  "uid": "35240-68b58452-2faf-40c6-bd6c-0c3784d33c4c"
+                },
+                {
+                  "id": "68231932-ebf6-4cd6-8d5f-35bb385244d5",
+                  "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/invitation/:invitationId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "invitation",
+                        ":invitationId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "invitationId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:33.000Z",
+                  "updatedAt": "2026-07-28T02:06:33.000Z",
+                  "uid": "35240-68231932-ebf6-4cd6-8d5f-35bb385244d5"
+                },
+                {
+                  "id": "d0371d5f-00b7-45bc-9ffe-0050fd43acb9",
+                  "name": "Forbidden - authenticated user lacks permission",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/invitation/:invitationId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "invitation",
+                        ":invitationId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "invitationId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Forbidden",
+                  "code": 403,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:33.000Z",
+                  "updatedAt": "2026-07-28T02:06:33.000Z",
+                  "uid": "35240-d0371d5f-00b7-45bc-9ffe-0050fd43acb9"
+                },
+                {
+                  "id": "03adeeaa-9aad-497d-b679-5ba819a0acfa",
+                  "name": "Not found",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/invitation/:invitationId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "invitation",
+                        ":invitationId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "invitationId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:33.000Z",
+                  "updatedAt": "2026-07-28T02:06:33.000Z",
+                  "uid": "35240-03adeeaa-9aad-497d-b679-5ba819a0acfa"
+                },
+                {
+                  "id": "16b061f6-d981-4f0d-9715-341273410e26",
+                  "name": "Unprocessable entity - required information was missing or invalid",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/invitation/:invitationId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "invitation",
+                        ":invitationId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "invitationId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                  "code": 422,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:33.000Z",
+                  "updatedAt": "2026-07-28T02:06:33.000Z",
+                  "uid": "35240-16b061f6-d981-4f0d-9715-341273410e26"
+                },
+                {
+                  "id": "93f9ed43-e58e-4f9f-b415-d43382ab658c",
+                  "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/invitation/:invitationId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "invitation",
+                        ":invitationId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "invitationId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Too Many Requests",
+                  "code": 429,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "HTTP-date after which the client may retry",
+                        "type": "text/plain"
+                      },
+                      "key": "Retry-After",
+                      "value": "<string>"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:33.000Z",
+                  "updatedAt": "2026-07-28T02:06:33.000Z",
+                  "uid": "35240-93f9ed43-e58e-4f9f-b415-d43382ab658c"
+                },
+                {
+                  "id": "1c1a7e16-d140-43b7-868c-61d178256be7",
+                  "name": "Server error on the AgilePlace side",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/invitation/:invitationId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "invitation",
+                        ":invitationId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "invitationId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:33.000Z",
+                  "updatedAt": "2026-07-28T02:06:33.000Z",
+                  "uid": "35240-1c1a7e16-d140-43b7-868c-61d178256be7"
+                }
+              ],
+              "createdAt": "2026-07-28T02:06:33.000Z",
+              "updatedAt": "2026-07-28T02:06:33.000Z",
+              "uid": "35240-51b329fb-84b0-4148-b6fd-122844dc0e40"
+            }
+          ],
+          "id": "89f9837d-abeb-42d0-bffd-b13f75ddba4d",
+          "createdAt": "2026-07-28T02:06:33.000Z",
+          "updatedAt": "2026-07-28T02:06:33.000Z",
+          "uid": "35240-89f9837d-abeb-42d0-bffd-b13f75ddba4d"
+        },
+        {
+          "name": "List your open invitations to new users",
+          "id": "1176ad56-3767-4773-ba70-a70e454b0e0e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/invitation",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "invitation"
+              ]
+            },
+            "description": "List your open invitations to new users. Query Params"
+          },
+          "response": [
+            {
+              "id": "56336cca-d428-42f3-922e-5296e2629860",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/invitation",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "invitation"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T02:06:33.000Z",
+              "updatedAt": "2026-07-28T02:06:33.000Z",
+              "uid": "35240-56336cca-d428-42f3-922e-5296e2629860"
+            },
+            {
+              "id": "3fbecf29-1ee9-4eaf-882b-1cb1dbec1ffd",
+              "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/invitation",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "invitation"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:06:33.000Z",
+              "updatedAt": "2026-07-28T02:06:33.000Z",
+              "uid": "35240-3fbecf29-1ee9-4eaf-882b-1cb1dbec1ffd"
+            },
+            {
+              "id": "92bd6247-5359-4ea7-b287-37a073023e48",
+              "name": "Forbidden - authenticated user lacks permission",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/invitation",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "invitation"
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:06:33.000Z",
+              "updatedAt": "2026-07-28T02:06:33.000Z",
+              "uid": "35240-92bd6247-5359-4ea7-b287-37a073023e48"
+            },
+            {
+              "id": "cff6f99d-87b3-4c10-854a-d894bbae1b25",
+              "name": "Not found",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/invitation",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "invitation"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:06:33.000Z",
+              "updatedAt": "2026-07-28T02:06:33.000Z",
+              "uid": "35240-cff6f99d-87b3-4c10-854a-d894bbae1b25"
+            },
+            {
+              "id": "7321020d-adfa-45fb-94e2-ae80efc0ce32",
+              "name": "Unprocessable entity - required information was missing or invalid",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/invitation",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "invitation"
+                  ]
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:06:33.000Z",
+              "updatedAt": "2026-07-28T02:06:33.000Z",
+              "uid": "35240-7321020d-adfa-45fb-94e2-ae80efc0ce32"
+            },
+            {
+              "id": "af6dc48b-1f14-4188-b921-6ca3b690f59d",
+              "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/invitation",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "invitation"
+                  ]
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "HTTP-date after which the client may retry",
+                    "type": "text/plain"
+                  },
+                  "key": "Retry-After",
+                  "value": "<string>"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:06:33.000Z",
+              "updatedAt": "2026-07-28T02:06:33.000Z",
+              "uid": "35240-af6dc48b-1f14-4188-b921-6ca3b690f59d"
+            },
+            {
+              "id": "89849aa2-8e34-426a-b7fb-6d69c3535941",
+              "name": "Server error on the AgilePlace side",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/invitation",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "invitation"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:06:33.000Z",
+              "updatedAt": "2026-07-28T02:06:33.000Z",
+              "uid": "35240-89849aa2-8e34-426a-b7fb-6d69c3535941"
+            }
+          ],
+          "createdAt": "2026-07-28T02:06:33.000Z",
+          "updatedAt": "2026-07-28T02:06:33.000Z",
+          "uid": "35240-1176ad56-3767-4773-ba70-a70e454b0e0e"
+        }
+      ],
+      "id": "6587e6e2-f638-4e50-aa6f-2f176ed8a92e",
+      "createdAt": "2026-07-28T02:06:33.000Z",
+      "updatedAt": "2026-07-28T02:06:33.000Z",
+      "uid": "35240-6587e6e2-f638-4e50-aa6f-2f176ed8a92e"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "account",
+      "value": "myaccount"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{account}}.leankit.com/io"
+    }
+  ]
+}

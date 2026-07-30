@@ -1,0 +1,74 @@
+generated: '2026-07-19'
+method: searched
+source: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+type: Lifecycle
+name: LeanKit / Planview AgilePlace API lifecycle
+versioning:
+  scheme: parallel path-prefixed API surfaces
+  current:
+    label: v2
+    path_prefix: /io
+    docs: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  legacy:
+    label: v1 (Application API)
+    path_prefix: /kanban/api
+    docs: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/02_Application_API_v1
+    status: deprecated
+  other_surfaces:
+  - label: User Provisioning API (SCIM 1.1)
+    path_prefix: /io/scim/v1
+    docs: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API
+  - label: Advanced Reporting API
+    path_prefix: /io/reporting
+    docs: https://success.planview.com/Planview_AgilePlace/Reporting/Advanced_Reporting
+    caveat: Data is not real-time and may be up to 24 hours out of date.
+  preview:
+    flag: preview
+    description: >-
+      "New endpoints that may have a higher chance of change should be labeled with a 'preview' flag."
+      Published in the API overview as the forward-compatibility signal.
+deprecation:
+  policy_published: true
+  policy_url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+  statement: >-
+    "Our legacy API has been marked for deprecation. We do not suggest using the legacy endpoints unless
+    you need functionality that does not exist in the current version."
+  deprecated_surfaces:
+  - surface: Application API v1 (/kanban/api)
+    status: marked for deprecation
+    sunset_date: not published
+  rfc8594_headers:
+    deprecation_header: not documented
+    sunset_header: not documented
+  notes: >-
+    Planview publishes a plain-language deprecation position for the legacy v1 surface but does not publish
+    a dated sunset schedule, an RFC 8594 Sunset header, or a Deprecation header. Individual /io v2
+    operations are not marked deprecated in the reference, so no deprecated operations were derived from
+    the OpenAPI.
+status_page:
+  url: https://status.planview.com/
+  status: 200
+  scope: All Planview systems, including AgilePlace.
+  linked_from: https://success.planview.com/ ("Check Planview system statuses")
+release_notes:
+  url: https://success.planview.com/Planview_AgilePlace/Product_Releases
+  cadence: dated entries with monthly archives back to 2021
+  see_also: changelog/leankit-changelog.yml
+sla:
+  published: false
+  notes: >-
+    No public uptime SLA or support-response SLA document was found on planview.com, trust.planview.com,
+    or the AgilePlace success site. Support tiers are described at
+    https://success.planview.com/Planview_AgilePlace/Support but without published numeric targets.
+product_history:
+- date: '2017'
+  event: LeanKit acquired by Planview.
+- date: '2023'
+  event: >-
+    Product renamed from Planview LeanKit to Planview AgilePlace; documentation moved to
+    success.planview.com. The leankit.com domain remains the per-account application and API host
+    (https://{account}.leankit.com) and the login host (https://login.leankit.com).
+- date: '2026-07-19'
+  event: >-
+    The leankit.com apex and www hosts no longer present a matching TLS certificate; only per-account and
+    login subdomains resolve correctly. Probed during this enrichment pass.

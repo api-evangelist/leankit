@@ -1,0 +1,49 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the Planview AgilePlace (LeanKit) User Provisioning API
+  version: 1.0.0
+  x-generated: '2026-07-19'
+  x-method: generated
+  x-source: openapi/leankit-user-provisioning-api-openapi.yml
+  x-description: >-
+    Records the SCIM 1.1 conformance profile, the LeanKit user schema extension, and the identity
+    providers Planview names as compatible, without mutating the transcribed OpenAPI.
+extends: ../openapi/leankit-user-provisioning-api-openapi.yml
+actions:
+- target: $.info
+  update:
+    x-apis-io:
+      aid: leankit:user-provisioning-api
+      provider: LeanKit (Planview AgilePlace)
+    x-conformance:
+      standard: SCIM
+      version: '1.1'
+      not: SCIM 2.0 (RFC 7643 / RFC 7644)
+      docs: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+    x-service-provider-config:
+      endpoint: GET /ServiceProviderConfigs
+      patch_supported: false
+      bulk_supported: false
+      change_password_supported: false
+      etag_supported: false
+      xml_supported: false
+      filter_supported: true
+      filter_max_results: 200
+      sort_supported: true
+    x-schemas:
+    - urn:scim:schemas:core:1.0
+    - urn:scim:schemas:extension:leankit:user:1.0
+    x-extension-fields:
+      licenseType: reserved for future use
+      lastAccess: read-only timestamp of the user's last action
+      administrator: grants administrator permissions
+      boardCreator: grants board creator permissions
+      dateFormat: 'one of mm/dd/yyyy, dd/mm/yyyy, yyyy/mm/dd'
+    x-identity-providers:
+    - Okta
+    - OneLogin
+    - Ping Identity
+    x-access-restriction: Only administrator users are allowed to access the user provisioning API.
+    x-artifacts:
+      conformance: conformance/leankit-conformance.yml
+      authentication: authentication/leankit-authentication.yml

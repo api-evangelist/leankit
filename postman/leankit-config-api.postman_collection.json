@@ -1,0 +1,182 @@
+{
+  "info": {
+    "_postman_id": "f0a4af04-17e0-49a8-aba5-176de1c8c090",
+    "name": "Planview AgilePlace API (LeanKit) v2 account config API",
+    "description": "RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference \u2014 no endpoints invented.\n\nContact Support:\n Name: Planview AgilePlace Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:04:19.000Z",
+    "updatedAt": "2026-07-28T02:04:19.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-f0a4af04-17e0-49a8-aba5-176de1c8c090"
+  },
+  "item": [
+    {
+      "name": "ServiceProviderConfigs",
+      "item": [
+        {
+          "name": "Service provider configuration",
+          "id": "44f1d793-a845-49f6-b1f7-919a7031fef8",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/ServiceProviderConfigs",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ServiceProviderConfigs"
+              ]
+            },
+            "description": "Configuration information about the API including supported operations and authentication. AgilePlace reports patch, bulk, changePassword, etag, and xmlDataFormat as unsupported; filter is supported with maxResults 200 and sort is supported."
+          },
+          "response": [
+            {
+              "id": "6094b89a-2ea1-473d-a6ad-09fc5c280cf5",
+              "name": "Service provider configuration",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/ServiceProviderConfigs",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "ServiceProviderConfigs"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T02:04:19.000Z",
+              "updatedAt": "2026-07-28T02:04:19.000Z",
+              "uid": "35240-6094b89a-2ea1-473d-a6ad-09fc5c280cf5"
+            },
+            {
+              "id": "df151556-aa25-4443-8566-8ba5be4ebfa2",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/ServiceProviderConfigs",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "ServiceProviderConfigs"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:04:19.000Z",
+              "updatedAt": "2026-07-28T02:04:19.000Z",
+              "uid": "35240-df151556-aa25-4443-8566-8ba5be4ebfa2"
+            },
+            {
+              "id": "cc790b32-29c5-4d50-9cb8-fc9621c01e76",
+              "name": "Forbidden - administrator access required",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/ServiceProviderConfigs",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "ServiceProviderConfigs"
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:04:19.000Z",
+              "updatedAt": "2026-07-28T02:04:19.000Z",
+              "uid": "35240-cc790b32-29c5-4d50-9cb8-fc9621c01e76"
+            }
+          ],
+          "createdAt": "2026-07-28T02:04:19.000Z",
+          "updatedAt": "2026-07-28T02:04:19.000Z",
+          "uid": "35240-44f1d793-a845-49f6-b1f7-919a7031fef8"
+        }
+      ],
+      "id": "91b65af1-6788-44f7-b685-3e30b1a62f03",
+      "createdAt": "2026-07-28T02:04:19.000Z",
+      "updatedAt": "2026-07-28T02:04:19.000Z",
+      "uid": "35240-91b65af1-6788-44f7-b685-3e30b1a62f03"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "account",
+      "value": "myaccount"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{account}}.leankit.com/io"
+    }
+  ]
+}

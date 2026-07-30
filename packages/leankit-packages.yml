@@ -1,0 +1,111 @@
+generated: '2026-07-19'
+method: searched
+source: npm registry, NuGet, PyPI, and the github.com/LeanKit organization
+type: Packages
+name: LeanKit / Planview AgilePlace client libraries and toolkits
+notes: >-
+  Searched npm, PyPI, Maven Central, NuGet, pkg.go.dev, RubyGems, Packagist, and crates.io. First-party
+  packages are published from the github.com/LeanKit organization. No first-party Python, Java, Go, Ruby,
+  PHP, or Rust client was found — the PyPI package named "leankit" is a community project by an
+  independent author. The Node and .NET clients still target the documented /io v2 API but have not been
+  released since 2022; the GitHub Actions toolkit is the actively maintained first-party surface.
+packages:
+- name: leankit-client
+  registry: npm
+  language: JavaScript
+  official: true
+  url: https://www.npmjs.com/package/leankit-client
+  repository: https://github.com/LeanKit/leankit-node-client
+  version: 2.4.0
+  last_published: '2022-06-19'
+  install: npm install leankit-client
+  description: >-
+    First-party Node.js client for the LeanKit API. Wraps the current /io v2 endpoints (account, auth
+    tokens, boards, board templates, cards, card tasks, comments, attachments, reporting exports, users)
+    and the legacy /kanban/api v1 endpoints. Supports Basic and Bearer authentication and returns Promises.
+- name: leankit-events
+  registry: npm
+  language: JavaScript
+  official: true
+  url: https://www.npmjs.com/package/leankit-events
+  repository: https://github.com/LeanKit/leankit-node-events
+  version: 1.1.0
+  last_published: '2022-05-07'
+  license: MIT
+  install: npm install leankit-events
+  description: >-
+    First-party Node.js module that polls a LeanKit board and emits board events (card creation, move,
+    assignment, block) to subscribers. Complements leankit-client, which does not cover events.
+- name: LeanKit.API.Client
+  registry: nuget
+  language: C#
+  official: true
+  url: https://www.nuget.org/packages/LeanKit.API.Client
+  repository: https://github.com/LeanKit/LeanKit.API.Client
+  version: 1.2.6
+  downloads: 41501
+  archived_repository: true
+  description: >-
+    First-party .NET wrapper for the LeanKit API. The source repository is archived on GitHub.
+- name: LeanKit.API.ExcelHelper
+  registry: github
+  language: C#
+  official: true
+  url: https://github.com/LeanKit/LeanKit.API.ExcelHelper
+  description: >-
+    First-party LeanKit API client for Excel and other Microsoft Office VBA or COM-based applications.
+    Distributed from source; not published to NuGet.
+- name: leankit/github-actions
+  registry: github-actions
+  language: JavaScript
+  official: true
+  url: https://github.com/LeanKit/github-actions
+  version: v1.6.0
+  last_pushed: '2026-02-28'
+  install: 'uses: leankit/github-actions/<action>@v1.6'
+  description: >-
+    First-party GitHub Actions toolkit for driving AgilePlace from CI/CD. Actions in the repository:
+    addComment, addTag, assignUsers, blockCard, createCard, extractCardId, getCardData, hasTag,
+    initiateBoardEvent, initiateCardEvent, moveCard, validateCustomFields. All actions authenticate with
+    an AgilePlace API token and pair with the Trigger GitHub Action card automation, which sends a
+    repository_dispatch with the card context as client_payload.
+- name: tableau-web-data-connectors
+  registry: github
+  language: JavaScript
+  official: true
+  url: https://github.com/LeanKit/tableau-web-data-connectors
+  description: >-
+    First-party Tableau Web Data Connectors that consume the LeanKit Advanced Reporting API.
+- name: reporting-api-url-generator
+  registry: github
+  language: JavaScript
+  official: true
+  url: https://github.com/LeanKit/reporting-api-url-generator
+  description: First-party helper for building Advanced Reporting API export URLs.
+- name: api-samples
+  registry: github
+  language: C#
+  official: true
+  url: https://github.com/LeanKit/api-samples
+  description: First-party collection of LeanKit API samples.
+third_party:
+- name: leankit
+  registry: pypi
+  language: Python
+  official: false
+  url: https://pypi.org/project/leankit/
+  repository: https://github.com/Funk66/leankit
+  version: 1.5.0
+  author: Guillermo Guirao Aguilar
+- name: '@pipedream/planview_leankit'
+  registry: npm
+  language: JavaScript
+  official: false
+  url: https://www.npmjs.com/package/@pipedream/planview_leankit
+  version: 0.2.0
+searched_no_result:
+- maven-central
+- pkg.go.dev
+- rubygems
+- packagist
+- crates.io

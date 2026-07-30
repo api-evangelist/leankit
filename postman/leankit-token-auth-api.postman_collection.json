@@ -1,0 +1,1188 @@
+{
+  "info": {
+    "_postman_id": "b1331052-5a22-4b7b-aa52-dbb6840469cc",
+    "name": "Planview AgilePlace API (LeanKit) v2 account token-auth API",
+    "description": "RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference \u2014 no endpoints invented.\n\nContact Support:\n Name: Planview AgilePlace Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:06:30.000Z",
+    "updatedAt": "2026-07-28T02:06:30.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b1331052-5a22-4b7b-aa52-dbb6840469cc"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "token",
+          "item": [
+            {
+              "name": "{tokenId}",
+              "item": [
+                {
+                  "name": "Delete an authentication token",
+                  "id": "b5297085-fb67-491f-b262-b781ea184d06",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/token/:tokenId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "token",
+                        ":tokenId"
+                      ],
+                      "variable": [
+                        {
+                          "id": "cd196de7-cd45-4159-9ded-96fbdf210be1",
+                          "key": "tokenId",
+                          "value": "<string>",
+                          "description": "(Required) tokenId identifier"
+                        }
+                      ]
+                    },
+                    "description": "Delete an authentication token. You can also manage your tokens by choosing the \"My API Tokens\" tab in your LeanKit User Profile."
+                  },
+                  "response": [
+                    {
+                      "id": "f0c0c747-03f0-4912-8e31-8f232dce03a4",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/auth/token/:tokenId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "auth",
+                            "token",
+                            ":tokenId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "tokenId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T02:06:30.000Z",
+                      "updatedAt": "2026-07-28T02:06:30.000Z",
+                      "uid": "35240-f0c0c747-03f0-4912-8e31-8f232dce03a4"
+                    },
+                    {
+                      "id": "36ea3c51-7315-4244-a83e-75b999cc4479",
+                      "name": "Deleted",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/auth/token/:tokenId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "auth",
+                            "token",
+                            ":tokenId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "tokenId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "No Content",
+                      "code": 204,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:30.000Z",
+                      "updatedAt": "2026-07-28T02:06:30.000Z",
+                      "uid": "35240-36ea3c51-7315-4244-a83e-75b999cc4479"
+                    },
+                    {
+                      "id": "371156eb-65e7-4ac1-8ede-4abd73ffd74c",
+                      "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/auth/token/:tokenId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "auth",
+                            "token",
+                            ":tokenId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "tokenId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:30.000Z",
+                      "updatedAt": "2026-07-28T02:06:30.000Z",
+                      "uid": "35240-371156eb-65e7-4ac1-8ede-4abd73ffd74c"
+                    },
+                    {
+                      "id": "34ce0e4e-bd2c-4893-90e9-ca4f8716da27",
+                      "name": "Forbidden - authenticated user lacks permission",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/auth/token/:tokenId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "auth",
+                            "token",
+                            ":tokenId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "tokenId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:30.000Z",
+                      "updatedAt": "2026-07-28T02:06:30.000Z",
+                      "uid": "35240-34ce0e4e-bd2c-4893-90e9-ca4f8716da27"
+                    },
+                    {
+                      "id": "6bd3de9f-07aa-430f-ba75-7c9e231e128b",
+                      "name": "Not found",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/auth/token/:tokenId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "auth",
+                            "token",
+                            ":tokenId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "tokenId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:30.000Z",
+                      "updatedAt": "2026-07-28T02:06:30.000Z",
+                      "uid": "35240-6bd3de9f-07aa-430f-ba75-7c9e231e128b"
+                    },
+                    {
+                      "id": "c550d729-9faa-4557-9270-9058fd378d05",
+                      "name": "Unprocessable entity - required information was missing or invalid",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/auth/token/:tokenId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "auth",
+                            "token",
+                            ":tokenId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "tokenId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:30.000Z",
+                      "updatedAt": "2026-07-28T02:06:30.000Z",
+                      "uid": "35240-c550d729-9faa-4557-9270-9058fd378d05"
+                    },
+                    {
+                      "id": "efe1d02e-d80c-42c6-a10c-34efd5178aa6",
+                      "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/auth/token/:tokenId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "auth",
+                            "token",
+                            ":tokenId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "tokenId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "HTTP-date after which the client may retry",
+                            "type": "text/plain"
+                          },
+                          "key": "Retry-After",
+                          "value": "<string>"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:30.000Z",
+                      "updatedAt": "2026-07-28T02:06:30.000Z",
+                      "uid": "35240-efe1d02e-d80c-42c6-a10c-34efd5178aa6"
+                    },
+                    {
+                      "id": "4451f0c5-1e54-411e-9e52-d43142bb2430",
+                      "name": "Server error on the AgilePlace side",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/auth/token/:tokenId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "auth",
+                            "token",
+                            ":tokenId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "tokenId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:30.000Z",
+                      "updatedAt": "2026-07-28T02:06:30.000Z",
+                      "uid": "35240-4451f0c5-1e54-411e-9e52-d43142bb2430"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:06:30.000Z",
+                  "updatedAt": "2026-07-28T02:06:30.000Z",
+                  "uid": "35240-b5297085-fb67-491f-b262-b781ea184d06"
+                }
+              ],
+              "id": "6476d99f-a075-43e6-95ab-0a0b7328cde2",
+              "createdAt": "2026-07-28T02:06:30.000Z",
+              "updatedAt": "2026-07-28T02:06:30.000Z",
+              "uid": "35240-6476d99f-a075-43e6-95ab-0a0b7328cde2"
+            },
+            {
+              "name": "Create an authentication token",
+              "id": "1486f0c0-3f48-4cea-b427-63666a587d7c",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/auth/token",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "token"
+                  ]
+                },
+                "description": "Create an authentication token. Make sure that you choose a meaningful description when you post, and record the token received from this request. This is the only time it is displayed. You can also manage your tokens by choosing the \"My API Tokens\" tab in your LeanKit User Profile."
+              },
+              "response": [
+                {
+                  "id": "c441fd37-5f22-42c4-987c-2c0b10de296d",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/token",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "token"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T02:06:30.000Z",
+                  "updatedAt": "2026-07-28T02:06:30.000Z",
+                  "uid": "35240-c441fd37-5f22-42c4-987c-2c0b10de296d"
+                },
+                {
+                  "id": "2c2484f0-7f3f-471e-bba4-3e5fb4efa5e5",
+                  "name": "Created",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/token",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "token"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T02:06:30.000Z",
+                  "updatedAt": "2026-07-28T02:06:30.000Z",
+                  "uid": "35240-2c2484f0-7f3f-471e-bba4-3e5fb4efa5e5"
+                },
+                {
+                  "id": "5e1f4ec8-9a83-48ec-82f6-f74cc0b7a4fe",
+                  "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/token",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "token"
+                      ]
+                    }
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:30.000Z",
+                  "updatedAt": "2026-07-28T02:06:30.000Z",
+                  "uid": "35240-5e1f4ec8-9a83-48ec-82f6-f74cc0b7a4fe"
+                },
+                {
+                  "id": "3b21cd9a-aa5b-41ee-8119-78b665666277",
+                  "name": "Forbidden - authenticated user lacks permission",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/token",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "token"
+                      ]
+                    }
+                  },
+                  "status": "Forbidden",
+                  "code": 403,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:30.000Z",
+                  "updatedAt": "2026-07-28T02:06:30.000Z",
+                  "uid": "35240-3b21cd9a-aa5b-41ee-8119-78b665666277"
+                },
+                {
+                  "id": "4aeda422-3192-4fe4-a775-d0fd4cad04bb",
+                  "name": "Not found",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/token",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "token"
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:30.000Z",
+                  "updatedAt": "2026-07-28T02:06:30.000Z",
+                  "uid": "35240-4aeda422-3192-4fe4-a775-d0fd4cad04bb"
+                },
+                {
+                  "id": "a15100e1-4dd1-4932-a586-779293936d65",
+                  "name": "Unprocessable entity - required information was missing or invalid",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/token",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "token"
+                      ]
+                    }
+                  },
+                  "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                  "code": 422,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:30.000Z",
+                  "updatedAt": "2026-07-28T02:06:30.000Z",
+                  "uid": "35240-a15100e1-4dd1-4932-a586-779293936d65"
+                },
+                {
+                  "id": "43e4c72c-b761-45bc-86d7-26d8f1650728",
+                  "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/token",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "token"
+                      ]
+                    }
+                  },
+                  "status": "Too Many Requests",
+                  "code": 429,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "HTTP-date after which the client may retry",
+                        "type": "text/plain"
+                      },
+                      "key": "Retry-After",
+                      "value": "<string>"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:30.000Z",
+                  "updatedAt": "2026-07-28T02:06:30.000Z",
+                  "uid": "35240-43e4c72c-b761-45bc-86d7-26d8f1650728"
+                },
+                {
+                  "id": "462e0aa7-2fd3-4e81-a2da-f820e6b0e60a",
+                  "name": "Server error on the AgilePlace side",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/token",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "token"
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:30.000Z",
+                  "updatedAt": "2026-07-28T02:06:30.000Z",
+                  "uid": "35240-462e0aa7-2fd3-4e81-a2da-f820e6b0e60a"
+                }
+              ],
+              "createdAt": "2026-07-28T02:06:30.000Z",
+              "updatedAt": "2026-07-28T02:06:30.000Z",
+              "uid": "35240-1486f0c0-3f48-4cea-b427-63666a587d7c"
+            },
+            {
+              "name": "Get the list of authentication tokens",
+              "id": "4a328aad-a86d-4c48-8688-f5cacfb3373e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/auth/token",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "token"
+                  ]
+                },
+                "description": "Get the list of authentication tokens. You can also manage your tokens by choosing the \"My API Tokens\" tab in your LeanKit User Profile."
+              },
+              "response": [
+                {
+                  "id": "255dc11c-c857-4340-9480-2c274a967919",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/token",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "token"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T02:06:30.000Z",
+                  "updatedAt": "2026-07-28T02:06:30.000Z",
+                  "uid": "35240-255dc11c-c857-4340-9480-2c274a967919"
+                },
+                {
+                  "id": "875d2004-d7f9-4e23-a64b-635b76551a80",
+                  "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/token",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "token"
+                      ]
+                    }
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:30.000Z",
+                  "updatedAt": "2026-07-28T02:06:30.000Z",
+                  "uid": "35240-875d2004-d7f9-4e23-a64b-635b76551a80"
+                },
+                {
+                  "id": "32137849-adbc-4ade-a3dc-4059c5b0e168",
+                  "name": "Forbidden - authenticated user lacks permission",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/token",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "token"
+                      ]
+                    }
+                  },
+                  "status": "Forbidden",
+                  "code": 403,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:30.000Z",
+                  "updatedAt": "2026-07-28T02:06:30.000Z",
+                  "uid": "35240-32137849-adbc-4ade-a3dc-4059c5b0e168"
+                },
+                {
+                  "id": "78307901-afd9-44f3-b779-d5f6e87debd0",
+                  "name": "Not found",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/token",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "token"
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:30.000Z",
+                  "updatedAt": "2026-07-28T02:06:30.000Z",
+                  "uid": "35240-78307901-afd9-44f3-b779-d5f6e87debd0"
+                },
+                {
+                  "id": "b1612dc6-9c9d-4e00-a96b-478acb0781f3",
+                  "name": "Unprocessable entity - required information was missing or invalid",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/token",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "token"
+                      ]
+                    }
+                  },
+                  "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                  "code": 422,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:30.000Z",
+                  "updatedAt": "2026-07-28T02:06:30.000Z",
+                  "uid": "35240-b1612dc6-9c9d-4e00-a96b-478acb0781f3"
+                },
+                {
+                  "id": "0f71f7e0-50a1-4ddd-b41f-09e03e3bc119",
+                  "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/token",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "token"
+                      ]
+                    }
+                  },
+                  "status": "Too Many Requests",
+                  "code": 429,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "HTTP-date after which the client may retry",
+                        "type": "text/plain"
+                      },
+                      "key": "Retry-After",
+                      "value": "<string>"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:30.000Z",
+                  "updatedAt": "2026-07-28T02:06:30.000Z",
+                  "uid": "35240-0f71f7e0-50a1-4ddd-b41f-09e03e3bc119"
+                },
+                {
+                  "id": "af5d4e10-b28c-46bd-abbe-9b251c548c16",
+                  "name": "Server error on the AgilePlace side",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/token",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "token"
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:30.000Z",
+                  "updatedAt": "2026-07-28T02:06:30.000Z",
+                  "uid": "35240-af5d4e10-b28c-46bd-abbe-9b251c548c16"
+                }
+              ],
+              "createdAt": "2026-07-28T02:06:30.000Z",
+              "updatedAt": "2026-07-28T02:06:30.000Z",
+              "uid": "35240-4a328aad-a86d-4c48-8688-f5cacfb3373e"
+            }
+          ],
+          "id": "345f58e0-9889-4767-b891-6eb307a2e68f",
+          "createdAt": "2026-07-28T02:06:30.000Z",
+          "updatedAt": "2026-07-28T02:06:30.000Z",
+          "uid": "35240-345f58e0-9889-4767-b891-6eb307a2e68f"
+        }
+      ],
+      "id": "cd6911db-853e-48d7-811c-5ff0f2508500",
+      "createdAt": "2026-07-28T02:06:30.000Z",
+      "updatedAt": "2026-07-28T02:06:30.000Z",
+      "uid": "35240-cd6911db-853e-48d7-811c-5ff0f2508500"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "account",
+      "value": "myaccount"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{account}}.leankit.com/io"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+generated: '2026-07-19'
+method: searched
+source: https://success.planview.com/Planview_AgilePlace/Product_Releases
+type: ChangeLog
+name: LeanKit / Planview AgilePlace product releases
+url: https://success.planview.com/Planview_AgilePlace/Product_Releases
+scheme: dated product release notes (no semantic version numbers)
+cadence: irregular; entries are dated and grouped into monthly archives
+archive_range: 2021 to present
+current_version: >-
+  Not versioned publicly. The API surface is identified by path prefix (/io for v2, /kanban/api for the
+  deprecated v1) rather than by a release number, and product release notes describe application changes.
+notes: >-
+  Planview publishes a dated product changelog for AgilePlace with monthly archives going back to 2021.
+  The notes are product-facing; API-breaking changes are not called out in a separate developer changelog,
+  and no RSS or JSON feed for the release notes was found. Recent window captured below.
+entries:
+- date: '2026-07-16'
+  title: Enhanced Dependency Management - GA
+  type: addition
+  breaking: false
+  highlights: >-
+    Link cards with incoming and outgoing dependencies, connection timing, and health status (Healthy,
+    At risk, Blocked). Connection lines render on the board and cards can be filtered by dependency links.
+  api_surface: /io/card/dependency and /io/card/{cardId}/dependency
+- date: '2026-06-01'
+  title: AgilePlace board filtering update
+  type: change
+  breaking: false
+  highlights: >-
+    Board filtering consolidated to a single Highlight mode toggle — one click dims unfiltered cards, a
+    second click hides them — replacing the previous separate show and highlight buttons.
+- date: '2026-05-15'
+  title: Visual Lane Policies now available
+  type: addition
+  breaking: false
+  highlights: >-
+    Interactive, enforceable lane- and board-level rules that monitor cards and give immediate visual
+    feedback when standards are not met, replacing informal text lane descriptions.
+- date: '2026-05-15'
+  title: Card import now supports custom fields
+  type: addition
+  breaking: false
+  highlights: >-
+    CSV card import maps columns to the custom fields configured on the target board, easing board-to-board
+    migration.
+- date: '2026-04'
+  title: No release notes published for April 2026
+  type: none
+  breaking: false
+archives:
+- year: 2026
+  url: https://success.planview.com/Planview_AgilePlace/Product_Releases/99_Archive/2026_Archive
+- year: 2025
+  url: https://success.planview.com/Planview_AgilePlace/Product_Releases/99_Archive/91_2025_Archive
+- year: 2024
+  url: https://success.planview.com/Planview_AgilePlace/Product_Releases/99_Archive
+- year: 2023
+  url: https://success.planview.com/Planview_AgilePlace/Product_Releases/99_Archive
+- year: 2022
+  url: https://success.planview.com/Planview_AgilePlace/Product_Releases/99_Archive
+- year: 2021
+  url: https://success.planview.com/Planview_AgilePlace/Product_Releases/99_Archive
+related_changelogs:
+- name: LeanKit GitHub Actions
+  url: https://github.com/LeanKit/github-actions/blob/main/CHANGELOG.md
+  latest_tag: v1.6.0

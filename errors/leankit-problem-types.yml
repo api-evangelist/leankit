@@ -1,0 +1,64 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/leankit-agileplace-api-openapi.yml, https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+type: ErrorCatalog
+name: LeanKit / Planview AgilePlace error catalog
+format: http-status
+rfc9457: false
+notes: >-
+  LeanKit / Planview AgilePlace does not publish an error reference page, an error-code registry, or an
+  application/problem+json envelope. The documented contract is HTTP status codes only: "Codes in the 2xx
+  range indicate success. Codes in the 4xx range indicate that some information provided was incorrect...
+  5xx level errors indicate a problem on the AgilePlace server side." The entries below are derived from
+  that statement, the rate-limiting page, and the status codes carried in the transcribed OpenAPI. Titles
+  and remediation are grounded in published behaviour; no error codes were invented.
+envelope:
+  content_type: application/json
+  fields: not documented
+errors:
+- status: 401
+  title: Unauthorized
+  meaning: The request carried no credentials, or the Basic credentials / Bearer token were invalid.
+  remediation: >-
+    Send Authorization: Basic <base64 email:password> or Authorization: Bearer <token>. Tokens are shown
+    only once at creation; if the value was lost, create a new token via POST /io/auth/token or the
+    "My API Tokens" tab and revoke the old one.
+- status: 403
+  title: Forbidden
+  meaning: >-
+    The caller authenticated but lacks the permission for the operation. Board-scoped operations require
+    the appropriate board role; the User Provisioning API is restricted to account administrators.
+  remediation: Grant the user the required board role, or authenticate as an account administrator.
+- status: 404
+  title: Not Found
+  meaning: The addressed board, card, lane, comment, attachment, team, user, or series does not exist or is not visible to the caller.
+  remediation: Re-resolve the identifier; IDs are account-scoped opaque numeric strings.
+- status: 422
+  title: Unprocessable Entity
+  meaning: >-
+    Required information was missing or invalid. The documented example is omitting the list of card ids
+    on an endpoint that requires it.
+  remediation: Check the endpoint reference for required request properties before retrying.
+- status: 429
+  title: Too Many Requests
+  meaning: >-
+    The authenticated user exhausted their rate-limit points for the current 60-second window. Limits are
+    shared across all of that user's tokens and authentication methods.
+  remediation: >-
+    Wait until the time given by the Retry-After header (an HTTP-date) or X-RateLimit-Reset (a Unix
+    timestamp) before retrying. Reduce parallelism, cache resolved identifiers, and use the `since`
+    parameter on the card list endpoint instead of polling.
+  headers:
+  - Retry-After
+  - X-RateLimit-Limit
+  - X-RateLimit-Remaining
+  - X-RateLimit-Reset
+- status: 500
+  title: Internal Server Error
+  meaning: A problem on the AgilePlace server side.
+  remediation: Retry with backoff; check https://status.planview.com/ for an active incident.
+github_actions_errors:
+  notes: >-
+    The first-party GitHub Actions toolkit surfaces failures from these calls on the action's `error`
+    output and in the LK_ERROR_MESSAGE environment variable.
+  source: https://github.com/LeanKit/github-actions

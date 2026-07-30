@@ -1,0 +1,557 @@
+{
+  "info": {
+    "_postman_id": "beafd93b-8619-42e3-a1cf-cdc195237a22",
+    "name": "Planview AgilePlace API (LeanKit) v2 account lane API",
+    "description": "RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference \u2014 no endpoints invented.\n\nContact Support:\n Name: Planview AgilePlace Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:06:23.000Z",
+    "updatedAt": "2026-07-28T02:06:24.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-beafd93b-8619-42e3-a1cf-cdc195237a22"
+  },
+  "item": [
+    {
+      "name": "board",
+      "item": [
+        {
+          "name": "{boardId}",
+          "item": [
+            {
+              "name": "lane",
+              "item": [
+                {
+                  "name": "{laneId}",
+                  "item": [
+                    {
+                      "name": "Update a lane",
+                      "id": "11443784-b19b-4056-ac1a-60009c8cf6b4",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/lane/:laneId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "lane",
+                            ":laneId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "9fd2a71b-d4a0-4f78-b286-a9f8080bd62a",
+                              "key": "boardId",
+                              "value": "<string>",
+                              "description": "(Required) boardId identifier"
+                            },
+                            {
+                              "id": "3635e1d4-5dcd-4102-8a19-183a17f6fc5c",
+                              "key": "laneId",
+                              "value": "<string>",
+                              "description": "(Required) laneId identifier"
+                            }
+                          ]
+                        },
+                        "description": "Update a lane. Requires authentication with at least board manager role on the board specified."
+                      },
+                      "response": [
+                        {
+                          "id": "14e98e3b-822a-4648-a4b9-d687d78cfc0f",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/lane/:laneId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "lane",
+                                ":laneId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "laneId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T02:06:24.000Z",
+                          "updatedAt": "2026-07-28T02:06:24.000Z",
+                          "uid": "35240-14e98e3b-822a-4648-a4b9-d687d78cfc0f"
+                        },
+                        {
+                          "id": "61c7fa8c-3cd4-4851-8ff6-182397975322",
+                          "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/lane/:laneId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "lane",
+                                ":laneId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "laneId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:06:24.000Z",
+                          "updatedAt": "2026-07-28T02:06:24.000Z",
+                          "uid": "35240-61c7fa8c-3cd4-4851-8ff6-182397975322"
+                        },
+                        {
+                          "id": "3393fe4e-f959-4d7d-aa65-aa8693bfd1ce",
+                          "name": "Forbidden - authenticated user lacks permission",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/lane/:laneId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "lane",
+                                ":laneId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "laneId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:06:24.000Z",
+                          "updatedAt": "2026-07-28T02:06:24.000Z",
+                          "uid": "35240-3393fe4e-f959-4d7d-aa65-aa8693bfd1ce"
+                        },
+                        {
+                          "id": "3e641cd3-59c7-44cf-a959-59a5a7fd674f",
+                          "name": "Not found",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/lane/:laneId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "lane",
+                                ":laneId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "laneId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:06:24.000Z",
+                          "updatedAt": "2026-07-28T02:06:24.000Z",
+                          "uid": "35240-3e641cd3-59c7-44cf-a959-59a5a7fd674f"
+                        },
+                        {
+                          "id": "935abbe8-8690-45a9-a392-bab2aa5792a3",
+                          "name": "Unprocessable entity - required information was missing or invalid",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/lane/:laneId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "lane",
+                                ":laneId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "laneId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:06:24.000Z",
+                          "updatedAt": "2026-07-28T02:06:24.000Z",
+                          "uid": "35240-935abbe8-8690-45a9-a392-bab2aa5792a3"
+                        },
+                        {
+                          "id": "4e538d65-6a39-4b4f-b30d-88db7f7f73ff",
+                          "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/lane/:laneId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "lane",
+                                ":laneId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "laneId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Too Many Requests",
+                          "code": 429,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "HTTP-date after which the client may retry",
+                                "type": "text/plain"
+                              },
+                              "key": "Retry-After",
+                              "value": "<string>"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:06:24.000Z",
+                          "updatedAt": "2026-07-28T02:06:24.000Z",
+                          "uid": "35240-4e538d65-6a39-4b4f-b30d-88db7f7f73ff"
+                        },
+                        {
+                          "id": "d35359df-17d9-4548-a814-6649f9ed1219",
+                          "name": "Server error on the AgilePlace side",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/lane/:laneId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "lane",
+                                ":laneId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "laneId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:06:24.000Z",
+                          "updatedAt": "2026-07-28T02:06:24.000Z",
+                          "uid": "35240-d35359df-17d9-4548-a814-6649f9ed1219"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:06:24.000Z",
+                      "updatedAt": "2026-07-28T02:06:24.000Z",
+                      "uid": "35240-11443784-b19b-4056-ac1a-60009c8cf6b4"
+                    }
+                  ],
+                  "id": "8a5a8175-1ee9-4e4a-a45a-3b66ab13ac72",
+                  "createdAt": "2026-07-28T02:06:24.000Z",
+                  "updatedAt": "2026-07-28T02:06:24.000Z",
+                  "uid": "35240-8a5a8175-1ee9-4e4a-a45a-3b66ab13ac72"
+                }
+              ],
+              "id": "84e66e18-d78b-4196-bdd1-eefde84954b6",
+              "createdAt": "2026-07-28T02:06:24.000Z",
+              "updatedAt": "2026-07-28T02:06:24.000Z",
+              "uid": "35240-84e66e18-d78b-4196-bdd1-eefde84954b6"
+            }
+          ],
+          "id": "81669d3d-d210-4f76-8126-a25e72af34f8",
+          "createdAt": "2026-07-28T02:06:24.000Z",
+          "updatedAt": "2026-07-28T02:06:24.000Z",
+          "uid": "35240-81669d3d-d210-4f76-8126-a25e72af34f8"
+        }
+      ],
+      "id": "33a90d30-3b59-4e95-a8c9-d5a12d1ecd8e",
+      "createdAt": "2026-07-28T02:06:24.000Z",
+      "updatedAt": "2026-07-28T02:06:24.000Z",
+      "uid": "35240-33a90d30-3b59-4e95-a8c9-d5a12d1ecd8e"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "account",
+      "value": "myaccount"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{account}}.leankit.com/io"
+    }
+  ]
+}

@@ -1,0 +1,717 @@
+{
+  "info": {
+    "_postman_id": "fb438959-f83a-4337-bf86-4a9ef544c260",
+    "name": "Planview AgilePlace API (LeanKit) v2 account board-level API",
+    "description": "RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference \u2014 no endpoints invented.\n\nContact Support:\n Name: Planview AgilePlace Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:04:01.000Z",
+    "updatedAt": "2026-07-28T02:04:01.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-fb438959-f83a-4337-bf86-4a9ef544c260"
+  },
+  "item": [
+    {
+      "name": "boardLevel",
+      "item": [
+        {
+          "name": "Create, update, or delete board levels",
+          "id": "94546032-0e62-487a-a0fb-48aa895565d6",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/boardLevel",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "boardLevel"
+              ]
+            },
+            "description": "Create, update, or delete board levels. All levels need to be included in the payload. Levels without an id will be created. Missing levels will be deleted."
+          },
+          "response": [
+            {
+              "id": "75c6deee-e49a-45bf-9ff1-707f0a77df5b",
+              "name": "Success",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/boardLevel",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "boardLevel"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T02:04:02.000Z",
+              "updatedAt": "2026-07-28T02:04:02.000Z",
+              "uid": "35240-75c6deee-e49a-45bf-9ff1-707f0a77df5b"
+            },
+            {
+              "id": "dec7c822-acad-47c8-83a7-d35dff577fef",
+              "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/boardLevel",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "boardLevel"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:04:02.000Z",
+              "updatedAt": "2026-07-28T02:04:02.000Z",
+              "uid": "35240-dec7c822-acad-47c8-83a7-d35dff577fef"
+            },
+            {
+              "id": "d15ae15c-2f4b-45a5-b084-e2fdcc614fb0",
+              "name": "Forbidden - authenticated user lacks permission",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/boardLevel",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "boardLevel"
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:04:02.000Z",
+              "updatedAt": "2026-07-28T02:04:02.000Z",
+              "uid": "35240-d15ae15c-2f4b-45a5-b084-e2fdcc614fb0"
+            },
+            {
+              "id": "1f482840-9bce-4815-bb9a-a0396df59c0d",
+              "name": "Not found",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/boardLevel",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "boardLevel"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:04:02.000Z",
+              "updatedAt": "2026-07-28T02:04:02.000Z",
+              "uid": "35240-1f482840-9bce-4815-bb9a-a0396df59c0d"
+            },
+            {
+              "id": "1bbe8ac8-f595-4f39-93c8-a4c78bfdae4b",
+              "name": "Unprocessable entity - required information was missing or invalid",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/boardLevel",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "boardLevel"
+                  ]
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:04:02.000Z",
+              "updatedAt": "2026-07-28T02:04:02.000Z",
+              "uid": "35240-1bbe8ac8-f595-4f39-93c8-a4c78bfdae4b"
+            },
+            {
+              "id": "f2916a3c-4695-4925-9932-95607da03c32",
+              "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/boardLevel",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "boardLevel"
+                  ]
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "HTTP-date after which the client may retry",
+                    "type": "text/plain"
+                  },
+                  "key": "Retry-After",
+                  "value": "<string>"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:04:02.000Z",
+              "updatedAt": "2026-07-28T02:04:02.000Z",
+              "uid": "35240-f2916a3c-4695-4925-9932-95607da03c32"
+            },
+            {
+              "id": "498b7ecc-e629-4f7f-89bd-b6599351658f",
+              "name": "Server error on the AgilePlace side",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/boardLevel",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "boardLevel"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:04:02.000Z",
+              "updatedAt": "2026-07-28T02:04:02.000Z",
+              "uid": "35240-498b7ecc-e629-4f7f-89bd-b6599351658f"
+            }
+          ],
+          "createdAt": "2026-07-28T02:04:02.000Z",
+          "updatedAt": "2026-07-28T02:04:02.000Z",
+          "uid": "35240-94546032-0e62-487a-a0fb-48aa895565d6"
+        },
+        {
+          "name": "List board levels",
+          "id": "cae4d196-c413-4e87-b711-08e7f91281f7",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/boardLevel",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "boardLevel"
+              ]
+            },
+            "description": "List board levels. Example Request"
+          },
+          "response": [
+            {
+              "id": "accd01c1-7f47-49e8-87aa-98fbc5a8b7a1",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/boardLevel",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "boardLevel"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T02:04:02.000Z",
+              "updatedAt": "2026-07-28T02:04:02.000Z",
+              "uid": "35240-accd01c1-7f47-49e8-87aa-98fbc5a8b7a1"
+            },
+            {
+              "id": "62155782-b3e5-4aec-8985-7a5a12411ed2",
+              "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/boardLevel",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "boardLevel"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:04:02.000Z",
+              "updatedAt": "2026-07-28T02:04:02.000Z",
+              "uid": "35240-62155782-b3e5-4aec-8985-7a5a12411ed2"
+            },
+            {
+              "id": "2148077a-7238-422a-8568-c4e8251efe6e",
+              "name": "Forbidden - authenticated user lacks permission",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/boardLevel",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "boardLevel"
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:04:02.000Z",
+              "updatedAt": "2026-07-28T02:04:02.000Z",
+              "uid": "35240-2148077a-7238-422a-8568-c4e8251efe6e"
+            },
+            {
+              "id": "52839f15-7141-4ec9-9cb0-80f8f1fce856",
+              "name": "Not found",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/boardLevel",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "boardLevel"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:04:02.000Z",
+              "updatedAt": "2026-07-28T02:04:02.000Z",
+              "uid": "35240-52839f15-7141-4ec9-9cb0-80f8f1fce856"
+            },
+            {
+              "id": "e43b400c-db6d-49c7-a1a1-ff6d44641265",
+              "name": "Unprocessable entity - required information was missing or invalid",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/boardLevel",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "boardLevel"
+                  ]
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:04:02.000Z",
+              "updatedAt": "2026-07-28T02:04:02.000Z",
+              "uid": "35240-e43b400c-db6d-49c7-a1a1-ff6d44641265"
+            },
+            {
+              "id": "67a5f95f-b853-4a06-907b-93a8576123a8",
+              "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/boardLevel",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "boardLevel"
+                  ]
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "HTTP-date after which the client may retry",
+                    "type": "text/plain"
+                  },
+                  "key": "Retry-After",
+                  "value": "<string>"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:04:02.000Z",
+              "updatedAt": "2026-07-28T02:04:02.000Z",
+              "uid": "35240-67a5f95f-b853-4a06-907b-93a8576123a8"
+            },
+            {
+              "id": "09934ce3-e5d3-4f39-80bc-3535edc6fbd5",
+              "name": "Server error on the AgilePlace side",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/boardLevel",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "boardLevel"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:04:02.000Z",
+              "updatedAt": "2026-07-28T02:04:02.000Z",
+              "uid": "35240-09934ce3-e5d3-4f39-80bc-3535edc6fbd5"
+            }
+          ],
+          "createdAt": "2026-07-28T02:04:02.000Z",
+          "updatedAt": "2026-07-28T02:04:02.000Z",
+          "uid": "35240-cae4d196-c413-4e87-b711-08e7f91281f7"
+        }
+      ],
+      "id": "ffdccc38-d4cd-47fd-9db7-77eea52feca1",
+      "createdAt": "2026-07-28T02:04:02.000Z",
+      "updatedAt": "2026-07-28T02:04:02.000Z",
+      "uid": "35240-ffdccc38-d4cd-47fd-9db7-77eea52feca1"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "account",
+      "value": "myaccount"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{account}}.leankit.com/io"
+    }
+  ]
+}

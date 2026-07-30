@@ -1,0 +1,170 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/leankit-agileplace-api-openapi.yml
+type: MCPServer
+name: LeanKit / Planview AgilePlace MCP candidate
+status: candidate
+official_server: none
+notes: >-
+  Searched the official Model Context Protocol registry (no results for leankit, agileplace, or planview),
+  the github.com/LeanKit and LeanKit-Labs organizations, npm, and the Planview AgilePlace documentation.
+  Planview publishes no hosted or remote MCP server for AgilePlace. The one MCP-related artifact found on
+  a Planview host is the SafeBase trust-center MCP advertised via
+  https://trust.planview.com/.well-known/oauth-authorization-server (issuer https://app.safebase.io/api/mcp) —
+  that belongs to the trust-center platform vendor and exposes security documentation, not the AgilePlace
+  API. The tool list below is a candidate derived from real operationIds in the transcribed OpenAPI; it is
+  a design proposal, not a shipped server.
+transport_candidate: stdio or streamable-http
+auth:
+  scheme: bearer
+  credential: AgilePlace API token (POST /io/auth/token, or the "My API Tokens" profile tab)
+  host_variable: LEANKIT_DOMAIN, e.g. mycompany.leankit.com
+  see_also: authentication/leankit-authentication.yml
+rate_limit_guidance: >-
+  Any MCP server fronting this API must honour X-RateLimit-Remaining / X-RateLimit-Reset and back off on
+  429 with Retry-After. Limits are per authenticated user and shared across all of that user's tokens.
+candidate_tools:
+- name: list_boards
+  operationId: boardList
+  method: GET
+  path: /io/board
+  description: List the boards the authenticated user can access, with search and paging options.
+- name: get_board
+  operationId: boardGet
+  method: GET
+  path: /io/board/{boardId}
+  description: Retrieve a single board, including its lanes and layout.
+- name: list_board_cards
+  operationId: boardCards
+  method: GET
+  path: /io/board/{boardId}/card
+  description: List the cards on a board.
+- name: search_cards
+  operationId: cardList
+  method: GET
+  path: /io/card
+  description: Search cards across boards; supports the `since` parameter for incremental sync.
+- name: get_card
+  operationId: cardGet
+  method: GET
+  path: /io/card/{cardId}
+  description: Retrieve one card by id.
+- name: create_card
+  operationId: cardCreate
+  method: POST
+  path: /io/card
+  description: Create a card in a board, lane, or taskboard destination.
+- name: update_card
+  operationId: cardUpdate
+  method: PATCH
+  path: /io/card/{cardId}
+  description: Apply add/replace/remove operations to a card's properties.
+- name: move_card
+  operationId: cardMove
+  method: POST
+  path: /io/card/move
+  description: Move one or more cards to a destination lane.
+- name: delete_card
+  operationId: cardDelete
+  method: DELETE
+  path: /io/card/{cardId}
+  description: Delete a card.
+- name: list_card_comments
+  operationId: commentList
+  method: GET
+  path: /io/card/{cardId}/comment
+  description: List the comments on a card.
+- name: add_card_comment
+  operationId: commentCreate
+  method: POST
+  path: /io/card/{cardId}/comment
+  description: Add a comment to a card.
+- name: get_card_activity
+  operationId: cardActivity
+  method: GET
+  path: /io/card/{cardId}/activity
+  description: Retrieve a card's activity history.
+- name: list_card_tasks
+  operationId: cardListTasks
+  method: GET
+  path: /io/card/{cardId}/tasks
+  description: List the task cards on a card's taskboard.
+- name: create_card_task
+  operationId: cardCreateTask
+  method: POST
+  path: /io/card/{cardId}/tasks
+  description: Create a task card on a card's taskboard.
+- name: assign_card_members
+  operationId: cardAssignMembers
+  method: POST
+  path: /io/card/assign
+  description: Assign or unassign users on cards.
+- name: list_card_connections
+  operationId: connectionsChildren
+  method: GET
+  path: /io/card/{cardId}/connection/children
+  description: List a card's child connections.
+- name: create_connection
+  operationId: connectionsCreate
+  method: POST
+  path: /io/card/connections
+  description: Create parent/child connections between cards.
+- name: get_card_dependencies
+  operationId: dependenciesGetCard
+  method: GET
+  path: /io/card/{cardId}/dependency
+  description: List a card's incoming and outgoing dependencies.
+- name: list_board_tags
+  operationId: tagsList
+  method: GET
+  path: /io/board/{boardId}/tag
+  description: List the tags in use on a board.
+- name: list_board_custom_fields
+  operationId: customFieldList
+  method: GET
+  path: /io/board/{boardId}/customfield
+  description: List the custom fields configured on a board.
+- name: list_board_automations
+  operationId: automationList
+  method: GET
+  path: /io/board/{boardId}/automation
+  description: List the card automations configured on a board.
+- name: initiate_card_event
+  operationId: automationInitiateCardEvent
+  method: POST
+  path: /io/card/{cardId}/automation/customevent
+  description: Raise a named custom event against a card to trigger listening automations.
+- name: initiate_board_event
+  operationId: automationInitiateBoardEvent
+  method: POST
+  path: /io/board/{boardId}/automation/customevent
+  description: Raise a named custom event at board level.
+- name: whoami
+  operationId: userGetMe
+  method: GET
+  path: /io/user/me
+  description: Return the authenticated user's profile.
+- name: list_my_cards
+  operationId: userListMyCards
+  method: GET
+  path: /io/user/me/card
+  description: List cards assigned to the authenticated user.
+- name: list_my_recent_boards
+  operationId: userListMyRecentBoards
+  method: GET
+  path: /io/user/me/board/recent
+  description: List boards the authenticated user recently accessed.
+- name: list_teams
+  operationId: teamList
+  method: GET
+  path: /io/team
+  description: List teams in the account.
+- name: list_planning_series
+  operationId: planningSeriesListSeries
+  method: GET
+  path: /io/series
+  description: List planning series and their increments.
+write_operation_warning: >-
+  create_card, update_card, move_card, delete_card, add_card_comment, create_connection, and the custom
+  event tools mutate customer work-management state and the API documents no idempotency key. Any server
+  implementing them should require explicit confirmation and must not retry a failed write blindly.

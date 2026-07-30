@@ -1,0 +1,401 @@
+{
+  "info": {
+    "_postman_id": "1dbf8b96-bc9d-4c15-be86-03ee9882c0f3",
+    "name": "Planview AgilePlace API (LeanKit) v2 account card-scoring API",
+    "description": "RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference \u2014 no endpoints invented.\n\nContact Support:\n Name: Planview AgilePlace Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:04:05.000Z",
+    "updatedAt": "2026-07-28T02:04:05.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-1dbf8b96-bc9d-4c15-be86-03ee9882c0f3"
+  },
+  "item": [
+    {
+      "name": "board",
+      "item": [
+        {
+          "name": "{boardId}",
+          "item": [
+            {
+              "name": "scoring",
+              "item": [
+                {
+                  "name": "Get the current state of the user's card scoring for a board",
+                  "id": "c8b31abc-8d85-4833-932d-8f0baa9a9c5e",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/board/:boardId/scoring",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "board",
+                        ":boardId",
+                        "scoring"
+                      ],
+                      "variable": [
+                        {
+                          "id": "85fe2d95-8fa7-4d34-88e0-6954fa325a44",
+                          "key": "boardId",
+                          "value": "<string>",
+                          "description": "(Required) boardId identifier"
+                        }
+                      ]
+                    },
+                    "description": "Get the current state of the user's card scoring for a board. Example Request"
+                  },
+                  "response": [
+                    {
+                      "id": "474d6aeb-7ec9-4d35-a1ea-6ee4cbdf1d54",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/scoring",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "scoring"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T02:04:05.000Z",
+                      "updatedAt": "2026-07-28T02:04:05.000Z",
+                      "uid": "35240-474d6aeb-7ec9-4d35-a1ea-6ee4cbdf1d54"
+                    },
+                    {
+                      "id": "cd44b19f-20c6-488c-a654-cb4b0bc6541d",
+                      "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/scoring",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "scoring"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:05.000Z",
+                      "updatedAt": "2026-07-28T02:04:05.000Z",
+                      "uid": "35240-cd44b19f-20c6-488c-a654-cb4b0bc6541d"
+                    },
+                    {
+                      "id": "72228f43-d146-464b-9e63-961d7daa344b",
+                      "name": "Forbidden - authenticated user lacks permission",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/scoring",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "scoring"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:05.000Z",
+                      "updatedAt": "2026-07-28T02:04:05.000Z",
+                      "uid": "35240-72228f43-d146-464b-9e63-961d7daa344b"
+                    },
+                    {
+                      "id": "f29f5229-d20a-4892-8153-2d4090146869",
+                      "name": "Not found",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/scoring",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "scoring"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:05.000Z",
+                      "updatedAt": "2026-07-28T02:04:05.000Z",
+                      "uid": "35240-f29f5229-d20a-4892-8153-2d4090146869"
+                    },
+                    {
+                      "id": "7666268d-c288-44d8-9042-461632706428",
+                      "name": "Unprocessable entity - required information was missing or invalid",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/scoring",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "scoring"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:05.000Z",
+                      "updatedAt": "2026-07-28T02:04:05.000Z",
+                      "uid": "35240-7666268d-c288-44d8-9042-461632706428"
+                    },
+                    {
+                      "id": "67aeeabd-4903-4a4c-901c-50250fb26db6",
+                      "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/scoring",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "scoring"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "HTTP-date after which the client may retry",
+                            "type": "text/plain"
+                          },
+                          "key": "Retry-After",
+                          "value": "<string>"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:05.000Z",
+                      "updatedAt": "2026-07-28T02:04:05.000Z",
+                      "uid": "35240-67aeeabd-4903-4a4c-901c-50250fb26db6"
+                    },
+                    {
+                      "id": "4b6f3153-b7d2-4e8c-be01-e9095ff17c35",
+                      "name": "Server error on the AgilePlace side",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/scoring",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "scoring"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:05.000Z",
+                      "updatedAt": "2026-07-28T02:04:05.000Z",
+                      "uid": "35240-4b6f3153-b7d2-4e8c-be01-e9095ff17c35"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:04:05.000Z",
+                  "updatedAt": "2026-07-28T02:04:05.000Z",
+                  "uid": "35240-c8b31abc-8d85-4833-932d-8f0baa9a9c5e"
+                }
+              ],
+              "id": "7cca104c-6163-4cce-a252-4817225214e0",
+              "createdAt": "2026-07-28T02:04:05.000Z",
+              "updatedAt": "2026-07-28T02:04:05.000Z",
+              "uid": "35240-7cca104c-6163-4cce-a252-4817225214e0"
+            }
+          ],
+          "id": "c5f82c4f-75dd-4a98-b4d8-0e97dce023cc",
+          "createdAt": "2026-07-28T02:04:05.000Z",
+          "updatedAt": "2026-07-28T02:04:05.000Z",
+          "uid": "35240-c5f82c4f-75dd-4a98-b4d8-0e97dce023cc"
+        }
+      ],
+      "id": "bee90232-a329-4dbd-bc2f-ef0886cee1fd",
+      "createdAt": "2026-07-28T02:04:05.000Z",
+      "updatedAt": "2026-07-28T02:04:05.000Z",
+      "uid": "35240-bee90232-a329-4dbd-bc2f-ef0886cee1fd"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "account",
+      "value": "myaccount"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{account}}.leankit.com/io"
+    }
+  ]
+}

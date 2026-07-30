@@ -1,0 +1,275 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/leankit-agileplace-api-openapi.yml, https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+type: DataModel
+name: LeanKit / Planview AgilePlace entity graph
+notes: >-
+  Derived from the path hierarchy of the transcribed AgilePlace v2 OpenAPI and the id-reference fields the
+  documentation shows in card, automation, and webhook payloads. Planview does not publish a schema
+  reference or an object-model diagram, so field-level types are not asserted here — only the entities and
+  the relationships the URL structure and payloads make explicit.
+identifiers:
+  format: opaque numeric strings
+  scope: account
+  prefixes: none (AgilePlace does not use typed id prefixes)
+  examples_from_docs:
+    boardId: '10112910528'
+    cardId: '10127481191'
+    laneId: '10135383914'
+    automationId: '10135653531'
+entities:
+- name: Account
+  path: /io/account
+  description: The AgilePlace tenant, addressed at https://{account}.leankit.com.
+  relationships:
+  - type: has_many
+    target: Board
+  - type: has_many
+    target: User
+  - type: has_many
+    target: Team
+  - type: has_many
+    target: BoardTemplate
+  - type: has_many
+    target: PlanningSeries
+- name: Board
+  path: /io/board/{boardId}
+  description: A Kanban board — the primary container for lanes, cards, and configuration.
+  relationships:
+  - type: has_many
+    target: Lane
+    via: /io/board/{boardId}/leafLanes
+  - type: has_many
+    target: Card
+    via: /io/board/{boardId}/card
+  - type: has_many
+    target: CardType
+    via: /io/board/{boardId}/cardType
+  - type: has_many
+    target: CustomField
+    via: /io/board/{boardId}/customfield
+  - type: has_many
+    target: CustomIcon
+    via: /io/board/{boardId}/customIcon
+  - type: has_many
+    target: Tag
+    via: /io/board/{boardId}/tag
+  - type: has_many
+    target: BoardFilter
+    via: /io/board/{boardId}/filter
+  - type: has_many
+    target: Automation
+    via: /io/board/{boardId}/automation
+  - type: has_many
+    target: UserRole
+    via: /io/board/{boardId}/user
+  - type: belongs_to
+    target: BoardLevel
+- name: BoardLevel
+  path: /io/boardLevel
+  description: Hierarchy level a board occupies, used to organise parent/child board structures.
+  relationships:
+  - type: has_many
+    target: Board
+- name: BoardTemplate
+  path: /io/template/{templateId}
+  description: Reusable board definition; new boards may be created from a template or an existing board.
+  relationships:
+  - type: has_many
+    target: Board
+    via: board create copiedFrom
+- name: Lane
+  path: /io/board/{boardId}/lane/{laneId}
+  description: A column or swimlane on a board; carries WIP limits and lane policies.
+  relationships:
+  - type: belongs_to
+    target: Board
+    via: boardId
+  - type: has_many
+    target: Card
+- name: Card
+  path: /io/card/{cardId}
+  description: A unit of work. Carries title, dates, size, blocked status, custom fields, tags, and scoring.
+  relationships:
+  - type: belongs_to
+    target: Board
+    via: board.id
+  - type: belongs_to
+    target: Lane
+    via: laneId
+  - type: belongs_to
+    target: CardType
+    via: cardType
+  - type: belongs_to
+    target: CustomIcon
+    via: customIcon.id
+  - type: has_many
+    target: Comment
+    via: /io/card/{cardId}/comment
+  - type: has_many
+    target: Attachment
+    via: /io/card/{cardId}/attachment
+  - type: has_many
+    target: Task
+    via: /io/card/{cardId}/tasks
+  - type: has_many
+    target: Connection
+    via: /io/card/{cardId}/connection
+  - type: has_many
+    target: Dependency
+    via: /io/card/{cardId}/dependency
+  - type: has_many
+    target: Tag
+  - type: has_many
+    target: CustomFieldValue
+    via: customFields[] / customFieldsByLabel
+  - type: has_many
+    target: Activity
+    via: /io/card/{cardId}/activity
+  - type: belongs_to
+    target: User
+    via: createdBy, updatedBy, movedBy, archivedBy, assignedUsers
+  - type: has_one
+    target: Card
+    via: mirrorSourceCardId
+  external_correlation:
+  - externalCardId
+  - externalLink.url
+- name: Task
+  path: /io/card/{cardId}/tasks/{taskId}
+  description: A card on a parent card's taskboard.
+  relationships:
+  - type: belongs_to
+    target: Card
+    via: cardId
+- name: Comment
+  path: /io/card/{cardId}/comment/{commentId}
+  relationships:
+  - type: belongs_to
+    target: Card
+    via: cardId
+  - type: belongs_to
+    target: User
+- name: Attachment
+  path: /io/card/{cardId}/attachment/{attachmentId}
+  relationships:
+  - type: belongs_to
+    target: Card
+    via: cardId
+- name: Connection
+  path: /io/card/connections
+  description: Parent/child link between two cards, possibly across boards.
+  relationships:
+  - type: belongs_to
+    target: Card
+    via: parentCardId
+  - type: belongs_to
+    target: Card
+    via: childCardId
+- name: Dependency
+  path: /io/card/dependency
+  description: >-
+    Incoming or outgoing dependency between cards, with connection timing and a health status of Healthy,
+    At risk, or Blocked. Went GA 2026-07-16.
+  relationships:
+  - type: belongs_to
+    target: Card
+- name: CardType
+  path: /io/board/{boardId}/cardType/{cardTypeId}
+  relationships:
+  - type: belongs_to
+    target: Board
+    via: boardId
+- name: CustomField
+  path: /io/board/{boardId}/customfield
+  description: Board-scoped user-defined field; values appear on cards as customFields[] and customFieldsByLabel.
+  relationships:
+  - type: belongs_to
+    target: Board
+    via: boardId
+- name: CustomIcon
+  path: /io/board/{boardId}/customIcon/{customIconId}
+  relationships:
+  - type: belongs_to
+    target: Board
+    via: boardId
+- name: Tag
+  path: /io/board/{boardId}/tag
+  relationships:
+  - type: belongs_to
+    target: Board
+    via: boardId
+  - type: has_many
+    target: Card
+- name: BoardFilter
+  path: /io/board/{boardId}/filter/{filterId}
+  relationships:
+  - type: belongs_to
+    target: Board
+    via: boardId
+- name: Automation
+  path: /io/board/{boardId}/automation/{automationId}
+  description: >-
+    Card automation rule. Actions include Web service call (webhook), Trigger GitHub Action, post to
+    Microsoft Teams, move card, assign user, and raise a custom event.
+  relationships:
+  - type: belongs_to
+    target: Board
+    via: boardId
+  - type: has_many
+    target: AutomationAudit
+    via: /io/board/{boardId}/automation/{automationId}/audit
+- name: PlanningSeries
+  path: /io/series/{seriesId}
+  description: A cadence of planning increments (for example PI planning).
+  relationships:
+  - type: has_many
+    target: PlanningIncrement
+    via: /io/series/{seriesId}/increment
+- name: PlanningIncrement
+  path: /io/series/{seriesId}/increment/{incrementId}
+  relationships:
+  - type: belongs_to
+    target: PlanningSeries
+    via: seriesId
+  - type: has_many
+    target: Card
+- name: Team
+  path: /io/team/{teamId}
+  relationships:
+  - type: has_many
+    target: User
+    via: /io/team/{teamId}/user
+  - type: has_many
+    target: Team
+    via: /io/team/{teamId}/subteam
+  - type: has_many
+    target: Board
+    via: /io/team/{teamId}/board
+- name: User
+  path: /io/user/{userId}
+  description: >-
+    Account member. Also addressable through the SCIM 1.1 User Provisioning API at /io/scim/v1/Users, with
+    the urn:scim:schemas:extension:leankit:user:1.0 extension carrying licenseType, lastAccess,
+    administrator, boardCreator, and dateFormat.
+  relationships:
+  - type: has_many
+    target: Board
+    via: /io/user/me/board/recent
+  - type: has_many
+    target: Card
+    via: /io/user/me/card
+  - type: belongs_to
+    target: Team
+- name: UserInvitation
+  path: /io/invitation/{invitationId}
+  relationships:
+  - type: belongs_to
+    target: Account
+- name: AuthToken
+  path: /io/auth/token/{tokenId}
+  description: Long-lived opaque API token. Value is displayed only at creation and never expires.
+  relationships:
+  - type: belongs_to
+    target: User
+render: none

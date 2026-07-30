@@ -1,0 +1,1831 @@
+{
+  "info": {
+    "_postman_id": "9d4f4a2f-da70-47aa-9373-94bce692cbe5",
+    "name": "Planview AgilePlace API (LeanKit) v2 account comment API",
+    "description": "RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference \u2014 no endpoints invented.\n\nContact Support:\n Name: Planview AgilePlace Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:04:07.000Z",
+    "updatedAt": "2026-07-28T02:04:07.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9d4f4a2f-da70-47aa-9373-94bce692cbe5"
+  },
+  "item": [
+    {
+      "name": "card",
+      "item": [
+        {
+          "name": "{cardId}",
+          "item": [
+            {
+              "name": "comment",
+              "item": [
+                {
+                  "name": "{commentId}",
+                  "item": [
+                    {
+                      "name": "Delete a comment",
+                      "id": "249ceee8-8108-4fa3-89d1-0193825d70c1",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/card/:cardId/comment/:commentId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "card",
+                            ":cardId",
+                            "comment",
+                            ":commentId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "7e13839c-cb6e-4f7b-aab4-6a7a3798163e",
+                              "key": "cardId",
+                              "value": "<string>",
+                              "description": "(Required) cardId identifier"
+                            },
+                            {
+                              "id": "11ec34bb-8f65-4eb4-93f5-ce0ebd7f85df",
+                              "key": "commentId",
+                              "value": "<string>",
+                              "description": "(Required) commentId identifier"
+                            }
+                          ]
+                        },
+                        "description": "Delete a comment. Example Request"
+                      },
+                      "response": [
+                        {
+                          "id": "ac8debfc-af4f-40e8-b283-1430314b76d9",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/card/:cardId/comment/:commentId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "card",
+                                ":cardId",
+                                "comment",
+                                ":commentId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                },
+                                {
+                                  "key": "commentId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T02:04:07.000Z",
+                          "updatedAt": "2026-07-28T02:04:07.000Z",
+                          "uid": "35240-ac8debfc-af4f-40e8-b283-1430314b76d9"
+                        },
+                        {
+                          "id": "9eb90b63-4ee9-4e98-9914-4f51c84b9b11",
+                          "name": "Deleted",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/card/:cardId/comment/:commentId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "card",
+                                ":cardId",
+                                "comment",
+                                ":commentId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                },
+                                {
+                                  "key": "commentId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:07.000Z",
+                          "updatedAt": "2026-07-28T02:04:07.000Z",
+                          "uid": "35240-9eb90b63-4ee9-4e98-9914-4f51c84b9b11"
+                        },
+                        {
+                          "id": "75608e8d-24f4-4008-80a6-663d244a1329",
+                          "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/card/:cardId/comment/:commentId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "card",
+                                ":cardId",
+                                "comment",
+                                ":commentId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                },
+                                {
+                                  "key": "commentId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:07.000Z",
+                          "updatedAt": "2026-07-28T02:04:07.000Z",
+                          "uid": "35240-75608e8d-24f4-4008-80a6-663d244a1329"
+                        },
+                        {
+                          "id": "0d70baeb-f2a0-4044-b6be-96c85ae8fc98",
+                          "name": "Forbidden - authenticated user lacks permission",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/card/:cardId/comment/:commentId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "card",
+                                ":cardId",
+                                "comment",
+                                ":commentId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                },
+                                {
+                                  "key": "commentId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:07.000Z",
+                          "updatedAt": "2026-07-28T02:04:07.000Z",
+                          "uid": "35240-0d70baeb-f2a0-4044-b6be-96c85ae8fc98"
+                        },
+                        {
+                          "id": "8dee88b3-53f0-4b20-af46-2f139dedeba0",
+                          "name": "Not found",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/card/:cardId/comment/:commentId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "card",
+                                ":cardId",
+                                "comment",
+                                ":commentId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                },
+                                {
+                                  "key": "commentId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:07.000Z",
+                          "updatedAt": "2026-07-28T02:04:07.000Z",
+                          "uid": "35240-8dee88b3-53f0-4b20-af46-2f139dedeba0"
+                        },
+                        {
+                          "id": "74481c72-ea89-4bac-b867-197ade775d8d",
+                          "name": "Unprocessable entity - required information was missing or invalid",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/card/:cardId/comment/:commentId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "card",
+                                ":cardId",
+                                "comment",
+                                ":commentId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                },
+                                {
+                                  "key": "commentId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:07.000Z",
+                          "updatedAt": "2026-07-28T02:04:07.000Z",
+                          "uid": "35240-74481c72-ea89-4bac-b867-197ade775d8d"
+                        },
+                        {
+                          "id": "648b3491-1f99-4fe1-83fc-6aa1caa28dea",
+                          "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/card/:cardId/comment/:commentId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "card",
+                                ":cardId",
+                                "comment",
+                                ":commentId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                },
+                                {
+                                  "key": "commentId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Too Many Requests",
+                          "code": 429,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "HTTP-date after which the client may retry",
+                                "type": "text/plain"
+                              },
+                              "key": "Retry-After",
+                              "value": "<string>"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:07.000Z",
+                          "updatedAt": "2026-07-28T02:04:07.000Z",
+                          "uid": "35240-648b3491-1f99-4fe1-83fc-6aa1caa28dea"
+                        },
+                        {
+                          "id": "7c1e7ef1-74ed-4afd-857f-670693e0b090",
+                          "name": "Server error on the AgilePlace side",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/card/:cardId/comment/:commentId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "card",
+                                ":cardId",
+                                "comment",
+                                ":commentId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                },
+                                {
+                                  "key": "commentId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:07.000Z",
+                          "updatedAt": "2026-07-28T02:04:07.000Z",
+                          "uid": "35240-7c1e7ef1-74ed-4afd-857f-670693e0b090"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:04:07.000Z",
+                      "updatedAt": "2026-07-28T02:04:07.000Z",
+                      "uid": "35240-249ceee8-8108-4fa3-89d1-0193825d70c1"
+                    },
+                    {
+                      "name": "Update a comment",
+                      "id": "0d7f9c20-4844-462b-951c-44a1cf4fc53e",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/card/:cardId/comment/:commentId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "card",
+                            ":cardId",
+                            "comment",
+                            ":commentId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "49fc32d6-3c46-45b3-a6ca-6d4415542b72",
+                              "key": "cardId",
+                              "value": "<string>",
+                              "description": "(Required) cardId identifier"
+                            },
+                            {
+                              "id": "1fecef01-b84c-4c5e-b645-533b73839527",
+                              "key": "commentId",
+                              "value": "<string>",
+                              "description": "(Required) commentId identifier"
+                            }
+                          ]
+                        },
+                        "description": "Update a comment. Example Request"
+                      },
+                      "response": [
+                        {
+                          "id": "bd66222b-4e99-4591-bc87-b9e561b27aab",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/card/:cardId/comment/:commentId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "card",
+                                ":cardId",
+                                "comment",
+                                ":commentId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                },
+                                {
+                                  "key": "commentId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T02:04:07.000Z",
+                          "updatedAt": "2026-07-28T02:04:07.000Z",
+                          "uid": "35240-bd66222b-4e99-4591-bc87-b9e561b27aab"
+                        },
+                        {
+                          "id": "2cc29dfc-d72e-4d5c-9bfb-106c2ec94a87",
+                          "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/card/:cardId/comment/:commentId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "card",
+                                ":cardId",
+                                "comment",
+                                ":commentId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                },
+                                {
+                                  "key": "commentId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:07.000Z",
+                          "updatedAt": "2026-07-28T02:04:07.000Z",
+                          "uid": "35240-2cc29dfc-d72e-4d5c-9bfb-106c2ec94a87"
+                        },
+                        {
+                          "id": "6df8f1a7-245c-4ad3-8561-50ae85c0fe76",
+                          "name": "Forbidden - authenticated user lacks permission",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/card/:cardId/comment/:commentId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "card",
+                                ":cardId",
+                                "comment",
+                                ":commentId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                },
+                                {
+                                  "key": "commentId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:07.000Z",
+                          "updatedAt": "2026-07-28T02:04:07.000Z",
+                          "uid": "35240-6df8f1a7-245c-4ad3-8561-50ae85c0fe76"
+                        },
+                        {
+                          "id": "16adacf3-effc-4c9b-8282-81ab394a76d6",
+                          "name": "Not found",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/card/:cardId/comment/:commentId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "card",
+                                ":cardId",
+                                "comment",
+                                ":commentId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                },
+                                {
+                                  "key": "commentId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:07.000Z",
+                          "updatedAt": "2026-07-28T02:04:07.000Z",
+                          "uid": "35240-16adacf3-effc-4c9b-8282-81ab394a76d6"
+                        },
+                        {
+                          "id": "27d7a401-a23a-42d8-b7a5-f0483086201e",
+                          "name": "Unprocessable entity - required information was missing or invalid",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/card/:cardId/comment/:commentId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "card",
+                                ":cardId",
+                                "comment",
+                                ":commentId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                },
+                                {
+                                  "key": "commentId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:07.000Z",
+                          "updatedAt": "2026-07-28T02:04:07.000Z",
+                          "uid": "35240-27d7a401-a23a-42d8-b7a5-f0483086201e"
+                        },
+                        {
+                          "id": "8046e1dc-c1f3-44e9-a5ee-f006372dc4ec",
+                          "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/card/:cardId/comment/:commentId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "card",
+                                ":cardId",
+                                "comment",
+                                ":commentId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                },
+                                {
+                                  "key": "commentId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Too Many Requests",
+                          "code": 429,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "HTTP-date after which the client may retry",
+                                "type": "text/plain"
+                              },
+                              "key": "Retry-After",
+                              "value": "<string>"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:07.000Z",
+                          "updatedAt": "2026-07-28T02:04:07.000Z",
+                          "uid": "35240-8046e1dc-c1f3-44e9-a5ee-f006372dc4ec"
+                        },
+                        {
+                          "id": "f6686d67-a651-4b06-88df-c8f3fb514bc8",
+                          "name": "Server error on the AgilePlace side",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/card/:cardId/comment/:commentId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "card",
+                                ":cardId",
+                                "comment",
+                                ":commentId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                },
+                                {
+                                  "key": "commentId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:07.000Z",
+                          "updatedAt": "2026-07-28T02:04:07.000Z",
+                          "uid": "35240-f6686d67-a651-4b06-88df-c8f3fb514bc8"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:04:07.000Z",
+                      "updatedAt": "2026-07-28T02:04:07.000Z",
+                      "uid": "35240-0d7f9c20-4844-462b-951c-44a1cf4fc53e"
+                    }
+                  ],
+                  "id": "ed874ba9-96c5-405a-baf0-6fb388d23772",
+                  "createdAt": "2026-07-28T02:04:07.000Z",
+                  "updatedAt": "2026-07-28T02:04:07.000Z",
+                  "uid": "35240-ed874ba9-96c5-405a-baf0-6fb388d23772"
+                },
+                {
+                  "name": "Create a comment",
+                  "id": "5276f4d5-2070-4983-8382-1ec7d915e350",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/card/:cardId/comment",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "card",
+                        ":cardId",
+                        "comment"
+                      ],
+                      "variable": [
+                        {
+                          "id": "0c8731fc-a33d-40af-847b-c38fba318187",
+                          "key": "cardId",
+                          "value": "<string>",
+                          "description": "(Required) cardId identifier"
+                        }
+                      ]
+                    },
+                    "description": "Create a comment. Example Request"
+                  },
+                  "response": [
+                    {
+                      "id": "77335508-f6a6-4387-9c59-3e5afdc8a07d",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/card/:cardId/comment",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "card",
+                            ":cardId",
+                            "comment"
+                          ],
+                          "variable": [
+                            {
+                              "key": "cardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T02:04:07.000Z",
+                      "updatedAt": "2026-07-28T02:04:07.000Z",
+                      "uid": "35240-77335508-f6a6-4387-9c59-3e5afdc8a07d"
+                    },
+                    {
+                      "id": "3bca059a-b6fd-4424-8861-52d9ae4a2656",
+                      "name": "Created",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/card/:cardId/comment",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "card",
+                            ":cardId",
+                            "comment"
+                          ],
+                          "variable": [
+                            {
+                              "key": "cardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T02:04:07.000Z",
+                      "updatedAt": "2026-07-28T02:04:07.000Z",
+                      "uid": "35240-3bca059a-b6fd-4424-8861-52d9ae4a2656"
+                    },
+                    {
+                      "id": "3d995b4d-c71e-4656-85be-226a833ed0ee",
+                      "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/card/:cardId/comment",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "card",
+                            ":cardId",
+                            "comment"
+                          ],
+                          "variable": [
+                            {
+                              "key": "cardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:07.000Z",
+                      "updatedAt": "2026-07-28T02:04:07.000Z",
+                      "uid": "35240-3d995b4d-c71e-4656-85be-226a833ed0ee"
+                    },
+                    {
+                      "id": "9ff469a1-8b7e-4f3b-949c-be804a33aa4b",
+                      "name": "Forbidden - authenticated user lacks permission",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/card/:cardId/comment",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "card",
+                            ":cardId",
+                            "comment"
+                          ],
+                          "variable": [
+                            {
+                              "key": "cardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:07.000Z",
+                      "updatedAt": "2026-07-28T02:04:07.000Z",
+                      "uid": "35240-9ff469a1-8b7e-4f3b-949c-be804a33aa4b"
+                    },
+                    {
+                      "id": "14c2d7ae-1df6-4a92-9a4d-70ed3ffdf75a",
+                      "name": "Not found",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/card/:cardId/comment",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "card",
+                            ":cardId",
+                            "comment"
+                          ],
+                          "variable": [
+                            {
+                              "key": "cardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:07.000Z",
+                      "updatedAt": "2026-07-28T02:04:07.000Z",
+                      "uid": "35240-14c2d7ae-1df6-4a92-9a4d-70ed3ffdf75a"
+                    },
+                    {
+                      "id": "111a4199-ab34-40ba-b19e-68d41179f942",
+                      "name": "Unprocessable entity - required information was missing or invalid",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/card/:cardId/comment",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "card",
+                            ":cardId",
+                            "comment"
+                          ],
+                          "variable": [
+                            {
+                              "key": "cardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:07.000Z",
+                      "updatedAt": "2026-07-28T02:04:07.000Z",
+                      "uid": "35240-111a4199-ab34-40ba-b19e-68d41179f942"
+                    },
+                    {
+                      "id": "c154834f-6674-4a3a-a8bb-e41e0cb76ede",
+                      "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/card/:cardId/comment",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "card",
+                            ":cardId",
+                            "comment"
+                          ],
+                          "variable": [
+                            {
+                              "key": "cardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "HTTP-date after which the client may retry",
+                            "type": "text/plain"
+                          },
+                          "key": "Retry-After",
+                          "value": "<string>"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:07.000Z",
+                      "updatedAt": "2026-07-28T02:04:07.000Z",
+                      "uid": "35240-c154834f-6674-4a3a-a8bb-e41e0cb76ede"
+                    },
+                    {
+                      "id": "c9da2621-c55d-4ddb-815a-8d1eab597754",
+                      "name": "Server error on the AgilePlace side",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/card/:cardId/comment",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "card",
+                            ":cardId",
+                            "comment"
+                          ],
+                          "variable": [
+                            {
+                              "key": "cardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:07.000Z",
+                      "updatedAt": "2026-07-28T02:04:07.000Z",
+                      "uid": "35240-c9da2621-c55d-4ddb-815a-8d1eab597754"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:04:07.000Z",
+                  "updatedAt": "2026-07-28T02:04:07.000Z",
+                  "uid": "35240-5276f4d5-2070-4983-8382-1ec7d915e350"
+                },
+                {
+                  "name": "Get a list of comments for a card",
+                  "id": "29fc6ca0-e14e-45dd-87ab-4cf0a1c84ea8",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/card/:cardId/comment",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "card",
+                        ":cardId",
+                        "comment"
+                      ],
+                      "variable": [
+                        {
+                          "id": "07031b48-b46a-472b-89b6-3aa6ea78789a",
+                          "key": "cardId",
+                          "value": "<string>",
+                          "description": "(Required) cardId identifier"
+                        }
+                      ]
+                    },
+                    "description": "Get a list of comments for a card. Query Params"
+                  },
+                  "response": [
+                    {
+                      "id": "7ad36231-044e-47ac-a1d2-ec141e68924f",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/card/:cardId/comment",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "card",
+                            ":cardId",
+                            "comment"
+                          ],
+                          "variable": [
+                            {
+                              "key": "cardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T02:04:07.000Z",
+                      "updatedAt": "2026-07-28T02:04:07.000Z",
+                      "uid": "35240-7ad36231-044e-47ac-a1d2-ec141e68924f"
+                    },
+                    {
+                      "id": "27660d2e-9228-48b8-b98d-d3445ec71ddc",
+                      "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/card/:cardId/comment",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "card",
+                            ":cardId",
+                            "comment"
+                          ],
+                          "variable": [
+                            {
+                              "key": "cardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:07.000Z",
+                      "updatedAt": "2026-07-28T02:04:07.000Z",
+                      "uid": "35240-27660d2e-9228-48b8-b98d-d3445ec71ddc"
+                    },
+                    {
+                      "id": "10c319c9-224d-4b42-a967-e21c7d08073d",
+                      "name": "Forbidden - authenticated user lacks permission",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/card/:cardId/comment",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "card",
+                            ":cardId",
+                            "comment"
+                          ],
+                          "variable": [
+                            {
+                              "key": "cardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:07.000Z",
+                      "updatedAt": "2026-07-28T02:04:07.000Z",
+                      "uid": "35240-10c319c9-224d-4b42-a967-e21c7d08073d"
+                    },
+                    {
+                      "id": "1a2d79b5-e0db-4b29-b7ed-c2389ac1ad40",
+                      "name": "Not found",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/card/:cardId/comment",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "card",
+                            ":cardId",
+                            "comment"
+                          ],
+                          "variable": [
+                            {
+                              "key": "cardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:07.000Z",
+                      "updatedAt": "2026-07-28T02:04:07.000Z",
+                      "uid": "35240-1a2d79b5-e0db-4b29-b7ed-c2389ac1ad40"
+                    },
+                    {
+                      "id": "b3b0a88e-9d60-4fe7-8b60-2874ba611d25",
+                      "name": "Unprocessable entity - required information was missing or invalid",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/card/:cardId/comment",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "card",
+                            ":cardId",
+                            "comment"
+                          ],
+                          "variable": [
+                            {
+                              "key": "cardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:07.000Z",
+                      "updatedAt": "2026-07-28T02:04:07.000Z",
+                      "uid": "35240-b3b0a88e-9d60-4fe7-8b60-2874ba611d25"
+                    },
+                    {
+                      "id": "02564cff-e8c3-47d1-b74d-cc994095a56a",
+                      "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/card/:cardId/comment",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "card",
+                            ":cardId",
+                            "comment"
+                          ],
+                          "variable": [
+                            {
+                              "key": "cardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "HTTP-date after which the client may retry",
+                            "type": "text/plain"
+                          },
+                          "key": "Retry-After",
+                          "value": "<string>"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:07.000Z",
+                      "updatedAt": "2026-07-28T02:04:07.000Z",
+                      "uid": "35240-02564cff-e8c3-47d1-b74d-cc994095a56a"
+                    },
+                    {
+                      "id": "4647f2cf-8d38-4888-9deb-fc7dd22869a8",
+                      "name": "Server error on the AgilePlace side",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/card/:cardId/comment",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "card",
+                            ":cardId",
+                            "comment"
+                          ],
+                          "variable": [
+                            {
+                              "key": "cardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:07.000Z",
+                      "updatedAt": "2026-07-28T02:04:07.000Z",
+                      "uid": "35240-4647f2cf-8d38-4888-9deb-fc7dd22869a8"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:04:07.000Z",
+                  "updatedAt": "2026-07-28T02:04:07.000Z",
+                  "uid": "35240-29fc6ca0-e14e-45dd-87ab-4cf0a1c84ea8"
+                }
+              ],
+              "id": "a0725bae-0b2b-449e-ab93-16d811f868b0",
+              "createdAt": "2026-07-28T02:04:07.000Z",
+              "updatedAt": "2026-07-28T02:04:07.000Z",
+              "uid": "35240-a0725bae-0b2b-449e-ab93-16d811f868b0"
+            }
+          ],
+          "id": "2109aa8b-11ce-4758-bdc5-c71889e4e92b",
+          "createdAt": "2026-07-28T02:04:07.000Z",
+          "updatedAt": "2026-07-28T02:04:07.000Z",
+          "uid": "35240-2109aa8b-11ce-4758-bdc5-c71889e4e92b"
+        }
+      ],
+      "id": "b5f35875-241a-4d47-9d68-382bf6b69be4",
+      "createdAt": "2026-07-28T02:04:07.000Z",
+      "updatedAt": "2026-07-28T02:04:07.000Z",
+      "uid": "35240-b5f35875-241a-4d47-9d68-382bf6b69be4"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "account",
+      "value": "myaccount"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{account}}.leankit.com/io"
+    }
+  ]
+}

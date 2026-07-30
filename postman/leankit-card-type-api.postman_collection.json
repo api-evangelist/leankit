@@ -1,0 +1,2206 @@
+{
+  "info": {
+    "_postman_id": "41900482-469d-46f9-aad9-8c6394d4f698",
+    "name": "Planview AgilePlace API (LeanKit) v2 account card-type API",
+    "description": "RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference \u2014 no endpoints invented.\n\nContact Support:\n Name: Planview AgilePlace Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:04:06.000Z",
+    "updatedAt": "2026-07-28T02:04:06.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-41900482-469d-46f9-aad9-8c6394d4f698"
+  },
+  "item": [
+    {
+      "name": "board",
+      "item": [
+        {
+          "name": "{boardId}",
+          "item": [
+            {
+              "name": "cardType",
+              "item": [
+                {
+                  "name": "{cardTypeId}",
+                  "item": [
+                    {
+                      "name": "Delete a card type on a board",
+                      "id": "a2589bc2-e0d3-4666-bb6d-342da1b18913",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/cardType/:cardTypeId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "cardType",
+                            ":cardTypeId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "1d716e01-2c70-4f6e-813d-2265c29313cb",
+                              "key": "boardId",
+                              "value": "<string>",
+                              "description": "(Required) boardId identifier"
+                            },
+                            {
+                              "id": "293980d8-40f1-4f66-924b-6a02fe95cf8d",
+                              "key": "cardTypeId",
+                              "value": "<string>",
+                              "description": "(Required) cardTypeId identifier"
+                            }
+                          ]
+                        },
+                        "description": "Delete a card type on a board. Example Request"
+                      },
+                      "response": [
+                        {
+                          "id": "e52d2288-f03c-4d88-b975-ce99060c195b",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/cardType/:cardTypeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "cardType",
+                                ":cardTypeId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "cardTypeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T02:04:06.000Z",
+                          "updatedAt": "2026-07-28T02:04:06.000Z",
+                          "uid": "35240-e52d2288-f03c-4d88-b975-ce99060c195b"
+                        },
+                        {
+                          "id": "ca687690-3f33-4ee6-96ef-50db174816da",
+                          "name": "Deleted",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/cardType/:cardTypeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "cardType",
+                                ":cardTypeId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "cardTypeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:06.000Z",
+                          "updatedAt": "2026-07-28T02:04:06.000Z",
+                          "uid": "35240-ca687690-3f33-4ee6-96ef-50db174816da"
+                        },
+                        {
+                          "id": "2cef9436-9f86-40c9-912e-5cf92a24d047",
+                          "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/cardType/:cardTypeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "cardType",
+                                ":cardTypeId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "cardTypeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:06.000Z",
+                          "updatedAt": "2026-07-28T02:04:06.000Z",
+                          "uid": "35240-2cef9436-9f86-40c9-912e-5cf92a24d047"
+                        },
+                        {
+                          "id": "3499c604-0e1c-4102-aa91-b83a4c4fe1a6",
+                          "name": "Forbidden - authenticated user lacks permission",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/cardType/:cardTypeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "cardType",
+                                ":cardTypeId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "cardTypeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:06.000Z",
+                          "updatedAt": "2026-07-28T02:04:06.000Z",
+                          "uid": "35240-3499c604-0e1c-4102-aa91-b83a4c4fe1a6"
+                        },
+                        {
+                          "id": "53161271-271d-4c88-b991-19c699a14d66",
+                          "name": "Not found",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/cardType/:cardTypeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "cardType",
+                                ":cardTypeId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "cardTypeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:06.000Z",
+                          "updatedAt": "2026-07-28T02:04:06.000Z",
+                          "uid": "35240-53161271-271d-4c88-b991-19c699a14d66"
+                        },
+                        {
+                          "id": "cde8f346-2390-4c06-ad3d-bc8edc525acc",
+                          "name": "Unprocessable entity - required information was missing or invalid",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/cardType/:cardTypeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "cardType",
+                                ":cardTypeId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "cardTypeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:06.000Z",
+                          "updatedAt": "2026-07-28T02:04:06.000Z",
+                          "uid": "35240-cde8f346-2390-4c06-ad3d-bc8edc525acc"
+                        },
+                        {
+                          "id": "7df4188f-b1e7-4e03-80fa-540705250b20",
+                          "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/cardType/:cardTypeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "cardType",
+                                ":cardTypeId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "cardTypeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Too Many Requests",
+                          "code": 429,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "HTTP-date after which the client may retry",
+                                "type": "text/plain"
+                              },
+                              "key": "Retry-After",
+                              "value": "<string>"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:06.000Z",
+                          "updatedAt": "2026-07-28T02:04:06.000Z",
+                          "uid": "35240-7df4188f-b1e7-4e03-80fa-540705250b20"
+                        },
+                        {
+                          "id": "6d0b5074-8145-47d9-8065-3928cb06149e",
+                          "name": "Server error on the AgilePlace side",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/cardType/:cardTypeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "cardType",
+                                ":cardTypeId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "cardTypeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:06.000Z",
+                          "updatedAt": "2026-07-28T02:04:06.000Z",
+                          "uid": "35240-6d0b5074-8145-47d9-8065-3928cb06149e"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:04:06.000Z",
+                      "updatedAt": "2026-07-28T02:04:06.000Z",
+                      "uid": "35240-a2589bc2-e0d3-4666-bb6d-342da1b18913"
+                    },
+                    {
+                      "name": "Get a single card type on a board",
+                      "id": "688ff26a-34d5-43b8-a1d9-a171a6116fd2",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/cardType/:cardTypeId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "cardType",
+                            ":cardTypeId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "1edd5a05-9e53-4f2e-a8bf-6cc9ac78a117",
+                              "key": "boardId",
+                              "value": "<string>",
+                              "description": "(Required) boardId identifier"
+                            },
+                            {
+                              "id": "4d83fc80-e681-4274-afa5-6f746b282f09",
+                              "key": "cardTypeId",
+                              "value": "<string>",
+                              "description": "(Required) cardTypeId identifier"
+                            }
+                          ]
+                        },
+                        "description": "Get a single card type on a board. Example Request"
+                      },
+                      "response": [
+                        {
+                          "id": "9541a4a3-ef7a-47d1-9859-871383a7d5f1",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/cardType/:cardTypeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "cardType",
+                                ":cardTypeId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "cardTypeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T02:04:06.000Z",
+                          "updatedAt": "2026-07-28T02:04:06.000Z",
+                          "uid": "35240-9541a4a3-ef7a-47d1-9859-871383a7d5f1"
+                        },
+                        {
+                          "id": "35cfbdda-2f0e-4b0b-81e2-539e146ce35e",
+                          "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/cardType/:cardTypeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "cardType",
+                                ":cardTypeId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "cardTypeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:06.000Z",
+                          "updatedAt": "2026-07-28T02:04:06.000Z",
+                          "uid": "35240-35cfbdda-2f0e-4b0b-81e2-539e146ce35e"
+                        },
+                        {
+                          "id": "cd353181-3eea-4d07-88a0-7204dd9ef91a",
+                          "name": "Forbidden - authenticated user lacks permission",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/cardType/:cardTypeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "cardType",
+                                ":cardTypeId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "cardTypeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:06.000Z",
+                          "updatedAt": "2026-07-28T02:04:06.000Z",
+                          "uid": "35240-cd353181-3eea-4d07-88a0-7204dd9ef91a"
+                        },
+                        {
+                          "id": "86cae4a3-882b-49c3-8caa-ff9ee5672265",
+                          "name": "Not found",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/cardType/:cardTypeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "cardType",
+                                ":cardTypeId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "cardTypeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:06.000Z",
+                          "updatedAt": "2026-07-28T02:04:06.000Z",
+                          "uid": "35240-86cae4a3-882b-49c3-8caa-ff9ee5672265"
+                        },
+                        {
+                          "id": "9d434964-f353-4609-b9cd-40659c77dcfa",
+                          "name": "Unprocessable entity - required information was missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/cardType/:cardTypeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "cardType",
+                                ":cardTypeId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "cardTypeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:06.000Z",
+                          "updatedAt": "2026-07-28T02:04:06.000Z",
+                          "uid": "35240-9d434964-f353-4609-b9cd-40659c77dcfa"
+                        },
+                        {
+                          "id": "8da0fa4e-fe7f-43ae-ba92-03967b42039c",
+                          "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/cardType/:cardTypeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "cardType",
+                                ":cardTypeId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "cardTypeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Too Many Requests",
+                          "code": 429,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "HTTP-date after which the client may retry",
+                                "type": "text/plain"
+                              },
+                              "key": "Retry-After",
+                              "value": "<string>"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:06.000Z",
+                          "updatedAt": "2026-07-28T02:04:06.000Z",
+                          "uid": "35240-8da0fa4e-fe7f-43ae-ba92-03967b42039c"
+                        },
+                        {
+                          "id": "def2d75e-c499-40a9-a196-2a5a40060a28",
+                          "name": "Server error on the AgilePlace side",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/cardType/:cardTypeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "cardType",
+                                ":cardTypeId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "cardTypeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:06.000Z",
+                          "updatedAt": "2026-07-28T02:04:06.000Z",
+                          "uid": "35240-def2d75e-c499-40a9-a196-2a5a40060a28"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:04:06.000Z",
+                      "updatedAt": "2026-07-28T02:04:06.000Z",
+                      "uid": "35240-688ff26a-34d5-43b8-a1d9-a171a6116fd2"
+                    },
+                    {
+                      "name": "Update a card type on a board",
+                      "id": "caef5b70-4f44-43ab-a4be-2f017c3772db",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/cardType/:cardTypeId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "cardType",
+                            ":cardTypeId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "34fac7b5-a501-4cdd-ae9b-09ab009ef87c",
+                              "key": "boardId",
+                              "value": "<string>",
+                              "description": "(Required) boardId identifier"
+                            },
+                            {
+                              "id": "2c8e14ed-07b8-43e3-8bd7-354d2d1f1e2a",
+                              "key": "cardTypeId",
+                              "value": "<string>",
+                              "description": "(Required) cardTypeId identifier"
+                            }
+                          ]
+                        },
+                        "description": "Update a card type on a board. Request Properties"
+                      },
+                      "response": [
+                        {
+                          "id": "599c346d-32db-46f0-949c-36e15aeb92c8",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/cardType/:cardTypeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "cardType",
+                                ":cardTypeId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "cardTypeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T02:04:06.000Z",
+                          "updatedAt": "2026-07-28T02:04:06.000Z",
+                          "uid": "35240-599c346d-32db-46f0-949c-36e15aeb92c8"
+                        },
+                        {
+                          "id": "396d7678-1377-4d1f-9cbf-d8244629c227",
+                          "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/cardType/:cardTypeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "cardType",
+                                ":cardTypeId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "cardTypeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:06.000Z",
+                          "updatedAt": "2026-07-28T02:04:06.000Z",
+                          "uid": "35240-396d7678-1377-4d1f-9cbf-d8244629c227"
+                        },
+                        {
+                          "id": "8d43cca4-4239-44e0-bf1b-5be1008a329e",
+                          "name": "Forbidden - authenticated user lacks permission",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/cardType/:cardTypeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "cardType",
+                                ":cardTypeId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "cardTypeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:06.000Z",
+                          "updatedAt": "2026-07-28T02:04:06.000Z",
+                          "uid": "35240-8d43cca4-4239-44e0-bf1b-5be1008a329e"
+                        },
+                        {
+                          "id": "06db81dd-6322-4b34-8b22-a5fa0f8f2441",
+                          "name": "Not found",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/cardType/:cardTypeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "cardType",
+                                ":cardTypeId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "cardTypeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:06.000Z",
+                          "updatedAt": "2026-07-28T02:04:06.000Z",
+                          "uid": "35240-06db81dd-6322-4b34-8b22-a5fa0f8f2441"
+                        },
+                        {
+                          "id": "ef9eebff-e695-4101-b14f-a70344c03a87",
+                          "name": "Unprocessable entity - required information was missing or invalid",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/cardType/:cardTypeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "cardType",
+                                ":cardTypeId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "cardTypeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:06.000Z",
+                          "updatedAt": "2026-07-28T02:04:06.000Z",
+                          "uid": "35240-ef9eebff-e695-4101-b14f-a70344c03a87"
+                        },
+                        {
+                          "id": "7d8b6de9-b0a1-49f6-bf45-42fab1db8560",
+                          "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/cardType/:cardTypeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "cardType",
+                                ":cardTypeId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "cardTypeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Too Many Requests",
+                          "code": 429,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "HTTP-date after which the client may retry",
+                                "type": "text/plain"
+                              },
+                              "key": "Retry-After",
+                              "value": "<string>"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:06.000Z",
+                          "updatedAt": "2026-07-28T02:04:06.000Z",
+                          "uid": "35240-7d8b6de9-b0a1-49f6-bf45-42fab1db8560"
+                        },
+                        {
+                          "id": "f53b943c-ecc3-462a-a7ee-c45faf4a5221",
+                          "name": "Server error on the AgilePlace side",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/cardType/:cardTypeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "cardType",
+                                ":cardTypeId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "cardTypeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:04:06.000Z",
+                          "updatedAt": "2026-07-28T02:04:06.000Z",
+                          "uid": "35240-f53b943c-ecc3-462a-a7ee-c45faf4a5221"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:04:06.000Z",
+                      "updatedAt": "2026-07-28T02:04:06.000Z",
+                      "uid": "35240-caef5b70-4f44-43ab-a4be-2f017c3772db"
+                    }
+                  ],
+                  "id": "85f4c9f1-273c-4242-8a9f-9de5886fd969",
+                  "createdAt": "2026-07-28T02:04:06.000Z",
+                  "updatedAt": "2026-07-28T02:04:06.000Z",
+                  "uid": "35240-85f4c9f1-273c-4242-8a9f-9de5886fd969"
+                },
+                {
+                  "name": "Create a card type on a board",
+                  "id": "81ec90c0-28b7-4a07-b8a2-a19c9d427b75",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/board/:boardId/cardType",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "board",
+                        ":boardId",
+                        "cardType"
+                      ],
+                      "variable": [
+                        {
+                          "id": "fafaf025-1bc4-4c73-be0a-7f6d69c43c80",
+                          "key": "boardId",
+                          "value": "<string>",
+                          "description": "(Required) boardId identifier"
+                        }
+                      ]
+                    },
+                    "description": "Create a card type on a board. Request Properties"
+                  },
+                  "response": [
+                    {
+                      "id": "08775b41-7b08-4958-9948-064e135d7589",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/cardType",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "cardType"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T02:04:06.000Z",
+                      "updatedAt": "2026-07-28T02:04:06.000Z",
+                      "uid": "35240-08775b41-7b08-4958-9948-064e135d7589"
+                    },
+                    {
+                      "id": "861d1eed-815d-4e0a-a6ed-2683d1735dda",
+                      "name": "Created",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/cardType",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "cardType"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T02:04:06.000Z",
+                      "updatedAt": "2026-07-28T02:04:06.000Z",
+                      "uid": "35240-861d1eed-815d-4e0a-a6ed-2683d1735dda"
+                    },
+                    {
+                      "id": "c318c973-3095-49a0-bce8-cef1fef4f410",
+                      "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/cardType",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "cardType"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:06.000Z",
+                      "updatedAt": "2026-07-28T02:04:06.000Z",
+                      "uid": "35240-c318c973-3095-49a0-bce8-cef1fef4f410"
+                    },
+                    {
+                      "id": "dc3cea20-edd8-4774-9f01-f9600fe9bd47",
+                      "name": "Forbidden - authenticated user lacks permission",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/cardType",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "cardType"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:06.000Z",
+                      "updatedAt": "2026-07-28T02:04:06.000Z",
+                      "uid": "35240-dc3cea20-edd8-4774-9f01-f9600fe9bd47"
+                    },
+                    {
+                      "id": "722c52f8-19cd-46ff-a366-6b38c731ee28",
+                      "name": "Not found",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/cardType",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "cardType"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:06.000Z",
+                      "updatedAt": "2026-07-28T02:04:06.000Z",
+                      "uid": "35240-722c52f8-19cd-46ff-a366-6b38c731ee28"
+                    },
+                    {
+                      "id": "f4b285e2-7372-4986-9c10-b1ddf6a8336d",
+                      "name": "Unprocessable entity - required information was missing or invalid",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/cardType",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "cardType"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:06.000Z",
+                      "updatedAt": "2026-07-28T02:04:06.000Z",
+                      "uid": "35240-f4b285e2-7372-4986-9c10-b1ddf6a8336d"
+                    },
+                    {
+                      "id": "d5b0cb1a-f990-4129-b791-b81428526eee",
+                      "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/cardType",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "cardType"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "HTTP-date after which the client may retry",
+                            "type": "text/plain"
+                          },
+                          "key": "Retry-After",
+                          "value": "<string>"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:06.000Z",
+                      "updatedAt": "2026-07-28T02:04:06.000Z",
+                      "uid": "35240-d5b0cb1a-f990-4129-b791-b81428526eee"
+                    },
+                    {
+                      "id": "58635d68-6053-47e6-b327-73dadf972938",
+                      "name": "Server error on the AgilePlace side",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/cardType",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "cardType"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:06.000Z",
+                      "updatedAt": "2026-07-28T02:04:06.000Z",
+                      "uid": "35240-58635d68-6053-47e6-b327-73dadf972938"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:04:06.000Z",
+                  "updatedAt": "2026-07-28T02:04:06.000Z",
+                  "uid": "35240-81ec90c0-28b7-4a07-b8a2-a19c9d427b75"
+                },
+                {
+                  "name": "Get a list of card types for a board",
+                  "id": "2ff7a408-6e41-4acb-88ce-a68f5308b6d7",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/board/:boardId/cardType",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "board",
+                        ":boardId",
+                        "cardType"
+                      ],
+                      "variable": [
+                        {
+                          "id": "9d616cd2-dd32-4fc6-a860-fad69058aaab",
+                          "key": "boardId",
+                          "value": "<string>",
+                          "description": "(Required) boardId identifier"
+                        }
+                      ]
+                    },
+                    "description": "Get a list of card types for a board. Example Request"
+                  },
+                  "response": [
+                    {
+                      "id": "d5b94a73-e6d9-441f-96b6-20c5dcf8dcf9",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/cardType",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "cardType"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T02:04:06.000Z",
+                      "updatedAt": "2026-07-28T02:04:06.000Z",
+                      "uid": "35240-d5b94a73-e6d9-441f-96b6-20c5dcf8dcf9"
+                    },
+                    {
+                      "id": "54eddae8-e86f-44da-b4ab-74821f2ff79b",
+                      "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/cardType",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "cardType"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:06.000Z",
+                      "updatedAt": "2026-07-28T02:04:06.000Z",
+                      "uid": "35240-54eddae8-e86f-44da-b4ab-74821f2ff79b"
+                    },
+                    {
+                      "id": "911624cf-7f22-4ab6-9a5b-d38bd9aacd45",
+                      "name": "Forbidden - authenticated user lacks permission",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/cardType",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "cardType"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:06.000Z",
+                      "updatedAt": "2026-07-28T02:04:06.000Z",
+                      "uid": "35240-911624cf-7f22-4ab6-9a5b-d38bd9aacd45"
+                    },
+                    {
+                      "id": "c0b3bcdf-043c-460b-96e9-0a1707eca43e",
+                      "name": "Not found",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/cardType",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "cardType"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:06.000Z",
+                      "updatedAt": "2026-07-28T02:04:06.000Z",
+                      "uid": "35240-c0b3bcdf-043c-460b-96e9-0a1707eca43e"
+                    },
+                    {
+                      "id": "f79031e3-a912-493c-a4cc-bd85eb5dd5a8",
+                      "name": "Unprocessable entity - required information was missing or invalid",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/cardType",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "cardType"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:06.000Z",
+                      "updatedAt": "2026-07-28T02:04:06.000Z",
+                      "uid": "35240-f79031e3-a912-493c-a4cc-bd85eb5dd5a8"
+                    },
+                    {
+                      "id": "4ec43d9d-c706-42e8-9b0c-2b4785e99be4",
+                      "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/cardType",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "cardType"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "HTTP-date after which the client may retry",
+                            "type": "text/plain"
+                          },
+                          "key": "Retry-After",
+                          "value": "<string>"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:06.000Z",
+                      "updatedAt": "2026-07-28T02:04:06.000Z",
+                      "uid": "35240-4ec43d9d-c706-42e8-9b0c-2b4785e99be4"
+                    },
+                    {
+                      "id": "088c2db3-0b5e-4b9e-a554-df1fdb5664ac",
+                      "name": "Server error on the AgilePlace side",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/cardType",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "cardType"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:04:06.000Z",
+                      "updatedAt": "2026-07-28T02:04:06.000Z",
+                      "uid": "35240-088c2db3-0b5e-4b9e-a554-df1fdb5664ac"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:04:06.000Z",
+                  "updatedAt": "2026-07-28T02:04:06.000Z",
+                  "uid": "35240-2ff7a408-6e41-4acb-88ce-a68f5308b6d7"
+                }
+              ],
+              "id": "68199b00-3731-445b-922d-824f9624faba",
+              "createdAt": "2026-07-28T02:04:06.000Z",
+              "updatedAt": "2026-07-28T02:04:06.000Z",
+              "uid": "35240-68199b00-3731-445b-922d-824f9624faba"
+            }
+          ],
+          "id": "ac4da417-2602-4247-b435-76da93fd939a",
+          "createdAt": "2026-07-28T02:04:06.000Z",
+          "updatedAt": "2026-07-28T02:04:06.000Z",
+          "uid": "35240-ac4da417-2602-4247-b435-76da93fd939a"
+        }
+      ],
+      "id": "e2699f9e-f14d-47dc-8d3f-e61bdb293f88",
+      "createdAt": "2026-07-28T02:04:06.000Z",
+      "updatedAt": "2026-07-28T02:04:06.000Z",
+      "uid": "35240-e2699f9e-f14d-47dc-8d3f-e61bdb293f88"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "account",
+      "value": "myaccount"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{account}}.leankit.com/io"
+    }
+  ]
+}

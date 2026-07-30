@@ -1,0 +1,3691 @@
+{
+  "info": {
+    "_postman_id": "b388a5ec-111b-4042-a791-cc5b20a7dfbb",
+    "name": "Planview AgilePlace API (LeanKit) v2 account automation API",
+    "description": "RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference \u2014 no endpoints invented.\n\nContact Support:\n Name: Planview AgilePlace Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:03:52.000Z",
+    "updatedAt": "2026-07-28T02:03:52.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b388a5ec-111b-4042-a791-cc5b20a7dfbb"
+  },
+  "item": [
+    {
+      "name": "board",
+      "item": [
+        {
+          "name": "{boardId}",
+          "item": [
+            {
+              "name": "automation",
+              "item": [
+                {
+                  "name": "customevent",
+                  "item": [
+                    {
+                      "name": "Trigger a custom event for a board",
+                      "id": "94663b22-fff9-4bdb-9881-287d11a82b8e",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/automation/customevent",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "automation",
+                            "customevent"
+                          ],
+                          "variable": [
+                            {
+                              "id": "26e1db05-0507-4365-8fdc-9607b7fec465",
+                              "key": "boardId",
+                              "value": "<string>",
+                              "description": "(Required) boardId identifier"
+                            }
+                          ]
+                        },
+                        "description": "Trigger a custom event for a board. This allows you to execute automations based on something happening outside of your board. For a board-level custom event, the criteria on the automation is used to identify matching cards (this is similar to how scheduled automations run) and the automation is ru"
+                      },
+                      "response": [
+                        {
+                          "id": "e7d3a627-708e-4cb8-bbe0-924159109ac5",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/customevent",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                "customevent"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-e7d3a627-708e-4cb8-bbe0-924159109ac5"
+                        },
+                        {
+                          "id": "fd39ee02-d0f1-4a1a-85ff-cab9f7341947",
+                          "name": "Created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/customevent",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                "customevent"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-fd39ee02-d0f1-4a1a-85ff-cab9f7341947"
+                        },
+                        {
+                          "id": "a65c7cdb-ecbb-4170-a235-7a3c9778d1ea",
+                          "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/customevent",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                "customevent"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-a65c7cdb-ecbb-4170-a235-7a3c9778d1ea"
+                        },
+                        {
+                          "id": "672f9d4b-0b12-4ac5-bcb2-95eef144f02c",
+                          "name": "Forbidden - authenticated user lacks permission",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/customevent",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                "customevent"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-672f9d4b-0b12-4ac5-bcb2-95eef144f02c"
+                        },
+                        {
+                          "id": "6cea41f7-12c0-44fb-a545-c72c3c3ba7ad",
+                          "name": "Not found",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/customevent",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                "customevent"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-6cea41f7-12c0-44fb-a545-c72c3c3ba7ad"
+                        },
+                        {
+                          "id": "aa4fe1a3-2a49-4a52-ad3e-36adcd28c3e9",
+                          "name": "Unprocessable entity - required information was missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/customevent",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                "customevent"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-aa4fe1a3-2a49-4a52-ad3e-36adcd28c3e9"
+                        },
+                        {
+                          "id": "278da7ff-fc68-4972-99ef-99ea9faa99ed",
+                          "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/customevent",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                "customevent"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Too Many Requests",
+                          "code": 429,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "HTTP-date after which the client may retry",
+                                "type": "text/plain"
+                              },
+                              "key": "Retry-After",
+                              "value": "<string>"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-278da7ff-fc68-4972-99ef-99ea9faa99ed"
+                        },
+                        {
+                          "id": "59d3a90e-4506-44f4-afb4-1d89f7e8311c",
+                          "name": "Server error on the AgilePlace side",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/customevent",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                "customevent"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-59d3a90e-4506-44f4-afb4-1d89f7e8311c"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:03:52.000Z",
+                      "updatedAt": "2026-07-28T02:03:52.000Z",
+                      "uid": "35240-94663b22-fff9-4bdb-9881-287d11a82b8e"
+                    }
+                  ],
+                  "id": "63795410-2a80-4a9e-85a8-16b9121b04e6",
+                  "createdAt": "2026-07-28T02:03:52.000Z",
+                  "updatedAt": "2026-07-28T02:03:52.000Z",
+                  "uid": "35240-63795410-2a80-4a9e-85a8-16b9121b04e6"
+                },
+                {
+                  "name": "{automationId}",
+                  "item": [
+                    {
+                      "name": "audit",
+                      "item": [
+                        {
+                          "name": "Get a list of audits for the recent runs (last 20) of an automation",
+                          "id": "a8adb24c-8268-4cb3-a33f-02999b090e69",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/:automationId/audit",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                ":automationId",
+                                "audit"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "1c4d96d0-695e-4179-aa7c-45fb8d9a447b",
+                                  "key": "boardId",
+                                  "value": "<string>",
+                                  "description": "(Required) boardId identifier"
+                                },
+                                {
+                                  "id": "6a4fafb6-8298-4969-a15d-424bf3703595",
+                                  "key": "automationId",
+                                  "value": "<string>",
+                                  "description": "(Required) automationId identifier"
+                                }
+                              ]
+                            },
+                            "description": "Get a list of audits for the recent runs (last 20) of an automation. Example Request"
+                          },
+                          "response": [
+                            {
+                              "id": "ffd59924-ada5-4a10-91ed-93be28ed6a8c",
+                              "name": "Success",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/board/:boardId/automation/:automationId/audit",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "board",
+                                    ":boardId",
+                                    "automation",
+                                    ":automationId",
+                                    "audit"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "boardId"
+                                    },
+                                    {
+                                      "key": "automationId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{}",
+                              "createdAt": "2026-07-28T02:03:52.000Z",
+                              "updatedAt": "2026-07-28T02:03:52.000Z",
+                              "uid": "35240-ffd59924-ada5-4a10-91ed-93be28ed6a8c"
+                            },
+                            {
+                              "id": "4c218470-dd3e-4e95-ae26-75f77e84ee95",
+                              "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/board/:boardId/automation/:automationId/audit",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "board",
+                                    ":boardId",
+                                    "automation",
+                                    ":automationId",
+                                    "audit"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "boardId"
+                                    },
+                                    {
+                                      "key": "automationId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:03:52.000Z",
+                              "updatedAt": "2026-07-28T02:03:52.000Z",
+                              "uid": "35240-4c218470-dd3e-4e95-ae26-75f77e84ee95"
+                            },
+                            {
+                              "id": "877755c6-c03f-4b5f-9c1c-42e9a79b110f",
+                              "name": "Forbidden - authenticated user lacks permission",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/board/:boardId/automation/:automationId/audit",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "board",
+                                    ":boardId",
+                                    "automation",
+                                    ":automationId",
+                                    "audit"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "boardId"
+                                    },
+                                    {
+                                      "key": "automationId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Forbidden",
+                              "code": 403,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:03:52.000Z",
+                              "updatedAt": "2026-07-28T02:03:52.000Z",
+                              "uid": "35240-877755c6-c03f-4b5f-9c1c-42e9a79b110f"
+                            },
+                            {
+                              "id": "294a1c54-3676-441f-8dd3-b1ba7845f7ef",
+                              "name": "Not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/board/:boardId/automation/:automationId/audit",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "board",
+                                    ":boardId",
+                                    "automation",
+                                    ":automationId",
+                                    "audit"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "boardId"
+                                    },
+                                    {
+                                      "key": "automationId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:03:52.000Z",
+                              "updatedAt": "2026-07-28T02:03:52.000Z",
+                              "uid": "35240-294a1c54-3676-441f-8dd3-b1ba7845f7ef"
+                            },
+                            {
+                              "id": "d851f814-eb95-406e-a821-7e00c3dc23f9",
+                              "name": "Unprocessable entity - required information was missing or invalid",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/board/:boardId/automation/:automationId/audit",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "board",
+                                    ":boardId",
+                                    "automation",
+                                    ":automationId",
+                                    "audit"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "boardId"
+                                    },
+                                    {
+                                      "key": "automationId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                              "code": 422,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:03:52.000Z",
+                              "updatedAt": "2026-07-28T02:03:52.000Z",
+                              "uid": "35240-d851f814-eb95-406e-a821-7e00c3dc23f9"
+                            },
+                            {
+                              "id": "958a3904-d1bf-4a41-b136-792b8f99d0c7",
+                              "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/board/:boardId/automation/:automationId/audit",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "board",
+                                    ":boardId",
+                                    "automation",
+                                    ":automationId",
+                                    "audit"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "boardId"
+                                    },
+                                    {
+                                      "key": "automationId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Too Many Requests",
+                              "code": 429,
+                              "_postman_previewlanguage": "text",
+                              "header": [
+                                {
+                                  "disabled": false,
+                                  "description": {
+                                    "content": "HTTP-date after which the client may retry",
+                                    "type": "text/plain"
+                                  },
+                                  "key": "Retry-After",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:03:52.000Z",
+                              "updatedAt": "2026-07-28T02:03:52.000Z",
+                              "uid": "35240-958a3904-d1bf-4a41-b136-792b8f99d0c7"
+                            },
+                            {
+                              "id": "d01642e8-d6d4-4f30-8f7b-c3a6fe8fe5bc",
+                              "name": "Server error on the AgilePlace side",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/board/:boardId/automation/:automationId/audit",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "board",
+                                    ":boardId",
+                                    "automation",
+                                    ":automationId",
+                                    "audit"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "boardId"
+                                    },
+                                    {
+                                      "key": "automationId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:03:52.000Z",
+                              "updatedAt": "2026-07-28T02:03:52.000Z",
+                              "uid": "35240-d01642e8-d6d4-4f30-8f7b-c3a6fe8fe5bc"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-a8adb24c-8268-4cb3-a33f-02999b090e69"
+                        }
+                      ],
+                      "id": "97b20e89-5ec4-457d-9148-5efef9ef7113",
+                      "createdAt": "2026-07-28T02:03:52.000Z",
+                      "updatedAt": "2026-07-28T02:03:52.000Z",
+                      "uid": "35240-97b20e89-5ec4-457d-9148-5efef9ef7113"
+                    },
+                    {
+                      "name": "Delete a card automation",
+                      "id": "71450007-3538-4bde-94a3-89e8c7133cee",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/automation/:automationId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "automation",
+                            ":automationId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "27043e85-2693-4822-a8da-be61ec3f2008",
+                              "key": "boardId",
+                              "value": "<string>",
+                              "description": "(Required) boardId identifier"
+                            },
+                            {
+                              "id": "231f2998-093c-4739-84bb-a2cbd15944dd",
+                              "key": "automationId",
+                              "value": "<string>",
+                              "description": "(Required) automationId identifier"
+                            }
+                          ]
+                        },
+                        "description": "Delete a card automation. Example Request"
+                      },
+                      "response": [
+                        {
+                          "id": "e6295e1c-8959-4f3c-a07f-4e05e66163f5",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/:automationId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                ":automationId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "automationId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-e6295e1c-8959-4f3c-a07f-4e05e66163f5"
+                        },
+                        {
+                          "id": "80c3d368-f5da-4349-9db5-bb56ebe1ef7f",
+                          "name": "Deleted",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/:automationId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                ":automationId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "automationId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-80c3d368-f5da-4349-9db5-bb56ebe1ef7f"
+                        },
+                        {
+                          "id": "d5400aed-e8bb-4a33-a36f-3d215e1e196a",
+                          "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/:automationId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                ":automationId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "automationId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-d5400aed-e8bb-4a33-a36f-3d215e1e196a"
+                        },
+                        {
+                          "id": "42b6a4bf-7432-4211-9ba4-09db6229f401",
+                          "name": "Forbidden - authenticated user lacks permission",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/:automationId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                ":automationId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "automationId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-42b6a4bf-7432-4211-9ba4-09db6229f401"
+                        },
+                        {
+                          "id": "65750a26-0be5-41f2-a882-211646a7b848",
+                          "name": "Not found",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/:automationId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                ":automationId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "automationId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-65750a26-0be5-41f2-a882-211646a7b848"
+                        },
+                        {
+                          "id": "32471fb8-2ba7-424f-8bb7-6d73c363b212",
+                          "name": "Unprocessable entity - required information was missing or invalid",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/:automationId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                ":automationId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "automationId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-32471fb8-2ba7-424f-8bb7-6d73c363b212"
+                        },
+                        {
+                          "id": "6dd37700-37b4-4d39-b09d-ecc51be14de2",
+                          "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/:automationId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                ":automationId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "automationId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Too Many Requests",
+                          "code": 429,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "HTTP-date after which the client may retry",
+                                "type": "text/plain"
+                              },
+                              "key": "Retry-After",
+                              "value": "<string>"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-6dd37700-37b4-4d39-b09d-ecc51be14de2"
+                        },
+                        {
+                          "id": "f06c27ca-a22d-4a67-b3b2-3a4370b6f4e2",
+                          "name": "Server error on the AgilePlace side",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/:automationId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                ":automationId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "automationId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-f06c27ca-a22d-4a67-b3b2-3a4370b6f4e2"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:03:52.000Z",
+                      "updatedAt": "2026-07-28T02:03:52.000Z",
+                      "uid": "35240-71450007-3538-4bde-94a3-89e8c7133cee"
+                    },
+                    {
+                      "name": "Get an automation by id",
+                      "id": "57c02d0b-b649-4d66-af7d-44e636170892",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/automation/:automationId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "automation",
+                            ":automationId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "dccc75b8-7f9d-4b49-84d9-39f62e0326a3",
+                              "key": "boardId",
+                              "value": "<string>",
+                              "description": "(Required) boardId identifier"
+                            },
+                            {
+                              "id": "700ef668-5856-491a-b779-c766d8fc8d56",
+                              "key": "automationId",
+                              "value": "<string>",
+                              "description": "(Required) automationId identifier"
+                            }
+                          ]
+                        },
+                        "description": "Get an automation by id. Example Request"
+                      },
+                      "response": [
+                        {
+                          "id": "bb8c7aba-0fe9-4d67-a4ae-7235a4013759",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/:automationId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                ":automationId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "automationId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-bb8c7aba-0fe9-4d67-a4ae-7235a4013759"
+                        },
+                        {
+                          "id": "1ce5149f-a45e-4c99-98fd-33f939909302",
+                          "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/:automationId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                ":automationId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "automationId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-1ce5149f-a45e-4c99-98fd-33f939909302"
+                        },
+                        {
+                          "id": "9c0c2724-f23e-405e-85bb-119ddd123b50",
+                          "name": "Forbidden - authenticated user lacks permission",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/:automationId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                ":automationId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "automationId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-9c0c2724-f23e-405e-85bb-119ddd123b50"
+                        },
+                        {
+                          "id": "7689775b-3c6f-4d01-8494-8c910e290719",
+                          "name": "Not found",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/:automationId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                ":automationId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "automationId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-7689775b-3c6f-4d01-8494-8c910e290719"
+                        },
+                        {
+                          "id": "f790920b-4fd2-4526-a49e-95c2f2e626f6",
+                          "name": "Unprocessable entity - required information was missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/:automationId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                ":automationId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "automationId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-f790920b-4fd2-4526-a49e-95c2f2e626f6"
+                        },
+                        {
+                          "id": "0f0dc060-c197-4686-b485-3542f751061d",
+                          "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/:automationId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                ":automationId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "automationId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Too Many Requests",
+                          "code": 429,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "HTTP-date after which the client may retry",
+                                "type": "text/plain"
+                              },
+                              "key": "Retry-After",
+                              "value": "<string>"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-0f0dc060-c197-4686-b485-3542f751061d"
+                        },
+                        {
+                          "id": "1fb10ee0-b494-46a9-9b15-b6ee2344d400",
+                          "name": "Server error on the AgilePlace side",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/:automationId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                ":automationId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "automationId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-1fb10ee0-b494-46a9-9b15-b6ee2344d400"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:03:52.000Z",
+                      "updatedAt": "2026-07-28T02:03:52.000Z",
+                      "uid": "35240-57c02d0b-b649-4d66-af7d-44e636170892"
+                    },
+                    {
+                      "name": "Update a card automation",
+                      "id": "2c8f7e85-4528-4217-8a43-7d6a3989c176",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/automation/:automationId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "automation",
+                            ":automationId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "38557d83-9c1c-4313-a0b1-22f14af693d1",
+                              "key": "boardId",
+                              "value": "<string>",
+                              "description": "(Required) boardId identifier"
+                            },
+                            {
+                              "id": "7d85efa9-8be7-4049-83b3-f5e758be7e1a",
+                              "key": "automationId",
+                              "value": "<string>",
+                              "description": "(Required) automationId identifier"
+                            }
+                          ]
+                        },
+                        "description": "Update a card automation. Request Properties"
+                      },
+                      "response": [
+                        {
+                          "id": "0a51d9b0-74dc-4c34-8e41-7d4f297b9744",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/:automationId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                ":automationId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "automationId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-0a51d9b0-74dc-4c34-8e41-7d4f297b9744"
+                        },
+                        {
+                          "id": "6ff74e81-683f-45ea-a18d-9a46437f0453",
+                          "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/:automationId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                ":automationId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "automationId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-6ff74e81-683f-45ea-a18d-9a46437f0453"
+                        },
+                        {
+                          "id": "b7ad52e9-103d-47fa-8824-2921518c475d",
+                          "name": "Forbidden - authenticated user lacks permission",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/:automationId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                ":automationId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "automationId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-b7ad52e9-103d-47fa-8824-2921518c475d"
+                        },
+                        {
+                          "id": "9b319c62-6c1f-440e-8815-49a388f5dced",
+                          "name": "Not found",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/:automationId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                ":automationId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "automationId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-9b319c62-6c1f-440e-8815-49a388f5dced"
+                        },
+                        {
+                          "id": "a17b9ce3-a530-4a28-94c1-e0fb344d7219",
+                          "name": "Unprocessable entity - required information was missing or invalid",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/:automationId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                ":automationId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "automationId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-a17b9ce3-a530-4a28-94c1-e0fb344d7219"
+                        },
+                        {
+                          "id": "105e4be3-563c-4c1c-ad5d-200b52402d2d",
+                          "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/:automationId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                ":automationId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "automationId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Too Many Requests",
+                          "code": 429,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "HTTP-date after which the client may retry",
+                                "type": "text/plain"
+                              },
+                              "key": "Retry-After",
+                              "value": "<string>"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-105e4be3-563c-4c1c-ad5d-200b52402d2d"
+                        },
+                        {
+                          "id": "ac48859d-9b55-4159-99bd-61fa630e39ce",
+                          "name": "Server error on the AgilePlace side",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/board/:boardId/automation/:automationId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "board",
+                                ":boardId",
+                                "automation",
+                                ":automationId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "boardId"
+                                },
+                                {
+                                  "key": "automationId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-ac48859d-9b55-4159-99bd-61fa630e39ce"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:03:52.000Z",
+                      "updatedAt": "2026-07-28T02:03:52.000Z",
+                      "uid": "35240-2c8f7e85-4528-4217-8a43-7d6a3989c176"
+                    }
+                  ],
+                  "id": "ea5d78b8-935a-4145-a58b-eaa3fc42570b",
+                  "createdAt": "2026-07-28T02:03:52.000Z",
+                  "updatedAt": "2026-07-28T02:03:52.000Z",
+                  "uid": "35240-ea5d78b8-935a-4145-a58b-eaa3fc42570b"
+                },
+                {
+                  "name": "Create a card automation",
+                  "id": "e251792f-a533-411e-ab0d-4706f2d63c8c",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/board/:boardId/automation",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "board",
+                        ":boardId",
+                        "automation"
+                      ],
+                      "variable": [
+                        {
+                          "id": "bfcc3e54-9174-4a9d-b287-a39901ad5b56",
+                          "key": "boardId",
+                          "value": "<string>",
+                          "description": "(Required) boardId identifier"
+                        }
+                      ]
+                    },
+                    "description": "Create a card automation. Request Properties"
+                  },
+                  "response": [
+                    {
+                      "id": "7d98153f-85d1-4ae8-8e1a-7b2fffe328b5",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/automation",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "automation"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T02:03:52.000Z",
+                      "updatedAt": "2026-07-28T02:03:52.000Z",
+                      "uid": "35240-7d98153f-85d1-4ae8-8e1a-7b2fffe328b5"
+                    },
+                    {
+                      "id": "39ef724a-a969-40fc-9b88-12501740d57e",
+                      "name": "Created",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/automation",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "automation"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T02:03:52.000Z",
+                      "updatedAt": "2026-07-28T02:03:52.000Z",
+                      "uid": "35240-39ef724a-a969-40fc-9b88-12501740d57e"
+                    },
+                    {
+                      "id": "3e23e6f2-a2f6-458b-90aa-f2248c4cfea4",
+                      "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/automation",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "automation"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:03:52.000Z",
+                      "updatedAt": "2026-07-28T02:03:52.000Z",
+                      "uid": "35240-3e23e6f2-a2f6-458b-90aa-f2248c4cfea4"
+                    },
+                    {
+                      "id": "6644bf1f-5112-4c4e-989b-20aaf48af558",
+                      "name": "Forbidden - authenticated user lacks permission",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/automation",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "automation"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:03:52.000Z",
+                      "updatedAt": "2026-07-28T02:03:52.000Z",
+                      "uid": "35240-6644bf1f-5112-4c4e-989b-20aaf48af558"
+                    },
+                    {
+                      "id": "e231a4d7-d22f-4a79-9333-6b9e1532218d",
+                      "name": "Not found",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/automation",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "automation"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:03:52.000Z",
+                      "updatedAt": "2026-07-28T02:03:52.000Z",
+                      "uid": "35240-e231a4d7-d22f-4a79-9333-6b9e1532218d"
+                    },
+                    {
+                      "id": "e1e48ee6-f5e2-4f6a-8cca-43fe0d98ba8d",
+                      "name": "Unprocessable entity - required information was missing or invalid",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/automation",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "automation"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:03:52.000Z",
+                      "updatedAt": "2026-07-28T02:03:52.000Z",
+                      "uid": "35240-e1e48ee6-f5e2-4f6a-8cca-43fe0d98ba8d"
+                    },
+                    {
+                      "id": "1202ca54-c3c6-4d8c-8148-56985b93dde6",
+                      "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/automation",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "automation"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "HTTP-date after which the client may retry",
+                            "type": "text/plain"
+                          },
+                          "key": "Retry-After",
+                          "value": "<string>"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:03:52.000Z",
+                      "updatedAt": "2026-07-28T02:03:52.000Z",
+                      "uid": "35240-1202ca54-c3c6-4d8c-8148-56985b93dde6"
+                    },
+                    {
+                      "id": "575e6361-4726-4943-9238-04d1ae7bae8a",
+                      "name": "Server error on the AgilePlace side",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/automation",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "automation"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:03:52.000Z",
+                      "updatedAt": "2026-07-28T02:03:52.000Z",
+                      "uid": "35240-575e6361-4726-4943-9238-04d1ae7bae8a"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:03:52.000Z",
+                  "updatedAt": "2026-07-28T02:03:52.000Z",
+                  "uid": "35240-e251792f-a533-411e-ab0d-4706f2d63c8c"
+                },
+                {
+                  "name": "Get the list of card automations for a board",
+                  "id": "8593e636-096f-4b39-9897-0962f318e3a6",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/board/:boardId/automation",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "board",
+                        ":boardId",
+                        "automation"
+                      ],
+                      "variable": [
+                        {
+                          "id": "d452ef2b-b16d-488a-b755-457baa056ce1",
+                          "key": "boardId",
+                          "value": "<string>",
+                          "description": "(Required) boardId identifier"
+                        }
+                      ]
+                    },
+                    "description": "Get the list of card automations for a board. Example Request"
+                  },
+                  "response": [
+                    {
+                      "id": "44249dac-950c-41cf-8c20-8a8ad7bcd75a",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/automation",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "automation"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T02:03:52.000Z",
+                      "updatedAt": "2026-07-28T02:03:52.000Z",
+                      "uid": "35240-44249dac-950c-41cf-8c20-8a8ad7bcd75a"
+                    },
+                    {
+                      "id": "f6f7873f-061d-4880-81e5-32f2bb05c570",
+                      "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/automation",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "automation"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:03:52.000Z",
+                      "updatedAt": "2026-07-28T02:03:52.000Z",
+                      "uid": "35240-f6f7873f-061d-4880-81e5-32f2bb05c570"
+                    },
+                    {
+                      "id": "07e34b13-6b6d-4aed-b7e2-684a396c8d1c",
+                      "name": "Forbidden - authenticated user lacks permission",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/automation",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "automation"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:03:52.000Z",
+                      "updatedAt": "2026-07-28T02:03:52.000Z",
+                      "uid": "35240-07e34b13-6b6d-4aed-b7e2-684a396c8d1c"
+                    },
+                    {
+                      "id": "65b8db7f-43b2-4cc9-b287-b28d0ab2ee55",
+                      "name": "Not found",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/automation",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "automation"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:03:52.000Z",
+                      "updatedAt": "2026-07-28T02:03:52.000Z",
+                      "uid": "35240-65b8db7f-43b2-4cc9-b287-b28d0ab2ee55"
+                    },
+                    {
+                      "id": "f4efd29c-bb76-4ae2-ac99-9ccd0415ddce",
+                      "name": "Unprocessable entity - required information was missing or invalid",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/automation",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "automation"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:03:52.000Z",
+                      "updatedAt": "2026-07-28T02:03:52.000Z",
+                      "uid": "35240-f4efd29c-bb76-4ae2-ac99-9ccd0415ddce"
+                    },
+                    {
+                      "id": "759c79e3-649d-49ec-accd-a31b74f9361f",
+                      "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/automation",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "automation"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "HTTP-date after which the client may retry",
+                            "type": "text/plain"
+                          },
+                          "key": "Retry-After",
+                          "value": "<string>"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:03:52.000Z",
+                      "updatedAt": "2026-07-28T02:03:52.000Z",
+                      "uid": "35240-759c79e3-649d-49ec-accd-a31b74f9361f"
+                    },
+                    {
+                      "id": "d4f3cca5-9441-46f5-96dc-34ec09eff5c2",
+                      "name": "Server error on the AgilePlace side",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/automation",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "automation"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:03:52.000Z",
+                      "updatedAt": "2026-07-28T02:03:52.000Z",
+                      "uid": "35240-d4f3cca5-9441-46f5-96dc-34ec09eff5c2"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:03:52.000Z",
+                  "updatedAt": "2026-07-28T02:03:52.000Z",
+                  "uid": "35240-8593e636-096f-4b39-9897-0962f318e3a6"
+                }
+              ],
+              "id": "96d9d782-7b24-4b8b-82ea-5a87d6371fb3",
+              "createdAt": "2026-07-28T02:03:52.000Z",
+              "updatedAt": "2026-07-28T02:03:52.000Z",
+              "uid": "35240-96d9d782-7b24-4b8b-82ea-5a87d6371fb3"
+            }
+          ],
+          "id": "b7fde874-4afd-4d83-91f9-346ff35e7587",
+          "createdAt": "2026-07-28T02:03:52.000Z",
+          "updatedAt": "2026-07-28T02:03:52.000Z",
+          "uid": "35240-b7fde874-4afd-4d83-91f9-346ff35e7587"
+        }
+      ],
+      "id": "11ba2648-ae21-430b-93d4-d1574d74b101",
+      "createdAt": "2026-07-28T02:03:52.000Z",
+      "updatedAt": "2026-07-28T02:03:52.000Z",
+      "uid": "35240-11ba2648-ae21-430b-93d4-d1574d74b101"
+    },
+    {
+      "name": "card",
+      "item": [
+        {
+          "name": "{cardId}",
+          "item": [
+            {
+              "name": "automation",
+              "item": [
+                {
+                  "name": "customevent",
+                  "item": [
+                    {
+                      "name": "Triggering custom events from this API, allows you to execute automations based on something happening outside of your b",
+                      "id": "c94a8c2d-c147-4154-ad8b-0b2427f6da69",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/card/:cardId/automation/customevent",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "card",
+                            ":cardId",
+                            "automation",
+                            "customevent"
+                          ],
+                          "variable": [
+                            {
+                              "id": "0b658140-55be-4d45-a1b3-0a853a6d1893",
+                              "key": "cardId",
+                              "value": "<string>",
+                              "description": "(Required) cardId identifier"
+                            }
+                          ]
+                        },
+                        "description": "Triggering custom events from this API, allows you to execute automations based on something happening outside of your board. For a card-level custom event, any automations that have the custom"
+                      },
+                      "response": [
+                        {
+                          "id": "73182f3f-8032-4d0c-b58a-ac369150d5ae",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/card/:cardId/automation/customevent",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "card",
+                                ":cardId",
+                                "automation",
+                                "customevent"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-73182f3f-8032-4d0c-b58a-ac369150d5ae"
+                        },
+                        {
+                          "id": "f0efbbce-44d1-459e-b3cf-eda426979817",
+                          "name": "Created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/card/:cardId/automation/customevent",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "card",
+                                ":cardId",
+                                "automation",
+                                "customevent"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-f0efbbce-44d1-459e-b3cf-eda426979817"
+                        },
+                        {
+                          "id": "c7f2ef4c-5fdf-46a8-ab66-8b7b70401c2d",
+                          "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/card/:cardId/automation/customevent",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "card",
+                                ":cardId",
+                                "automation",
+                                "customevent"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-c7f2ef4c-5fdf-46a8-ab66-8b7b70401c2d"
+                        },
+                        {
+                          "id": "f18613a3-6790-4b6c-a9e0-c692a02be37c",
+                          "name": "Forbidden - authenticated user lacks permission",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/card/:cardId/automation/customevent",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "card",
+                                ":cardId",
+                                "automation",
+                                "customevent"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-f18613a3-6790-4b6c-a9e0-c692a02be37c"
+                        },
+                        {
+                          "id": "c0d328a5-495e-4478-b557-386e9e3de09a",
+                          "name": "Not found",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/card/:cardId/automation/customevent",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "card",
+                                ":cardId",
+                                "automation",
+                                "customevent"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-c0d328a5-495e-4478-b557-386e9e3de09a"
+                        },
+                        {
+                          "id": "0f784c44-11b4-4230-a58d-540a95615b1a",
+                          "name": "Unprocessable entity - required information was missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/card/:cardId/automation/customevent",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "card",
+                                ":cardId",
+                                "automation",
+                                "customevent"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-0f784c44-11b4-4230-a58d-540a95615b1a"
+                        },
+                        {
+                          "id": "eba07d12-1897-4d52-838c-477404852baa",
+                          "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/card/:cardId/automation/customevent",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "card",
+                                ":cardId",
+                                "automation",
+                                "customevent"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Too Many Requests",
+                          "code": 429,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "HTTP-date after which the client may retry",
+                                "type": "text/plain"
+                              },
+                              "key": "Retry-After",
+                              "value": "<string>"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-eba07d12-1897-4d52-838c-477404852baa"
+                        },
+                        {
+                          "id": "69db44f4-e762-4d64-a28d-278a886c983e",
+                          "name": "Server error on the AgilePlace side",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/card/:cardId/automation/customevent",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "card",
+                                ":cardId",
+                                "automation",
+                                "customevent"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:03:52.000Z",
+                          "updatedAt": "2026-07-28T02:03:52.000Z",
+                          "uid": "35240-69db44f4-e762-4d64-a28d-278a886c983e"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:03:52.000Z",
+                      "updatedAt": "2026-07-28T02:03:52.000Z",
+                      "uid": "35240-c94a8c2d-c147-4154-ad8b-0b2427f6da69"
+                    }
+                  ],
+                  "id": "89bdf3a7-73b4-4520-83f8-30d813ff5862",
+                  "createdAt": "2026-07-28T02:03:52.000Z",
+                  "updatedAt": "2026-07-28T02:03:52.000Z",
+                  "uid": "35240-89bdf3a7-73b4-4520-83f8-30d813ff5862"
+                }
+              ],
+              "id": "bf2710a8-e390-4c7d-87c7-a7819e57ac70",
+              "createdAt": "2026-07-28T02:03:52.000Z",
+              "updatedAt": "2026-07-28T02:03:52.000Z",
+              "uid": "35240-bf2710a8-e390-4c7d-87c7-a7819e57ac70"
+            }
+          ],
+          "id": "d48266c3-efa6-440a-8de9-df42ac364423",
+          "createdAt": "2026-07-28T02:03:52.000Z",
+          "updatedAt": "2026-07-28T02:03:52.000Z",
+          "uid": "35240-d48266c3-efa6-440a-8de9-df42ac364423"
+        }
+      ],
+      "id": "b5674f9d-2e1c-48ce-a153-e1de7875e3f5",
+      "createdAt": "2026-07-28T02:03:52.000Z",
+      "updatedAt": "2026-07-28T02:03:52.000Z",
+      "uid": "35240-b5674f9d-2e1c-48ce-a153-e1de7875e3f5"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "account",
+      "value": "myaccount"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{account}}.leankit.com/io"
+    }
+  ]
+}

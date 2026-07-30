@@ -1,0 +1,853 @@
+{
+  "info": {
+    "_postman_id": "94b138f1-9cf1-41e6-8347-45b840049e0c",
+    "name": "Planview AgilePlace API (LeanKit) v2 account custom-field API",
+    "description": "RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference \u2014 no endpoints invented.\n\nContact Support:\n Name: Planview AgilePlace Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:05:42.000Z",
+    "updatedAt": "2026-07-28T02:05:42.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-94b138f1-9cf1-41e6-8347-45b840049e0c"
+  },
+  "item": [
+    {
+      "name": "board",
+      "item": [
+        {
+          "name": "{boardId}",
+          "item": [
+            {
+              "name": "customfield",
+              "item": [
+                {
+                  "name": "Get a list of custom fields on a board",
+                  "id": "671229e7-8d30-493c-9eb9-ad798abe2098",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/board/:boardId/customfield",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "board",
+                        ":boardId",
+                        "customfield"
+                      ],
+                      "variable": [
+                        {
+                          "id": "597242d8-1e7f-4208-8d45-d6b3bc450ed6",
+                          "key": "boardId",
+                          "value": "<string>",
+                          "description": "(Required) boardId identifier"
+                        }
+                      ]
+                    },
+                    "description": "Get a list of custom fields on a board. Example Request"
+                  },
+                  "response": [
+                    {
+                      "id": "9c4f85d5-8eac-4389-b121-970a4eff5948",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customfield",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customfield"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T02:05:42.000Z",
+                      "updatedAt": "2026-07-28T02:05:42.000Z",
+                      "uid": "35240-9c4f85d5-8eac-4389-b121-970a4eff5948"
+                    },
+                    {
+                      "id": "ad41b92a-b2f2-43a7-8125-464d2c94fcf7",
+                      "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customfield",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customfield"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:05:42.000Z",
+                      "updatedAt": "2026-07-28T02:05:42.000Z",
+                      "uid": "35240-ad41b92a-b2f2-43a7-8125-464d2c94fcf7"
+                    },
+                    {
+                      "id": "7765fcd1-0115-4c21-a993-151c991a87de",
+                      "name": "Forbidden - authenticated user lacks permission",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customfield",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customfield"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:05:42.000Z",
+                      "updatedAt": "2026-07-28T02:05:42.000Z",
+                      "uid": "35240-7765fcd1-0115-4c21-a993-151c991a87de"
+                    },
+                    {
+                      "id": "a01a23f4-923b-42b1-bd3b-ee8467a336b0",
+                      "name": "Not found",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customfield",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customfield"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:05:42.000Z",
+                      "updatedAt": "2026-07-28T02:05:42.000Z",
+                      "uid": "35240-a01a23f4-923b-42b1-bd3b-ee8467a336b0"
+                    },
+                    {
+                      "id": "dec301fc-151b-4eef-8084-43e21030e658",
+                      "name": "Unprocessable entity - required information was missing or invalid",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customfield",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customfield"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:05:42.000Z",
+                      "updatedAt": "2026-07-28T02:05:42.000Z",
+                      "uid": "35240-dec301fc-151b-4eef-8084-43e21030e658"
+                    },
+                    {
+                      "id": "8ed56f24-263b-41c3-b211-9f88d4b9653b",
+                      "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customfield",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customfield"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "HTTP-date after which the client may retry",
+                            "type": "text/plain"
+                          },
+                          "key": "Retry-After",
+                          "value": "<string>"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:05:42.000Z",
+                      "updatedAt": "2026-07-28T02:05:42.000Z",
+                      "uid": "35240-8ed56f24-263b-41c3-b211-9f88d4b9653b"
+                    },
+                    {
+                      "id": "f18e6225-eff0-4f14-a3c5-a240cc9b0112",
+                      "name": "Server error on the AgilePlace side",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customfield",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customfield"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:05:42.000Z",
+                      "updatedAt": "2026-07-28T02:05:42.000Z",
+                      "uid": "35240-f18e6225-eff0-4f14-a3c5-a240cc9b0112"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:05:42.000Z",
+                  "updatedAt": "2026-07-28T02:05:42.000Z",
+                  "uid": "35240-671229e7-8d30-493c-9eb9-ad798abe2098"
+                },
+                {
+                  "name": "Add, update, or remove custom fields on a board by providing an array of operations to perform",
+                  "id": "389be77f-93b0-426f-b67a-1e33aa85b7cf",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/board/:boardId/customfield",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "board",
+                        ":boardId",
+                        "customfield"
+                      ],
+                      "variable": [
+                        {
+                          "id": "3afd7b06-499d-47d9-9b1d-e9e1cb7d8da9",
+                          "key": "boardId",
+                          "value": "<string>",
+                          "description": "(Required) boardId identifier"
+                        }
+                      ]
+                    },
+                    "description": "Add, update, or remove custom fields on a board by providing an array of operations to perform. Request Properties"
+                  },
+                  "response": [
+                    {
+                      "id": "4896d302-cee3-44cc-802c-7bd602e274f9",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customfield",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customfield"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T02:05:42.000Z",
+                      "updatedAt": "2026-07-28T02:05:42.000Z",
+                      "uid": "35240-4896d302-cee3-44cc-802c-7bd602e274f9"
+                    },
+                    {
+                      "id": "cbe91ad5-1916-4939-b764-dee1b6b3e159",
+                      "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                      "originalRequest": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customfield",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customfield"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:05:42.000Z",
+                      "updatedAt": "2026-07-28T02:05:42.000Z",
+                      "uid": "35240-cbe91ad5-1916-4939-b764-dee1b6b3e159"
+                    },
+                    {
+                      "id": "6e0d5876-a63e-4c27-bccd-f0588ebed46c",
+                      "name": "Forbidden - authenticated user lacks permission",
+                      "originalRequest": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customfield",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customfield"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:05:42.000Z",
+                      "updatedAt": "2026-07-28T02:05:42.000Z",
+                      "uid": "35240-6e0d5876-a63e-4c27-bccd-f0588ebed46c"
+                    },
+                    {
+                      "id": "b0c6a576-2cff-4ba1-9c12-f70c53705d30",
+                      "name": "Not found",
+                      "originalRequest": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customfield",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customfield"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:05:42.000Z",
+                      "updatedAt": "2026-07-28T02:05:42.000Z",
+                      "uid": "35240-b0c6a576-2cff-4ba1-9c12-f70c53705d30"
+                    },
+                    {
+                      "id": "ebef9c76-7d6b-4eb2-8d32-1f4011181d7a",
+                      "name": "Unprocessable entity - required information was missing or invalid",
+                      "originalRequest": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customfield",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customfield"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:05:42.000Z",
+                      "updatedAt": "2026-07-28T02:05:42.000Z",
+                      "uid": "35240-ebef9c76-7d6b-4eb2-8d32-1f4011181d7a"
+                    },
+                    {
+                      "id": "383ec754-b97d-4d8d-a555-bb710fe44731",
+                      "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                      "originalRequest": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customfield",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customfield"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "HTTP-date after which the client may retry",
+                            "type": "text/plain"
+                          },
+                          "key": "Retry-After",
+                          "value": "<string>"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:05:42.000Z",
+                      "updatedAt": "2026-07-28T02:05:42.000Z",
+                      "uid": "35240-383ec754-b97d-4d8d-a555-bb710fe44731"
+                    },
+                    {
+                      "id": "d640ba76-cdf8-4dfc-8fe7-8d6520eea481",
+                      "name": "Server error on the AgilePlace side",
+                      "originalRequest": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/board/:boardId/customfield",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "board",
+                            ":boardId",
+                            "customfield"
+                          ],
+                          "variable": [
+                            {
+                              "key": "boardId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:05:42.000Z",
+                      "updatedAt": "2026-07-28T02:05:42.000Z",
+                      "uid": "35240-d640ba76-cdf8-4dfc-8fe7-8d6520eea481"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:05:42.000Z",
+                  "updatedAt": "2026-07-28T02:05:42.000Z",
+                  "uid": "35240-389be77f-93b0-426f-b67a-1e33aa85b7cf"
+                }
+              ],
+              "id": "c8c8255f-3abf-4f3e-940d-ffec3c407434",
+              "createdAt": "2026-07-28T02:05:42.000Z",
+              "updatedAt": "2026-07-28T02:05:42.000Z",
+              "uid": "35240-c8c8255f-3abf-4f3e-940d-ffec3c407434"
+            }
+          ],
+          "id": "0bbedf09-fdac-4755-b54c-e99ed75b7d0f",
+          "createdAt": "2026-07-28T02:05:42.000Z",
+          "updatedAt": "2026-07-28T02:05:42.000Z",
+          "uid": "35240-0bbedf09-fdac-4755-b54c-e99ed75b7d0f"
+        }
+      ],
+      "id": "d81e9997-696f-470d-9033-aa7d0f20a405",
+      "createdAt": "2026-07-28T02:05:42.000Z",
+      "updatedAt": "2026-07-28T02:05:42.000Z",
+      "uid": "35240-d81e9997-696f-470d-9033-aa7d0f20a405"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "account",
+      "value": "myaccount"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{account}}.leankit.com/io"
+    }
+  ]
+}

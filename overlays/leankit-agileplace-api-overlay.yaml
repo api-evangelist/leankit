@@ -1,0 +1,96 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the Planview AgilePlace (LeanKit) v2 API
+  version: 1.0.0
+  x-generated: '2026-07-19'
+  x-method: generated
+  x-source: openapi/leankit-agileplace-api-openapi.yml
+  x-description: >-
+    Applies API Evangelist catalog enrichment to the transcribed AgilePlace v2 OpenAPI without mutating
+    it. Every value below is grounded in Planview's published documentation — the core concepts page, the
+    rate limiting page, the card automation webhooks page, and the product release notes.
+extends: ../openapi/leankit-agileplace-api-openapi.yml
+actions:
+- target: $.info
+  update:
+    x-apis-io:
+      aid: leankit:agileplace-api
+      provider: LeanKit (Planview AgilePlace)
+      catalog: https://raw.githubusercontent.com/api-evangelist/leankit/refs/heads/main/apis.yml
+    x-artifacts:
+      conventions: conventions/leankit-conventions.yml
+      errors: errors/leankit-problem-types.yml
+      lifecycle: lifecycle/leankit-lifecycle.yml
+      authentication: authentication/leankit-authentication.yml
+      webhooks: asyncapi/leankit-automation-webhooks.yml
+      data_model: data-model/leankit-data-model.yml
+      packages: packages/leankit-packages.yml
+      skills: skills/_index.yml
+    x-status-page: https://status.planview.com/
+    x-change-log: https://success.planview.com/Planview_AgilePlace/Product_Releases
+    x-legacy-api:
+      path_prefix: /kanban/api
+      status: deprecated
+      note: >-
+        "Our legacy API has been marked for deprecation. We do not suggest using the legacy endpoints
+        unless you need functionality that does not exist in the current version."
+- target: $.info
+  update:
+    x-rate-limit:
+      model: points per rolling 60-second window
+      default_cost_per_request: 1
+      scope: per authenticated user, shared across all tokens and auth methods
+      headers:
+      - X-RateLimit-Limit
+      - X-RateLimit-Remaining
+      - X-RateLimit-Reset
+      - Retry-After
+      status_on_exhaustion: 429
+      docs: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+    x-pagination:
+      style: offset-limit
+      params:
+      - limit
+      - offset
+      envelope: pageMeta
+      fields:
+      - totalRecords
+      - offset
+      - limit
+      - startRow
+      - endRow
+    x-idempotency:
+      supported: false
+      note: No idempotency key is documented for any write operation.
+    x-method-override:
+      header: X-HTTP-Method-Override
+      note: POST may stand in for PUT, PATCH, or DELETE when the client stack cannot issue them.
+    x-date-format:
+      standard: ISO 8601
+      timezone: UTC
+      example: '2019-12-24T13:29:31Z'
+- target: $.components.securitySchemes.bearerToken
+  update:
+    x-token-endpoint: POST /io/auth/token
+    x-token-expiry: none
+    x-token-management-ui: My API Tokens tab in the AgilePlace user profile
+    x-guidance: The token value is shown only once at creation. Revoke tokens that are not in active use.
+- target: $.paths['/card'].get
+  update:
+    x-incremental-sync:
+      param: since
+      guidance: >-
+        Planview directs integrations to pull only cards changed since the last fetch using `since`,
+        instead of polling full card contents, to stay inside the rate limit.
+- target: $.paths['/card/{cardId}/automation/customevent'].post
+  update:
+    x-triggers-webhooks: true
+    x-webhook-catalog: asyncapi/leankit-automation-webhooks.yml
+    x-note: >-
+      Raising a named custom event runs any automation listening for that event, including Web service call
+      automations that POST a signed payload to an external URL.
+- target: $.paths['/board/{boardId}/automation/customevent'].post
+  update:
+    x-triggers-webhooks: true
+    x-webhook-catalog: asyncapi/leankit-automation-webhooks.yml
+    x-scope: board-level; runs against every card matching the automation criteria

@@ -1,0 +1,110 @@
+generated: '2026-07-19'
+method: searched
+source: live probes of /.well-known/ on every LeanKit / Planview AgilePlace host in apis.yml
+type: WellKnown
+name: LeanKit / Planview AgilePlace well-known endpoints
+notes: >-
+  Probed security.txt, openid-configuration, oauth-authorization-server, api-catalog, and ai-plugin.json
+  on each host. login.leankit.com returns HTTP 200 with the same single-page-application HTML shell for
+  every path, so its 200s are recorded as false positives and no file was saved. myaccount.leankit.com is
+  the per-account application/API host and answers 403 "Access denied" to unauthenticated well-known
+  requests. The only real security.txt found is served on the documentation host and belongs to NICE, the
+  vendor operating the Planview Customer Success Center — it is not a Planview-operated vulnerability
+  disclosure program, and no first-party Planview VDP, HackerOne, or Bugcrowd program was found.
+endpoints:
+- host: success.planview.com
+  path: /.well-known/security.txt
+  status: 200
+  file: leankit-security.txt
+  type: SecurityTxt
+  operator: NICE (documentation platform vendor)
+  first_party: false
+  contact: mailto:ExpertSecurity@nice.com
+  policy: https://expert-help.nice.com/Admin/Contact/Disclosure
+- host: trust.planview.com
+  path: /.well-known/openid-configuration
+  status: 200
+  file: leankit-trust-openid-configuration.json
+  operator: SafeBase (trust-center platform vendor)
+  first_party: false
+  issuer: https://app.safebase.io/api/mcp
+  notes: OAuth authorization server metadata for the SafeBase trust-center MCP server, not for the AgilePlace API.
+- host: trust.planview.com
+  path: /.well-known/oauth-authorization-server
+  status: 200
+  file: leankit-trust-oauth-authorization-server.json
+  operator: SafeBase (trust-center platform vendor)
+  first_party: false
+  notes: Byte-identical to the openid-configuration document on the same host.
+- host: www.planview.com
+  path: /.well-known/security.txt
+  status: 404
+- host: www.planview.com
+  path: /.well-known/openid-configuration
+  status: 404
+- host: www.planview.com
+  path: /.well-known/oauth-authorization-server
+  status: 404
+- host: www.planview.com
+  path: /.well-known/api-catalog
+  status: 404
+- host: www.planview.com
+  path: /.well-known/ai-plugin.json
+  status: 404
+- host: success.planview.com
+  path: /.well-known/openid-configuration
+  status: 404
+- host: success.planview.com
+  path: /.well-known/oauth-authorization-server
+  status: 404
+- host: success.planview.com
+  path: /.well-known/api-catalog
+  status: 404
+- host: success.planview.com
+  path: /.well-known/ai-plugin.json
+  status: 404
+- host: trust.planview.com
+  path: /.well-known/security.txt
+  status: 404
+- host: trust.planview.com
+  path: /.well-known/api-catalog
+  status: 404
+- host: trust.planview.com
+  path: /.well-known/ai-plugin.json
+  status: 404
+- host: myaccount.leankit.com
+  path: /.well-known/security.txt
+  status: 403
+- host: myaccount.leankit.com
+  path: /.well-known/openid-configuration
+  status: 403
+- host: myaccount.leankit.com
+  path: /.well-known/oauth-authorization-server
+  status: 403
+- host: myaccount.leankit.com
+  path: /.well-known/api-catalog
+  status: 403
+- host: myaccount.leankit.com
+  path: /.well-known/ai-plugin.json
+  status: 403
+- host: login.leankit.com
+  path: /.well-known/security.txt
+  status: 200
+  false_positive: true
+  notes: SPA shell returned for every path on this host; no artifact saved.
+- host: login.leankit.com
+  path: /.well-known/openid-configuration
+  status: 200
+  false_positive: true
+- host: login.leankit.com
+  path: /.well-known/oauth-authorization-server
+  status: 200
+  false_positive: true
+- host: login.leankit.com
+  path: /.well-known/api-catalog
+  status: 200
+  false_positive: true
+- host: login.leankit.com
+  path: /.well-known/ai-plugin.json
+  status: 200
+  false_positive: true

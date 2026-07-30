@@ -1,0 +1,131 @@
+generated: '2026-07-19'
+method: searched
+source: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+type: Conventions
+name: LeanKit / Planview AgilePlace API cross-cutting conventions
+docs:
+- https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+- https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+- https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/time-zones
+transport:
+  protocol: https
+  base_url_template: https://{account}.leankit.com/io/
+  media_type: application/json
+  request_content_type: application/json
+  accept_header: application/json
+  notes: >-
+    All APIs use HTTPS and are based at https://<yourhostname>.leankit.com/io/. For POST, PATCH, PUT, and
+    DELETE requests, parameters not carried in the URL are encoded as JSON with Content-Type:
+    application/json. An Accept: application/json header should be sent unless a page says otherwise.
+authentication:
+  style: http
+  schemes:
+  - basic
+  - bearer
+  token_endpoint: POST /io/auth/token
+  token_expiry: none
+  notes: >-
+    Basic authentication uses a base64-encoded AgilePlace email and password. Bearer tokens are created
+    with a Basic-authenticated POST to /io/auth/token, or from the "My API Tokens" tab in the AgilePlace
+    user profile; the token value is displayed only once. Tokens have no expiration date and the docs
+    advise regularly revoking tokens that are not in active use. The rate limit is per authenticated
+    user and shared across all of that user's tokens and authentication methods.
+  see_also: authentication/leankit-authentication.yml
+idempotency:
+  supported: false
+  notes: >-
+    No idempotency key header, retry-safe POST semantics, or replay window is documented anywhere in the
+    AgilePlace API reference. Recorded as absent — this is a real gap, not an omission of this pipeline.
+method_override:
+  supported: true
+  header: X-HTTP-Method-Override
+  notes: >-
+    Clients whose stack cannot issue PUT, PATCH, or DELETE may send a POST with X-HTTP-Method-Override
+    set to the intended method.
+pagination:
+  style: offset-limit
+  request_params:
+  - name: limit
+    description: Number of records to return.
+  - name: offset
+    description: Number of records to skip before returning results.
+  response_envelope: pageMeta
+  response_fields:
+  - totalRecords
+  - offset
+  - limit
+  - startRow
+  - endRow
+  notes: Many, but not all, list endpoints support paging. Page metadata reports the total record count.
+incremental_sync:
+  supported: true
+  param: since
+  endpoint: GET /io/card
+  notes: >-
+    The rate-limiting guidance directs integrations to pull changes with the `since` parameter on the card
+    list endpoint rather than polling full card contents.
+field_selection:
+  supported: partial
+  params:
+  - name: returnFullRecord
+    type: boolean
+    default: false
+    description: >-
+      On card create, returns the full card record instead of the minimal response. Documented per
+      endpoint rather than as a global sparse-fieldset or expansion convention.
+metadata:
+  custom_fields: true
+  notes: >-
+    Boards carry user-defined custom fields (GET/PATCH /io/board/{boardId}/customfield) that are returned
+    on cards both as a customFields array and as a customFieldsByLabel map in automation payloads. Cards
+    also carry externalCardId and externalLink for correlating with outside systems.
+request_tracing:
+  request_id_header: none documented
+dates_and_time:
+  format: ISO 8601
+  timezone: UTC
+  example: '2019-12-24T13:29:31Z'
+  notes: Per-user date display format is configurable (mm/dd/yyyy, dd/mm/yyyy, yyyy/mm/dd) via the SCIM extension.
+versioning:
+  scheme: path-prefixed major surfaces
+  current: /io (v2)
+  legacy: /kanban/api (v1, marked for deprecation)
+  preview_flag: >-
+    New endpoints with a higher chance of change are labeled with a 'preview' flag in the reference.
+  see_also: lifecycle/leankit-lifecycle.yml
+errors:
+  envelope: application/json
+  format: none (not RFC 9457 problem+json)
+  notes: >-
+    HTTP status codes carry success and failure. 2xx indicates success; 4xx indicates the caller supplied
+    something incorrect (the docs give 422 for a missing required list of card ids); 5xx indicates a
+    server-side problem. No standard machine-readable error envelope or error-code registry is published.
+  see_also: errors/leankit-problem-types.yml
+rate_limiting:
+  model: points per rolling window
+  window_seconds: 60
+  window_start: first request
+  unit: points
+  default_cost: 1
+  notes: >-
+    Limits are per authenticated user and shared across all of that user's tokens and authentication
+    methods. Most requests cost 1 point; computationally expensive routes cost more. Planview explicitly
+    reserves the right to adjust rates and instructs clients to read the response headers rather than
+    hard-code a rate. Hitting the API limit does not block the user's web interface.
+  headers:
+  - name: X-RateLimit-Limit
+    description: Total points available in the current 60-second window.
+  - name: X-RateLimit-Remaining
+    description: Points remaining in the current window.
+  - name: X-RateLimit-Reset
+    description: Unix timestamp marking the end of the current window.
+  - name: Retry-After
+    description: HTTP-date, returned only on 429 Too Many Requests, before which the client must not retry.
+  status_on_exhaustion: 429
+  guidance:
+  - Limit the number of requests executed in parallel.
+  - Cache resolved identifiers (for example lane IDs looked up by label) instead of re-fetching them.
+  - Pull changes with the `since` parameter on the card list endpoint instead of polling full card state.
+  - Handle 429 by waiting for Retry-After or X-RateLimit-Reset before retrying.
+webhooks:
+  see_also: asyncapi/leankit-automation-webhooks.yml

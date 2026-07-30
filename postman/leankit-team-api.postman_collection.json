@@ -1,0 +1,4766 @@
+{
+  "info": {
+    "_postman_id": "c78a6eb3-c0b8-4ea0-a442-fa66151b3087",
+    "name": "Planview AgilePlace API (LeanKit) v2 account team API",
+    "description": "RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference \u2014 no endpoints invented.\n\nContact Support:\n Name: Planview AgilePlace Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:06:28.000Z",
+    "updatedAt": "2026-07-28T02:06:29.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-c78a6eb3-c0b8-4ea0-a442-fa66151b3087"
+  },
+  "item": [
+    {
+      "name": "team",
+      "item": [
+        {
+          "name": "{teamId}",
+          "item": [
+            {
+              "name": "board",
+              "item": [
+                {
+                  "name": "Get a list of all boards the team has been assigned to either directly or inherited via nested teams",
+                  "id": "3717db16-76d0-475e-8756-aac12f65305f",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId/board",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId",
+                        "board"
+                      ],
+                      "variable": [
+                        {
+                          "id": "9865facd-0d70-4023-a476-0b3a5947d616",
+                          "key": "teamId",
+                          "value": "<string>",
+                          "description": "(Required) teamId identifier"
+                        }
+                      ]
+                    },
+                    "description": "Get a list of all boards the team has been assigned to either directly or inherited via nested teams. Query Params"
+                  },
+                  "response": [
+                    {
+                      "id": "a10ffa98-2293-4d79-a771-149db6e557e9",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/board",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "board"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-a10ffa98-2293-4d79-a771-149db6e557e9"
+                    },
+                    {
+                      "id": "21d265e2-3b68-4fde-9d97-be4632cc35ad",
+                      "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/board",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "board"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-21d265e2-3b68-4fde-9d97-be4632cc35ad"
+                    },
+                    {
+                      "id": "49a7741c-9cf2-4508-a6dd-d54ea7899260",
+                      "name": "Forbidden - authenticated user lacks permission",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/board",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "board"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-49a7741c-9cf2-4508-a6dd-d54ea7899260"
+                    },
+                    {
+                      "id": "8cbe715d-f1ec-4837-af02-dff37db5a953",
+                      "name": "Not found",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/board",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "board"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-8cbe715d-f1ec-4837-af02-dff37db5a953"
+                    },
+                    {
+                      "id": "4d0c0bbb-ead4-41df-91c3-35776d3af960",
+                      "name": "Unprocessable entity - required information was missing or invalid",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/board",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "board"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-4d0c0bbb-ead4-41df-91c3-35776d3af960"
+                    },
+                    {
+                      "id": "e7345a7c-db94-406c-ba9c-f1236a0e636a",
+                      "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/board",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "board"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "HTTP-date after which the client may retry",
+                            "type": "text/plain"
+                          },
+                          "key": "Retry-After",
+                          "value": "<string>"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-e7345a7c-db94-406c-ba9c-f1236a0e636a"
+                    },
+                    {
+                      "id": "5831a7b9-5c98-4d0d-8131-1659bbdd2ea5",
+                      "name": "Server error on the AgilePlace side",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/board",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "board"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-5831a7b9-5c98-4d0d-8131-1659bbdd2ea5"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-3717db16-76d0-475e-8756-aac12f65305f"
+                }
+              ],
+              "id": "15738ed0-d2f3-4221-9a49-80ef14893d7c",
+              "createdAt": "2026-07-28T02:06:29.000Z",
+              "updatedAt": "2026-07-28T02:06:29.000Z",
+              "uid": "35240-15738ed0-d2f3-4221-9a49-80ef14893d7c"
+            },
+            {
+              "name": "subteam",
+              "item": [
+                {
+                  "name": "Add subteams to a team",
+                  "id": "2249502b-8473-4a87-83e3-51a798d1a2d6",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId/subteam",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId",
+                        "subteam"
+                      ],
+                      "variable": [
+                        {
+                          "id": "6e7903fb-b5d4-48cb-86db-d4c617093bfc",
+                          "key": "teamId",
+                          "value": "<string>",
+                          "description": "(Required) teamId identifier"
+                        }
+                      ]
+                    },
+                    "description": "Add subteams to a team. All subteams and its members (subteams and users) are granted the same privileges assigned to the team. Requires authentication as account administrator or team manager who created the team."
+                  },
+                  "response": [
+                    {
+                      "id": "79e53cb4-d62f-4b41-a889-009d30bc8384",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/subteam",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "subteam"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-79e53cb4-d62f-4b41-a889-009d30bc8384"
+                    },
+                    {
+                      "id": "85a4ad97-50ba-472d-9a83-6d40684d17f6",
+                      "name": "Created",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/subteam",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "subteam"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-85a4ad97-50ba-472d-9a83-6d40684d17f6"
+                    },
+                    {
+                      "id": "7beb35b8-990c-450b-83bb-672d03fbbfff",
+                      "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/subteam",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "subteam"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-7beb35b8-990c-450b-83bb-672d03fbbfff"
+                    },
+                    {
+                      "id": "76d1554e-aad5-4fbb-b7df-737d5e9df533",
+                      "name": "Forbidden - authenticated user lacks permission",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/subteam",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "subteam"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-76d1554e-aad5-4fbb-b7df-737d5e9df533"
+                    },
+                    {
+                      "id": "04e5b981-786a-4e0f-9ec1-557ab8fa7c64",
+                      "name": "Not found",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/subteam",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "subteam"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-04e5b981-786a-4e0f-9ec1-557ab8fa7c64"
+                    },
+                    {
+                      "id": "08244459-b4af-4fde-a5d3-d2ccada4fb16",
+                      "name": "Unprocessable entity - required information was missing or invalid",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/subteam",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "subteam"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-08244459-b4af-4fde-a5d3-d2ccada4fb16"
+                    },
+                    {
+                      "id": "ad71076c-b1d7-4c74-8543-de375f6f863a",
+                      "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/subteam",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "subteam"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "HTTP-date after which the client may retry",
+                            "type": "text/plain"
+                          },
+                          "key": "Retry-After",
+                          "value": "<string>"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-ad71076c-b1d7-4c74-8543-de375f6f863a"
+                    },
+                    {
+                      "id": "8d89d804-1918-47fc-bb7c-591e106cd66a",
+                      "name": "Server error on the AgilePlace side",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/subteam",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "subteam"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-8d89d804-1918-47fc-bb7c-591e106cd66a"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-2249502b-8473-4a87-83e3-51a798d1a2d6"
+                },
+                {
+                  "name": "Get a list of subteams assigned directly to the team",
+                  "id": "2d2e83a7-6e0c-41ee-8a35-38d9ad2f7b4b",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId/subteam",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId",
+                        "subteam"
+                      ],
+                      "variable": [
+                        {
+                          "id": "ce8feb47-4247-4247-9735-272e263e7571",
+                          "key": "teamId",
+                          "value": "<string>",
+                          "description": "(Required) teamId identifier"
+                        }
+                      ]
+                    },
+                    "description": "Get a list of subteams assigned directly to the team. Query Params"
+                  },
+                  "response": [
+                    {
+                      "id": "ca6cc42e-d580-4ee7-a2b6-f70747b33ab4",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/subteam",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "subteam"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-ca6cc42e-d580-4ee7-a2b6-f70747b33ab4"
+                    },
+                    {
+                      "id": "5362ed13-859d-49f4-a370-da96007ef993",
+                      "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/subteam",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "subteam"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-5362ed13-859d-49f4-a370-da96007ef993"
+                    },
+                    {
+                      "id": "fab81967-45c0-470a-bab6-592315a1a2c1",
+                      "name": "Forbidden - authenticated user lacks permission",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/subteam",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "subteam"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-fab81967-45c0-470a-bab6-592315a1a2c1"
+                    },
+                    {
+                      "id": "2b940822-e566-401f-b49c-170c1e5a3353",
+                      "name": "Not found",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/subteam",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "subteam"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-2b940822-e566-401f-b49c-170c1e5a3353"
+                    },
+                    {
+                      "id": "565fb6c5-d5bc-4ba9-842b-c6c3ae3541ef",
+                      "name": "Unprocessable entity - required information was missing or invalid",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/subteam",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "subteam"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-565fb6c5-d5bc-4ba9-842b-c6c3ae3541ef"
+                    },
+                    {
+                      "id": "c98b5029-7967-475f-a251-367757e0d0df",
+                      "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/subteam",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "subteam"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "HTTP-date after which the client may retry",
+                            "type": "text/plain"
+                          },
+                          "key": "Retry-After",
+                          "value": "<string>"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-c98b5029-7967-475f-a251-367757e0d0df"
+                    },
+                    {
+                      "id": "b6d0acb0-2d91-4556-a073-abf671fe160b",
+                      "name": "Server error on the AgilePlace side",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/subteam",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "subteam"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-b6d0acb0-2d91-4556-a073-abf671fe160b"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-2d2e83a7-6e0c-41ee-8a35-38d9ad2f7b4b"
+                },
+                {
+                  "name": "Remove directly assigned subteams from a team",
+                  "id": "9c5f8d3b-eb60-4025-a667-cd6bb5a7b44d",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId/subteam",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId",
+                        "subteam"
+                      ],
+                      "variable": [
+                        {
+                          "id": "29267aa1-031f-4a65-b37b-19d27a52d90e",
+                          "key": "teamId",
+                          "value": "<string>",
+                          "description": "(Required) teamId identifier"
+                        }
+                      ]
+                    },
+                    "description": "Remove directly assigned subteams from a team. Any permissions granted to the subteams and their members through membership in the parent team are removed. Requires authentication as account administrator or team manager who created the team."
+                  },
+                  "response": [
+                    {
+                      "id": "3ab0b7b0-4235-4887-90a5-9c27f3f8d03d",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/subteam",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "subteam"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-3ab0b7b0-4235-4887-90a5-9c27f3f8d03d"
+                    },
+                    {
+                      "id": "87a7ff93-2218-4b00-808a-e1b5f9468861",
+                      "name": "Deleted",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/subteam",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "subteam"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "No Content",
+                      "code": 204,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-87a7ff93-2218-4b00-808a-e1b5f9468861"
+                    },
+                    {
+                      "id": "8a5dc625-cfea-4176-ba7f-9effa8562189",
+                      "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/subteam",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "subteam"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-8a5dc625-cfea-4176-ba7f-9effa8562189"
+                    },
+                    {
+                      "id": "1492bb50-a524-4d68-8500-70b0c11ab834",
+                      "name": "Forbidden - authenticated user lacks permission",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/subteam",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "subteam"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-1492bb50-a524-4d68-8500-70b0c11ab834"
+                    },
+                    {
+                      "id": "03a6179d-b787-44a8-b564-95512f42c1b1",
+                      "name": "Not found",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/subteam",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "subteam"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-03a6179d-b787-44a8-b564-95512f42c1b1"
+                    },
+                    {
+                      "id": "ac28bd62-a92c-4651-8a36-fcea524dffd6",
+                      "name": "Unprocessable entity - required information was missing or invalid",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/subteam",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "subteam"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-ac28bd62-a92c-4651-8a36-fcea524dffd6"
+                    },
+                    {
+                      "id": "9668ce33-4590-44c1-9f02-3bb8312ba7f3",
+                      "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/subteam",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "subteam"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "HTTP-date after which the client may retry",
+                            "type": "text/plain"
+                          },
+                          "key": "Retry-After",
+                          "value": "<string>"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-9668ce33-4590-44c1-9f02-3bb8312ba7f3"
+                    },
+                    {
+                      "id": "de99a6e5-d591-4e01-b3c6-c4f1bb2ad608",
+                      "name": "Server error on the AgilePlace side",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/subteam",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "subteam"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-de99a6e5-d591-4e01-b3c6-c4f1bb2ad608"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-9c5f8d3b-eb60-4025-a667-cd6bb5a7b44d"
+                }
+              ],
+              "id": "3308767f-0421-4dac-bacc-e8f679ea52ca",
+              "createdAt": "2026-07-28T02:06:29.000Z",
+              "updatedAt": "2026-07-28T02:06:29.000Z",
+              "uid": "35240-3308767f-0421-4dac-bacc-e8f679ea52ca"
+            },
+            {
+              "name": "user",
+              "item": [
+                {
+                  "name": "Add users to a team",
+                  "id": "5b0a0fc1-04f4-4c9d-a2c3-2a20fff5bf89",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId/user",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId",
+                        "user"
+                      ],
+                      "variable": [
+                        {
+                          "id": "cbedae20-75ff-4bb0-ac63-7f25ca020780",
+                          "key": "teamId",
+                          "value": "<string>",
+                          "description": "(Required) teamId identifier"
+                        }
+                      ]
+                    },
+                    "description": "Add users to a team.  All users of a team are granted the same privileges assigned to the team. Requires authentication as account administrator or team manager who created the team."
+                  },
+                  "response": [
+                    {
+                      "id": "c6a0953d-6574-418e-a229-afbc8a25650a",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/user",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "user"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-c6a0953d-6574-418e-a229-afbc8a25650a"
+                    },
+                    {
+                      "id": "80805d3c-16aa-4a45-b4ae-8b35a40abe91",
+                      "name": "Created",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/user",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "user"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-80805d3c-16aa-4a45-b4ae-8b35a40abe91"
+                    },
+                    {
+                      "id": "77342af5-f83b-456e-a815-5992df592291",
+                      "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/user",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "user"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-77342af5-f83b-456e-a815-5992df592291"
+                    },
+                    {
+                      "id": "95e62d4e-5099-4ba9-8a50-556f8af42dff",
+                      "name": "Forbidden - authenticated user lacks permission",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/user",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "user"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-95e62d4e-5099-4ba9-8a50-556f8af42dff"
+                    },
+                    {
+                      "id": "1528f0d3-e385-41fc-924a-a0842fa38b3c",
+                      "name": "Not found",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/user",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "user"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-1528f0d3-e385-41fc-924a-a0842fa38b3c"
+                    },
+                    {
+                      "id": "82d7c923-f700-4fb9-86bd-6d9999a72406",
+                      "name": "Unprocessable entity - required information was missing or invalid",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/user",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "user"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-82d7c923-f700-4fb9-86bd-6d9999a72406"
+                    },
+                    {
+                      "id": "691679a3-46ae-4b97-af0c-c44b1a408152",
+                      "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/user",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "user"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "HTTP-date after which the client may retry",
+                            "type": "text/plain"
+                          },
+                          "key": "Retry-After",
+                          "value": "<string>"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-691679a3-46ae-4b97-af0c-c44b1a408152"
+                    },
+                    {
+                      "id": "53bc3550-a974-46c0-9ecf-4ff939fbfa09",
+                      "name": "Server error on the AgilePlace side",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/user",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "user"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-53bc3550-a974-46c0-9ecf-4ff939fbfa09"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-5b0a0fc1-04f4-4c9d-a2c3-2a20fff5bf89"
+                },
+                {
+                  "name": "Get a list of users assigned directly to the team - does not include users assigned to subteams",
+                  "id": "7868ee80-9123-48b4-8c90-7375755902f9",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId/user",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId",
+                        "user"
+                      ],
+                      "variable": [
+                        {
+                          "id": "fd2b7bda-fe76-479e-a382-a4553a7fbcb0",
+                          "key": "teamId",
+                          "value": "<string>",
+                          "description": "(Required) teamId identifier"
+                        }
+                      ]
+                    },
+                    "description": "Get a list of users assigned directly to the team - does not include users assigned to subteams. Query Params"
+                  },
+                  "response": [
+                    {
+                      "id": "42a7acf8-45c3-4d90-95c8-52737f71d936",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/user",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "user"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-42a7acf8-45c3-4d90-95c8-52737f71d936"
+                    },
+                    {
+                      "id": "8d1f4cf9-c8b6-428d-91a1-10f828d9acd6",
+                      "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/user",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "user"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-8d1f4cf9-c8b6-428d-91a1-10f828d9acd6"
+                    },
+                    {
+                      "id": "e2ca5161-6b05-47a5-879b-6bf562b94b73",
+                      "name": "Forbidden - authenticated user lacks permission",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/user",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "user"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-e2ca5161-6b05-47a5-879b-6bf562b94b73"
+                    },
+                    {
+                      "id": "37a8575b-4752-41ad-98c8-5c4c17693a91",
+                      "name": "Not found",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/user",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "user"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-37a8575b-4752-41ad-98c8-5c4c17693a91"
+                    },
+                    {
+                      "id": "159fdbfb-055f-4f22-80d1-02a29a827719",
+                      "name": "Unprocessable entity - required information was missing or invalid",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/user",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "user"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-159fdbfb-055f-4f22-80d1-02a29a827719"
+                    },
+                    {
+                      "id": "0e9a04f1-68ef-4f39-b3b8-4ba7f9561981",
+                      "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/user",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "user"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "HTTP-date after which the client may retry",
+                            "type": "text/plain"
+                          },
+                          "key": "Retry-After",
+                          "value": "<string>"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-0e9a04f1-68ef-4f39-b3b8-4ba7f9561981"
+                    },
+                    {
+                      "id": "50966f7d-8018-462d-adc8-222f0e79a0df",
+                      "name": "Server error on the AgilePlace side",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/user",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "user"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-50966f7d-8018-462d-adc8-222f0e79a0df"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-7868ee80-9123-48b4-8c90-7375755902f9"
+                },
+                {
+                  "name": "Remove users from a team",
+                  "id": "bfad565a-1c84-4171-b5d5-82dce25bc03b",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId/user",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId",
+                        "user"
+                      ],
+                      "variable": [
+                        {
+                          "id": "7006951e-2bd1-491d-888b-2a5bdd63fa6d",
+                          "key": "teamId",
+                          "value": "<string>",
+                          "description": "(Required) teamId identifier"
+                        }
+                      ]
+                    },
+                    "description": "Remove users from a team. This will only work with direct assignments, it will not remove a user that is part of the team via their assignment to a subteam. Any permissions granted to the user as a member of the team are removed. Requires authentication as account administrator or team manager who c"
+                  },
+                  "response": [
+                    {
+                      "id": "68bf6e52-76e2-43e8-b2d6-20fe23160c2b",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/user",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "user"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-68bf6e52-76e2-43e8-b2d6-20fe23160c2b"
+                    },
+                    {
+                      "id": "6f9cf925-fb74-4704-84d4-dc18470c5692",
+                      "name": "Deleted",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/user",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "user"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "No Content",
+                      "code": 204,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-6f9cf925-fb74-4704-84d4-dc18470c5692"
+                    },
+                    {
+                      "id": "d34a6b44-6e6e-4e81-ba08-99e054b1d1dd",
+                      "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/user",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "user"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-d34a6b44-6e6e-4e81-ba08-99e054b1d1dd"
+                    },
+                    {
+                      "id": "c98b91c2-3b04-48b9-8618-7c25532ac6e1",
+                      "name": "Forbidden - authenticated user lacks permission",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/user",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "user"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-c98b91c2-3b04-48b9-8618-7c25532ac6e1"
+                    },
+                    {
+                      "id": "56e4fe33-eb72-4efb-a2c0-c2165eb08f59",
+                      "name": "Not found",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/user",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "user"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-56e4fe33-eb72-4efb-a2c0-c2165eb08f59"
+                    },
+                    {
+                      "id": "3e3822ae-ba01-4ce9-a818-7934b2e58da8",
+                      "name": "Unprocessable entity - required information was missing or invalid",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/user",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "user"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-3e3822ae-ba01-4ce9-a818-7934b2e58da8"
+                    },
+                    {
+                      "id": "12cba851-6fcb-4383-9df0-c86d4a9c754d",
+                      "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/user",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "user"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "HTTP-date after which the client may retry",
+                            "type": "text/plain"
+                          },
+                          "key": "Retry-After",
+                          "value": "<string>"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-12cba851-6fcb-4383-9df0-c86d4a9c754d"
+                    },
+                    {
+                      "id": "5b427011-b969-474a-b047-3095f5ed2d23",
+                      "name": "Server error on the AgilePlace side",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/team/:teamId/user",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "team",
+                            ":teamId",
+                            "user"
+                          ],
+                          "variable": [
+                            {
+                              "key": "teamId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:06:29.000Z",
+                      "updatedAt": "2026-07-28T02:06:29.000Z",
+                      "uid": "35240-5b427011-b969-474a-b047-3095f5ed2d23"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-bfad565a-1c84-4171-b5d5-82dce25bc03b"
+                }
+              ],
+              "id": "24cce073-c722-4cf8-a178-f4463b4b5586",
+              "createdAt": "2026-07-28T02:06:29.000Z",
+              "updatedAt": "2026-07-28T02:06:29.000Z",
+              "uid": "35240-24cce073-c722-4cf8-a178-f4463b4b5586"
+            },
+            {
+              "name": "Delete a team",
+              "id": "fceca2b9-8dd7-4396-ae3e-bea91074dbd3",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/team/:teamId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "team",
+                    ":teamId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "37a424ea-8ce5-4038-9491-3e8ae9a2023d",
+                      "key": "teamId",
+                      "value": "<string>",
+                      "description": "(Required) teamId identifier"
+                    }
+                  ]
+                },
+                "description": "Delete a team. Teams and all associated data such as board memberships, user membership, and subteam relationships are permanantly deleted and cannot be recovered. Requires authentication as account administrator or team manager who created the team."
+              },
+              "response": [
+                {
+                  "id": "8448b066-9841-4260-a8c1-e3daf1856d67",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "teamId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-8448b066-9841-4260-a8c1-e3daf1856d67"
+                },
+                {
+                  "id": "754f53dc-19b9-4b30-b9e1-6cb746f81e06",
+                  "name": "Deleted",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "teamId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "No Content",
+                  "code": 204,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-754f53dc-19b9-4b30-b9e1-6cb746f81e06"
+                },
+                {
+                  "id": "8d28d525-7a10-4ded-a30b-7fe4b561ecdc",
+                  "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "teamId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-8d28d525-7a10-4ded-a30b-7fe4b561ecdc"
+                },
+                {
+                  "id": "71d6788d-3d6e-40e4-8fbb-5e22669cdd9a",
+                  "name": "Forbidden - authenticated user lacks permission",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "teamId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Forbidden",
+                  "code": 403,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-71d6788d-3d6e-40e4-8fbb-5e22669cdd9a"
+                },
+                {
+                  "id": "1f63004b-0b91-46ee-b9fb-d65955c3fb75",
+                  "name": "Not found",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "teamId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-1f63004b-0b91-46ee-b9fb-d65955c3fb75"
+                },
+                {
+                  "id": "805d2eaa-18d2-4b0e-962c-92f110c09e90",
+                  "name": "Unprocessable entity - required information was missing or invalid",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "teamId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                  "code": 422,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-805d2eaa-18d2-4b0e-962c-92f110c09e90"
+                },
+                {
+                  "id": "1b34242c-b476-4695-943a-2643ac6966b2",
+                  "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "teamId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Too Many Requests",
+                  "code": 429,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "HTTP-date after which the client may retry",
+                        "type": "text/plain"
+                      },
+                      "key": "Retry-After",
+                      "value": "<string>"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-1b34242c-b476-4695-943a-2643ac6966b2"
+                },
+                {
+                  "id": "2cdadc6d-5430-49c0-b080-b2ac12e5ff30",
+                  "name": "Server error on the AgilePlace side",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "teamId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-2cdadc6d-5430-49c0-b080-b2ac12e5ff30"
+                }
+              ],
+              "createdAt": "2026-07-28T02:06:29.000Z",
+              "updatedAt": "2026-07-28T02:06:29.000Z",
+              "uid": "35240-fceca2b9-8dd7-4396-ae3e-bea91074dbd3"
+            },
+            {
+              "name": "Get a team",
+              "id": "950b3090-f0ef-4cb5-aa18-f207251f17f8",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/team/:teamId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "team",
+                    ":teamId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "2c2d2da1-eb46-4f9d-826d-66dc56974b7b",
+                      "key": "teamId",
+                      "value": "<string>",
+                      "description": "(Required) teamId identifier"
+                    }
+                  ]
+                },
+                "description": "Get a team. Example Request"
+              },
+              "response": [
+                {
+                  "id": "aea739ae-aacf-402a-a735-4519b0a306c7",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "teamId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-aea739ae-aacf-402a-a735-4519b0a306c7"
+                },
+                {
+                  "id": "fe4a71f4-1cf4-44b9-ad72-8d398c36a78c",
+                  "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "teamId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-fe4a71f4-1cf4-44b9-ad72-8d398c36a78c"
+                },
+                {
+                  "id": "5f4eb337-e267-47f7-9c86-fa0b92865b7c",
+                  "name": "Forbidden - authenticated user lacks permission",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "teamId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Forbidden",
+                  "code": 403,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-5f4eb337-e267-47f7-9c86-fa0b92865b7c"
+                },
+                {
+                  "id": "da4d33f7-4944-4377-b8fe-e8bdd683fa2a",
+                  "name": "Not found",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "teamId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-da4d33f7-4944-4377-b8fe-e8bdd683fa2a"
+                },
+                {
+                  "id": "2fb42127-baab-49cc-9e13-191128a5d416",
+                  "name": "Unprocessable entity - required information was missing or invalid",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "teamId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                  "code": 422,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-2fb42127-baab-49cc-9e13-191128a5d416"
+                },
+                {
+                  "id": "b4733f47-944c-40d1-aa79-922d71ed244b",
+                  "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "teamId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Too Many Requests",
+                  "code": 429,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "HTTP-date after which the client may retry",
+                        "type": "text/plain"
+                      },
+                      "key": "Retry-After",
+                      "value": "<string>"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-b4733f47-944c-40d1-aa79-922d71ed244b"
+                },
+                {
+                  "id": "e86cd8ad-84a9-447b-9c10-8eb183e19e6a",
+                  "name": "Server error on the AgilePlace side",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "teamId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-e86cd8ad-84a9-447b-9c10-8eb183e19e6a"
+                }
+              ],
+              "createdAt": "2026-07-28T02:06:29.000Z",
+              "updatedAt": "2026-07-28T02:06:29.000Z",
+              "uid": "35240-950b3090-f0ef-4cb5-aa18-f207251f17f8"
+            },
+            {
+              "name": "Update a team",
+              "id": "dfc468c1-4682-4ce7-b6a7-bf35603d19c6",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/team/:teamId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "team",
+                    ":teamId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "55f1ee97-f384-4b22-8758-d07a0a8bf058",
+                      "key": "teamId",
+                      "value": "<string>",
+                      "description": "(Required) teamId identifier"
+                    }
+                  ]
+                },
+                "description": "Update a team. The team title, the team description and the enabled status can be updated. Requires authentication as account administrator or team manager who created the team."
+              },
+              "response": [
+                {
+                  "id": "9595f48e-ace4-439d-adb7-de697bbf2f4c",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "teamId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-9595f48e-ace4-439d-adb7-de697bbf2f4c"
+                },
+                {
+                  "id": "c991485d-fe18-4cd3-bf98-1bf01cf26cca",
+                  "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "teamId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-c991485d-fe18-4cd3-bf98-1bf01cf26cca"
+                },
+                {
+                  "id": "9f90f2fa-a486-46ca-8b5d-cf165bfe52d0",
+                  "name": "Forbidden - authenticated user lacks permission",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "teamId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Forbidden",
+                  "code": 403,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-9f90f2fa-a486-46ca-8b5d-cf165bfe52d0"
+                },
+                {
+                  "id": "2201f088-7d86-43b3-a17a-feb04009b7e2",
+                  "name": "Not found",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "teamId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-2201f088-7d86-43b3-a17a-feb04009b7e2"
+                },
+                {
+                  "id": "c6976125-758e-4bd5-8f8a-e2e80111bcc7",
+                  "name": "Unprocessable entity - required information was missing or invalid",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "teamId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                  "code": 422,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-c6976125-758e-4bd5-8f8a-e2e80111bcc7"
+                },
+                {
+                  "id": "12926d85-19d6-48e7-b8ee-3e2390b8ecd8",
+                  "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "teamId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Too Many Requests",
+                  "code": 429,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "HTTP-date after which the client may retry",
+                        "type": "text/plain"
+                      },
+                      "key": "Retry-After",
+                      "value": "<string>"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-12926d85-19d6-48e7-b8ee-3e2390b8ecd8"
+                },
+                {
+                  "id": "e96f6255-4291-4402-9225-f600d2fd05e0",
+                  "name": "Server error on the AgilePlace side",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/team/:teamId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "team",
+                        ":teamId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "teamId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:06:29.000Z",
+                  "updatedAt": "2026-07-28T02:06:29.000Z",
+                  "uid": "35240-e96f6255-4291-4402-9225-f600d2fd05e0"
+                }
+              ],
+              "createdAt": "2026-07-28T02:06:29.000Z",
+              "updatedAt": "2026-07-28T02:06:29.000Z",
+              "uid": "35240-dfc468c1-4682-4ce7-b6a7-bf35603d19c6"
+            }
+          ],
+          "id": "bf2e22c0-b711-4c48-bc3f-baa48cfa2e4d",
+          "createdAt": "2026-07-28T02:06:29.000Z",
+          "updatedAt": "2026-07-28T02:06:29.000Z",
+          "uid": "35240-bf2e22c0-b711-4c48-bc3f-baa48cfa2e4d"
+        },
+        {
+          "name": "Create a team",
+          "id": "e08feb2f-a33b-46e4-9818-f2dbdb1e6570",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/team",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "team"
+              ]
+            },
+            "description": "Create a team. Teams are enabled by default. Teams are not associated with any other teams, boards, or users when created. You must add parent teams, subteams, users and boards to the team after it is created. Requires authentication as account administrator or team manager."
+          },
+          "response": [
+            {
+              "id": "803c31de-23d9-4f6a-8e4f-ca116f3d9873",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/team",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "team"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T02:06:29.000Z",
+              "updatedAt": "2026-07-28T02:06:29.000Z",
+              "uid": "35240-803c31de-23d9-4f6a-8e4f-ca116f3d9873"
+            },
+            {
+              "id": "8a0a1ee1-9b99-4e59-b2e5-404d1006b8b3",
+              "name": "Created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/team",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "team"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T02:06:29.000Z",
+              "updatedAt": "2026-07-28T02:06:29.000Z",
+              "uid": "35240-8a0a1ee1-9b99-4e59-b2e5-404d1006b8b3"
+            },
+            {
+              "id": "890e1410-18bd-4046-8875-a3364f1cf048",
+              "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/team",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "team"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:06:29.000Z",
+              "updatedAt": "2026-07-28T02:06:29.000Z",
+              "uid": "35240-890e1410-18bd-4046-8875-a3364f1cf048"
+            },
+            {
+              "id": "9966125b-d17b-4536-aff0-8ede9b58bc4c",
+              "name": "Forbidden - authenticated user lacks permission",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/team",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "team"
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:06:29.000Z",
+              "updatedAt": "2026-07-28T02:06:29.000Z",
+              "uid": "35240-9966125b-d17b-4536-aff0-8ede9b58bc4c"
+            },
+            {
+              "id": "58887799-d497-470a-8da1-1c950d732723",
+              "name": "Not found",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/team",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "team"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:06:29.000Z",
+              "updatedAt": "2026-07-28T02:06:29.000Z",
+              "uid": "35240-58887799-d497-470a-8da1-1c950d732723"
+            },
+            {
+              "id": "0d920e5c-1423-4be8-9b78-fa4b83526117",
+              "name": "Unprocessable entity - required information was missing or invalid",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/team",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "team"
+                  ]
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:06:29.000Z",
+              "updatedAt": "2026-07-28T02:06:29.000Z",
+              "uid": "35240-0d920e5c-1423-4be8-9b78-fa4b83526117"
+            },
+            {
+              "id": "8ac6781d-d6b0-4b14-a6af-36b8fb8974ca",
+              "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/team",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "team"
+                  ]
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "HTTP-date after which the client may retry",
+                    "type": "text/plain"
+                  },
+                  "key": "Retry-After",
+                  "value": "<string>"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:06:29.000Z",
+              "updatedAt": "2026-07-28T02:06:29.000Z",
+              "uid": "35240-8ac6781d-d6b0-4b14-a6af-36b8fb8974ca"
+            },
+            {
+              "id": "d7f992f6-92b7-4950-bacd-0819ce15bc22",
+              "name": "Server error on the AgilePlace side",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/team",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "team"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:06:29.000Z",
+              "updatedAt": "2026-07-28T02:06:29.000Z",
+              "uid": "35240-d7f992f6-92b7-4950-bacd-0819ce15bc22"
+            }
+          ],
+          "createdAt": "2026-07-28T02:06:29.000Z",
+          "updatedAt": "2026-07-28T02:06:29.000Z",
+          "uid": "35240-e08feb2f-a33b-46e4-9818-f2dbdb1e6570"
+        },
+        {
+          "name": "Get a list of all teams for the organization",
+          "id": "e4d83112-3a32-4fc9-97be-73545da50d33",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/team",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "team"
+              ]
+            },
+            "description": "Get a list of all teams for the organization. Query Params"
+          },
+          "response": [
+            {
+              "id": "4a304e7d-d3f7-4044-9d0a-9dd8c497688a",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/team",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "team"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T02:06:29.000Z",
+              "updatedAt": "2026-07-28T02:06:29.000Z",
+              "uid": "35240-4a304e7d-d3f7-4044-9d0a-9dd8c497688a"
+            },
+            {
+              "id": "17a73ba4-fb50-46f1-81cd-35c394f031b0",
+              "name": "Unauthorized - missing or invalid Basic/Bearer credentials",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/team",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "team"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:06:29.000Z",
+              "updatedAt": "2026-07-28T02:06:29.000Z",
+              "uid": "35240-17a73ba4-fb50-46f1-81cd-35c394f031b0"
+            },
+            {
+              "id": "a5feebae-da25-4524-ac90-86a2ee03d578",
+              "name": "Forbidden - authenticated user lacks permission",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/team",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "team"
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:06:29.000Z",
+              "updatedAt": "2026-07-28T02:06:29.000Z",
+              "uid": "35240-a5feebae-da25-4524-ac90-86a2ee03d578"
+            },
+            {
+              "id": "9fab2092-db86-4753-9d12-11c20603e047",
+              "name": "Not found",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/team",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "team"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:06:29.000Z",
+              "updatedAt": "2026-07-28T02:06:29.000Z",
+              "uid": "35240-9fab2092-db86-4753-9d12-11c20603e047"
+            },
+            {
+              "id": "8d0d95ba-2ce0-4e66-9461-6623a1b69dca",
+              "name": "Unprocessable entity - required information was missing or invalid",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/team",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "team"
+                  ]
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:06:29.000Z",
+              "updatedAt": "2026-07-28T02:06:29.000Z",
+              "uid": "35240-8d0d95ba-2ce0-4e66-9461-6623a1b69dca"
+            },
+            {
+              "id": "9cae14f5-28b0-438e-9598-30eb5d77d095",
+              "name": "Too Many Requests - rate limit exceeded; see Retry-After and X-RateLimit-Reset headers",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/team",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "team"
+                  ]
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "HTTP-date after which the client may retry",
+                    "type": "text/plain"
+                  },
+                  "key": "Retry-After",
+                  "value": "<string>"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:06:29.000Z",
+              "updatedAt": "2026-07-28T02:06:29.000Z",
+              "uid": "35240-9cae14f5-28b0-438e-9598-30eb5d77d095"
+            },
+            {
+              "id": "a07a367f-45b5-46ef-b659-c871e5859c09",
+              "name": "Server error on the AgilePlace side",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/team",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "team"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:06:29.000Z",
+              "updatedAt": "2026-07-28T02:06:29.000Z",
+              "uid": "35240-a07a367f-45b5-46ef-b659-c871e5859c09"
+            }
+          ],
+          "createdAt": "2026-07-28T02:06:29.000Z",
+          "updatedAt": "2026-07-28T02:06:29.000Z",
+          "uid": "35240-e4d83112-3a32-4fc9-97be-73545da50d33"
+        }
+      ],
+      "id": "e45402b5-61bf-404c-befe-012b03e3cdac",
+      "createdAt": "2026-07-28T02:06:29.000Z",
+      "updatedAt": "2026-07-28T02:06:29.000Z",
+      "uid": "35240-e45402b5-61bf-404c-befe-012b03e3cdac"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "account",
+      "value": "myaccount"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{account}}.leankit.com/io"
+    }
+  ]
+}

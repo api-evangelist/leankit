@@ -1,0 +1,129 @@
+generated: '2026-07-19'
+method: searched
+source: https://success.planview.com/Planview_AgilePlace/Cards/Card_Automation/Webhooks
+type: Webhooks
+name: LeanKit / Planview AgilePlace card automation webhooks
+asyncapi_published: false
+notes: >-
+  LeanKit / Planview AgilePlace does not publish an AsyncAPI document. It does publish a real outbound
+  webhook surface: the "Web service call" card-automation action, which POSTs a contextual payload to a
+  caller-supplied URL whenever a board automation fires. There is no subscription API — webhooks are
+  configured per automation in board settings, not over the REST API. Card and board custom events can be
+  raised programmatically through POST /io/card/{cardId}/automation/customevent and
+  POST /io/board/{boardId}/automation/customevent, which lets an integration trigger a webhook-bearing
+  automation from code. A separate first-party polling module (npm leankit-events) exists for consumers
+  that want board events without configuring automations.
+docs:
+- https://success.planview.com/Planview_AgilePlace/Cards/Card_Automation/Webhooks
+- https://success.planview.com/Planview_AgilePlace/Cards/Card_Automation/Custom_Events
+- https://success.planview.com/Planview_AgilePlace/Cards/Card_Automation/GitHub_Actions
+delivery:
+  method: POST
+  target: URL configured on the automation
+  content_types:
+  - application/json
+  - application/x-www-form-urlencoded
+  retries: not documented
+security:
+  signature_header: x-lk-signature
+  algorithm: HMAC-SHA256
+  encoding: hex
+  signed_over: the exact raw request body bytes as sent
+  optional: true
+  notes: >-
+    The signature is only present when a secret is configured on the automation. Verify by recomputing the
+    HMAC over the raw body with the shared secret and comparing in constant time. Planview publishes a
+    Node.js verification example using crypto.createHmac and crypto.timingSafeEqual.
+payload:
+  fields:
+  - name: automation.id
+    description: Identifier of the automation that fired.
+  - name: automation.description
+    description: Human description of the automation.
+  - name: host
+    description: The AgilePlace account host URL, e.g. https://mycompany.leankit.com
+  - name: boardId
+    description: Board identifier.
+  - name: cardId
+    description: Card identifier.
+  - name: laneId
+    description: Lane identifier relevant to the event.
+  - name: cardUrl
+    description: Direct link to the card.
+  - name: event
+    description: Name of the event that triggered the automation.
+  - name: eventData
+    description: Event-specific details; the fields present vary by event.
+  - name: eventDate
+    description: ISO 8601 timestamp of the event.
+events:
+- name: movedTo
+  description: Card moved into a lane.
+  event_data:
+  - movedFromLaneId
+- name: movedFrom
+  description: Card moved out of a lane.
+  event_data:
+  - movedFromLaneId
+- name: blocked
+  description: Card was blocked.
+  event_data:
+  - reason
+- name: unblocked
+  description: Card was unblocked.
+  event_data:
+  - reason
+- name: childConnectionAdded
+  description: A child connection was added to the card.
+  event_data:
+  - childCardId
+  - parentCardId
+- name: childConnectionRemoved
+  description: A child connection was removed from the card.
+  event_data:
+  - childCardId
+  - parentCardId
+- name: parentConnectionAdded
+  description: A parent connection was added to the card.
+  event_data:
+  - childCardId
+  - parentCardId
+- name: parentConnectionRemoved
+  description: A parent connection was removed from the card.
+  event_data:
+  - childCardId
+  - parentCardId
+- name: childBlocked
+  description: A child card of this card was blocked.
+  event_data:
+  - childBlockReason
+custom_events:
+  supported: true
+  levels:
+  - card
+  - board
+  description: >-
+    Named custom events extend automations beyond the built-in triggers. A card-level custom event fires
+    against a single card; a board-level custom event ("Allow Board Event") runs against every card meeting
+    the criteria. Custom events are raised by name and consumed by a second automation configured with
+    "Custom Event" as its trigger.
+  api_operations:
+  - POST /io/card/{cardId}/automation/customevent
+  - POST /io/board/{boardId}/automation/customevent
+github_actions_dispatch:
+  supported: true
+  description: >-
+    The "Trigger GitHub Action" automation sends a repository_dispatch to a configured owner/repository
+    with a fixed event_type, delivering the automation, card (including customFields and
+    customFieldsByLabel), event, eventData, eventDate, and host as client_payload.
+  auth: GitHub Personal Access Token stored on the automation and never returned to the client.
+  token_scopes:
+  - workflow (classic token)
+  - Contents Read and Write (fine-grained token)
+polling_alternative:
+  package: leankit-events
+  registry: npm
+  url: https://github.com/LeanKit/leankit-node-events
+  description: >-
+    First-party Node module that polls a board version and emits events such as card-creation, card moves,
+    assignment, and blocking. Default poll interval is 30 seconds.

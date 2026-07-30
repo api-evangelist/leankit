@@ -1,0 +1,97 @@
+generated: '2026-07-19'
+method: searched
+source: https://success.planview.com/Planview_AgilePlace/AgilePlace_API, https://trust.planview.com/
+type: Conformance
+name: LeanKit / Planview AgilePlace standards conformance
+standards:
+- id: scim
+  version: '1.1'
+  conforms: true
+  evidence: >-
+    "The AgilePlace User Provisioning API is a REST API for user management based on the System for
+    Cross-Domain Identity Management (SCIM) 1.1 specification." Exposes /Users, /Users/:id, and
+    /ServiceProviderConfigs at https://{account}.leankit.com/io/scim/v1, with a documented
+    urn:scim:schemas:extension:leankit:user:1.0 extension schema and named compatibility with Okta,
+    OneLogin, and Ping Identity.
+  source: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+  caveat: >-
+    SCIM 1.1, not SCIM 2.0 (RFC 7643/7644). ServiceProviderConfigs reports patch:false, bulk:false,
+    changePassword:false, etag:false; filter and sort are supported with maxResults 200.
+- id: odata
+  conforms: true
+  evidence: >-
+    AgilePlace reporting data is documented as accessible over OData for Power BI Desktop.
+  source: https://success.planview.com/Planview_AgilePlace/Reporting/Advanced_Reporting/050_Accessing_LeanKit_data_with_Power_BI_Desktop_using_OData
+- id: pagination
+  conforms: true
+  evidence: >-
+    Offset/limit paging documented across list endpoints with a pageMeta envelope carrying totalRecords,
+    offset, limit, startRow, and endRow.
+  source: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+- id: iso8601
+  conforms: true
+  evidence: 'Dates in the API use UTC and are strings in the ISO 8601 format: 2019-12-24T13:29:31Z.'
+  source: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+- id: rfc6585-rate-limiting
+  conforms: true
+  evidence: >-
+    429 Too Many Requests with a Retry-After header formatted as an HTTP-date, plus X-RateLimit-Limit,
+    X-RateLimit-Remaining, and X-RateLimit-Reset on every response.
+  source: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+- id: hmac-webhook-signing
+  conforms: true
+  evidence: >-
+    Web service call automations sign the request body with a SHA-256 HMAC over the raw body using a
+    caller-supplied secret and deliver the hex digest in the x-lk-signature header.
+  source: https://success.planview.com/Planview_AgilePlace/Cards/Card_Automation/Webhooks
+- id: rfc9457
+  conforms: false
+  evidence: >-
+    No application/problem+json media type, no problem type registry, and no documented error envelope.
+    Errors are conveyed by HTTP status code only.
+  source: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+- id: oauth2
+  conforms: false
+  evidence: >-
+    The API supports only HTTP Basic and long-lived opaque Bearer API tokens. No authorization endpoint,
+    token grant flows, scopes, or consent surface are documented for the AgilePlace API. The
+    /.well-known/oauth-authorization-server document served on trust.planview.com belongs to SafeBase, the
+    trust-center platform vendor, not to AgilePlace.
+  source: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+- id: oidc
+  conforms: false
+  evidence: No OpenID Connect discovery document is published for the AgilePlace API or login host.
+- id: idempotency
+  conforms: false
+  evidence: No idempotency key header or retry-safe write semantics documented.
+- id: asyncapi
+  conforms: false
+  evidence: >-
+    Webhooks are documented in prose (Web service call automation) but no AsyncAPI document is published.
+- id: json-api
+  conforms: false
+  evidence: Plain JSON resources; no JSON:API media type or document structure.
+- id: fhir
+  conforms: false
+  evidence: Not a healthcare API.
+- id: fapi
+  conforms: false
+  evidence: Not a financial-grade API.
+- id: psd2
+  conforms: false
+  evidence: Not a payments API.
+compliance_programs:
+  source: https://trust.planview.com/
+  method: searched
+  certifications:
+  - SOC 2
+  - ISO/IEC 27001
+  - ISO/IEC 27701
+  - CSA STAR
+  - GDPR
+  not_claimed:
+  - HIPAA
+  - FedRAMP
+  - PCI DSS
+  - TISAX
+  see_also: security/leankit-trust-center.yml
