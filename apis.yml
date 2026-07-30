@@ -1,25 +1,656 @@
 aid: leankit
 name: LeanKit
-description: LeanKit is a company surfaced as a portfolio company of insight-partners and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: LeanKit is the enterprise Kanban platform now shipped by Planview as Planview AgilePlace,
+  used to visually track and manage the flow of work from strategy to delivery across boards, lanes,
+  cards, taskboards, and connected parent/child hierarchies. LeanKit exposes a documented RESTful v2
+  API at https://<yourhostname>.leankit.com/io/ covering boards, cards, lanes, comments, attachments,
+  card types, custom fields, custom icons, tags, teams, users, board filters, connections, dependencies,
+  planning series and increments, and board automations, plus a SCIM 1.1 User Provisioning API and an
+  Advanced Reporting export API. Authentication is Basic or Bearer API token, responses are JSON, list
+  endpoints page with limit/offset, and every response carries X-RateLimit-* headers. LeanKit was
+  acquired by Planview in 2017 and the product was renamed Planview AgilePlace; the leankit.com host
+  remains the per-account API and application domain.
 url: https://raw.githubusercontent.com/api-evangelist/leankit/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.planview.com/wp-content/uploads/2023/06/planview-logo.svg
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - insight-partners
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: enriched
+x-tier-reason: full-api-surface-published
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-apis: []
+- Kanban
+- Project Management
+- Agile
+- Work Management
+- Collaboration
+- Enterprise Software
+- Portfolio Management
+- Workflow Automation
+- SaaS
+apis:
+- aid: leankit:advanced-reporting-api
+  name: Planview AgilePlace Advanced Reporting API
+  description: >-
+    Bulk export API for LeanKit / Planview AgilePlace reporting data — cards, card lane positions, blocked
+    card history, comments, connections, lanes, tags, and user assignments — consumed from Excel, Power
+    BI (including OData), and Tableau web data connectors. Data is not real-time and may be up to 24 hours
+    old.
+  humanURL: https://success.planview.com/Planview_AgilePlace/Reporting/Advanced_Reporting
+  baseURL: https://myaccount.leankit.com/io/reporting
+  x-baseURL-template: https://{account}.leankit.com/io/reporting
+  tags:
+  - Reporting
+  - Analytics
+  - Data Export
+  properties:
+  - type: Documentation
+    url: https://success.planview.com/Planview_AgilePlace/Reporting/Advanced_Reporting
+  - type: GettingStarted
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/Reporting/Advanced_Reporting/015Advanced_Reporting_API%3A_Getting_Started
+- aid: leankit:leankit-account-api
+  name: LeanKit account API
+  description: The account API from LeanKit — 1 operation(s) for account.
+  humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  baseURL: https://myaccount.leankit.com/io
+  tags:
+  - account
+  properties:
+  - type: OpenAPI
+    url: openapi/leankit-account-api-openapi.yml
+  - type: Documentation
+    url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  - type: APIReference
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+  - type: RateLimits
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+  - type: Documentation
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+- aid: leankit:leankit-attachment-api
+  name: LeanKit attachment API
+  description: The attachment API from LeanKit — 3 operation(s) for attachment.
+  humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  baseURL: https://myaccount.leankit.com/io
+  tags:
+  - attachment
+  properties:
+  - type: OpenAPI
+    url: openapi/leankit-attachment-api-openapi.yml
+  - type: Documentation
+    url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  - type: APIReference
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+  - type: RateLimits
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+  - type: Documentation
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+- aid: leankit:leankit-automation-api
+  name: LeanKit automation API
+  description: The automation API from LeanKit — 5 operation(s) for automation.
+  humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  baseURL: https://myaccount.leankit.com/io
+  tags:
+  - automation
+  properties:
+  - type: OpenAPI
+    url: openapi/leankit-automation-api-openapi.yml
+  - type: Documentation
+    url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  - type: APIReference
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+  - type: RateLimits
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+  - type: Documentation
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+- aid: leankit:leankit-board-api
+  name: LeanKit board API
+  description: The board API from LeanKit — 15 operation(s) for board.
+  humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  baseURL: https://myaccount.leankit.com/io
+  tags:
+  - board
+  properties:
+  - type: OpenAPI
+    url: openapi/leankit-board-api-openapi.yml
+  - type: Documentation
+    url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  - type: APIReference
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+  - type: RateLimits
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+  - type: Documentation
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+- aid: leankit:leankit-board-filter-api
+  name: LeanKit board-filter API
+  description: The board-filter API from LeanKit — 2 operation(s) for board-filter.
+  humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  baseURL: https://myaccount.leankit.com/io
+  tags:
+  - board-filter
+  properties:
+  - type: OpenAPI
+    url: openapi/leankit-board-filter-api-openapi.yml
+  - type: Documentation
+    url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  - type: APIReference
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+  - type: RateLimits
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+  - type: Documentation
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+- aid: leankit:leankit-board-level-api
+  name: LeanKit board-level API
+  description: The board-level API from LeanKit — 1 operation(s) for board-level.
+  humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  baseURL: https://myaccount.leankit.com/io
+  tags:
+  - board-level
+  properties:
+  - type: OpenAPI
+    url: openapi/leankit-board-level-api-openapi.yml
+  - type: Documentation
+    url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  - type: APIReference
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+  - type: RateLimits
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+  - type: Documentation
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+- aid: leankit:leankit-board-template-api
+  name: LeanKit board-template API
+  description: The board-template API from LeanKit — 2 operation(s) for board-template.
+  humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  baseURL: https://myaccount.leankit.com/io
+  tags:
+  - board-template
+  properties:
+  - type: OpenAPI
+    url: openapi/leankit-board-template-api-openapi.yml
+  - type: Documentation
+    url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  - type: APIReference
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+  - type: RateLimits
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+  - type: Documentation
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+- aid: leankit:leankit-card-api
+  name: LeanKit card API
+  description: The card API from LeanKit — 8 operation(s) for card.
+  humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  baseURL: https://myaccount.leankit.com/io
+  tags:
+  - card
+  properties:
+  - type: OpenAPI
+    url: openapi/leankit-card-api-openapi.yml
+  - type: Documentation
+    url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  - type: APIReference
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+  - type: RateLimits
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+  - type: Documentation
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+- aid: leankit:leankit-card-scoring-api
+  name: LeanKit card-scoring API
+  description: The card-scoring API from LeanKit — 1 operation(s) for card-scoring.
+  humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  baseURL: https://myaccount.leankit.com/io
+  tags:
+  - card-scoring
+  properties:
+  - type: OpenAPI
+    url: openapi/leankit-card-scoring-api-openapi.yml
+  - type: Documentation
+    url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  - type: APIReference
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+  - type: RateLimits
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+  - type: Documentation
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+- aid: leankit:leankit-card-type-api
+  name: LeanKit card-type API
+  description: The card-type API from LeanKit — 2 operation(s) for card-type.
+  humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  baseURL: https://myaccount.leankit.com/io
+  tags:
+  - card-type
+  properties:
+  - type: OpenAPI
+    url: openapi/leankit-card-type-api-openapi.yml
+  - type: Documentation
+    url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  - type: APIReference
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+  - type: RateLimits
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+  - type: Documentation
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+- aid: leankit:leankit-comment-api
+  name: LeanKit comment API
+  description: The comment API from LeanKit — 2 operation(s) for comment.
+  humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  baseURL: https://myaccount.leankit.com/io
+  tags:
+  - comment
+  properties:
+  - type: OpenAPI
+    url: openapi/leankit-comment-api-openapi.yml
+  - type: Documentation
+    url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  - type: APIReference
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+  - type: RateLimits
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+  - type: Documentation
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+- aid: leankit:leankit-config-api
+  name: LeanKit config API
+  description: The config API from LeanKit — 1 operation(s) for config.
+  humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  baseURL: https://myaccount.leankit.com/io
+  tags:
+  - config
+  properties:
+  - type: OpenAPI
+    url: openapi/leankit-config-api-openapi.yml
+  - type: Documentation
+    url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  - type: APIReference
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+  - type: RateLimits
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+  - type: Documentation
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+- aid: leankit:leankit-connections-api
+  name: LeanKit connections API
+  description: The connections API from LeanKit — 8 operation(s) for connections.
+  humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  baseURL: https://myaccount.leankit.com/io
+  tags:
+  - connections
+  properties:
+  - type: OpenAPI
+    url: openapi/leankit-connections-api-openapi.yml
+  - type: Documentation
+    url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  - type: APIReference
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+  - type: RateLimits
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+  - type: Documentation
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+- aid: leankit:leankit-custom-field-api
+  name: LeanKit custom-field API
+  description: The custom-field API from LeanKit — 1 operation(s) for custom-field.
+  humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  baseURL: https://myaccount.leankit.com/io
+  tags:
+  - custom-field
+  properties:
+  - type: OpenAPI
+    url: openapi/leankit-custom-field-api-openapi.yml
+  - type: Documentation
+    url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  - type: APIReference
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+  - type: RateLimits
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+  - type: Documentation
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+- aid: leankit:leankit-custom-icon-api
+  name: LeanKit custom-icon API
+  description: The custom-icon API from LeanKit — 2 operation(s) for custom-icon.
+  humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  baseURL: https://myaccount.leankit.com/io
+  tags:
+  - custom-icon
+  properties:
+  - type: OpenAPI
+    url: openapi/leankit-custom-icon-api-openapi.yml
+  - type: Documentation
+    url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  - type: APIReference
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+  - type: RateLimits
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+  - type: Documentation
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+- aid: leankit:leankit-dependencies-api
+  name: LeanKit dependencies API
+  description: The dependencies API from LeanKit — 2 operation(s) for dependencies.
+  humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  baseURL: https://myaccount.leankit.com/io
+  tags:
+  - dependencies
+  properties:
+  - type: OpenAPI
+    url: openapi/leankit-dependencies-api-openapi.yml
+  - type: Documentation
+    url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  - type: APIReference
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+  - type: RateLimits
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+  - type: Documentation
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+- aid: leankit:leankit-lane-api
+  name: LeanKit lane API
+  description: The lane API from LeanKit — 1 operation(s) for lane.
+  humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  baseURL: https://myaccount.leankit.com/io
+  tags:
+  - lane
+  properties:
+  - type: OpenAPI
+    url: openapi/leankit-lane-api-openapi.yml
+  - type: Documentation
+    url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  - type: APIReference
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+  - type: RateLimits
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+  - type: Documentation
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+- aid: leankit:leankit-planning-series-api
+  name: LeanKit planning-series API
+  description: The planning-series API from LeanKit — 6 operation(s) for planning-series.
+  humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  baseURL: https://myaccount.leankit.com/io
+  tags:
+  - planning-series
+  properties:
+  - type: OpenAPI
+    url: openapi/leankit-planning-series-api-openapi.yml
+  - type: Documentation
+    url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  - type: APIReference
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+  - type: RateLimits
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+  - type: Documentation
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+- aid: leankit:leankit-tags-api
+  name: LeanKit tags API
+  description: The tags API from LeanKit — 2 operation(s) for tags.
+  humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  baseURL: https://myaccount.leankit.com/io
+  tags:
+  - tags
+  properties:
+  - type: OpenAPI
+    url: openapi/leankit-tags-api-openapi.yml
+  - type: Documentation
+    url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  - type: APIReference
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+  - type: RateLimits
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+  - type: Documentation
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+- aid: leankit:leankit-team-api
+  name: LeanKit team API
+  description: The team API from LeanKit — 5 operation(s) for team.
+  humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  baseURL: https://myaccount.leankit.com/io
+  tags:
+  - team
+  properties:
+  - type: OpenAPI
+    url: openapi/leankit-team-api-openapi.yml
+  - type: Documentation
+    url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  - type: APIReference
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+  - type: RateLimits
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+  - type: Documentation
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+- aid: leankit:leankit-token-auth-api
+  name: LeanKit token-auth API
+  description: The token-auth API from LeanKit — 2 operation(s) for token-auth.
+  humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  baseURL: https://myaccount.leankit.com/io
+  tags:
+  - token-auth
+  properties:
+  - type: OpenAPI
+    url: openapi/leankit-token-auth-api-openapi.yml
+  - type: Documentation
+    url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  - type: APIReference
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+  - type: RateLimits
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+  - type: Documentation
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+- aid: leankit:leankit-user-api
+  name: LeanKit user API
+  description: The user API from LeanKit — 6 operation(s) for user.
+  humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  baseURL: https://myaccount.leankit.com/io
+  tags:
+  - user
+  properties:
+  - type: OpenAPI
+    url: openapi/leankit-user-api-openapi.yml
+  - type: Documentation
+    url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  - type: APIReference
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+  - type: RateLimits
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+  - type: Documentation
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+- aid: leankit:leankit-user-invitation-api
+  name: LeanKit user-invitation API
+  description: The user-invitation API from LeanKit — 2 operation(s) for user-invitation.
+  humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  baseURL: https://myaccount.leankit.com/io
+  tags:
+  - user-invitation
+  properties:
+  - type: OpenAPI
+    url: openapi/leankit-user-invitation-api-openapi.yml
+  - type: Documentation
+    url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  - type: APIReference
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+  - type: RateLimits
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+  - type: Documentation
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
+- aid: leankit:leankit-users-api
+  name: LeanKit users API
+  description: The users API from LeanKit — 2 operation(s) for users.
+  humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  baseURL: https://myaccount.leankit.com/io
+  tags:
+  - users
+  properties:
+  - type: OpenAPI
+    url: openapi/leankit-users-api-openapi.yml
+  - type: Documentation
+    url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+  - type: APIReference
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/core-concepts
+  - type: RateLimits
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/01-overview/rate-limiting
+  - type: Documentation
+    url: >-
+      https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/leankit/overview
+- type: TrustCenter
+  url: security/leankit-trust-center.yml
 - type: Website
-  url: http://leankit.com/
+  url: https://www.planview.com/products-solutions/products/agileplace/
+- type: DeveloperPortal
+  url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API
+- type: Documentation
+  url: https://success.planview.com/Planview_AgilePlace
+- type: APIReference
+  url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
+- type: GettingStarted
+  url: https://success.planview.com/Planview_AgilePlace/Getting_Started
+- type: Support
+  url: https://success.planview.com/Planview_AgilePlace/Support
+- type: Blog
+  url: https://blog.planview.com/
+- type: GitHubOrganization
+  url: https://github.com/LeanKit
+- type: Pricing
+  url: https://www.planview.com/products-solutions/products/agileplace/agileplace-pricing/
+- type: SignUp
+  url: https://www.planview.com/products-solutions/products/agileplace/get-agileplace/
+- type: Login
+  url: https://login.leankit.com/
+- type: TermsOfService
+  url: https://www.planview.com/legal/legal-terms/
+- type: PrivacyPolicy
+  url: https://www.planview.com/trust/privacy/statement/
+- type: StatusPage
+  url: https://status.planview.com/
+- type: TrustCenter
+  url: https://trust.planview.com/
+- type: Compliance
+  url: conformance/leankit-conformance.yml
+- type: Integrations
+  url: https://www.planview.com/products-solutions/products/agileplace/integrations/
+- type: ChangeLog
+  url: https://success.planview.com/Planview_AgilePlace/Product_Releases
+- type: ChangeLog
+  url: changelog/leankit-changelog.yml
+- type: Packages
+  url: packages/leankit-packages.yml
+- type: SDKs
+  url: packages/leankit-packages.yml
+- type: WellKnown
+  url: well-known/leankit-well-known.yml
+- type: MCPServer
+  url: mcp/leankit-mcp.yml
+- type: LLMsTxt
+  url: llms/leankit-llms.txt
+- type: Conformance
+  url: conformance/leankit-conformance.yml
+- type: ErrorCatalog
+  url: errors/leankit-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/leankit-lifecycle.yml
+- type: Deprecation
+  url: lifecycle/leankit-lifecycle.yml
+- type: Authentication
+  url: authentication/leankit-authentication.yml
+- type: DomainSecurity
+  url: security/leankit-domain-security.yml
+- type: Conventions
+  url: conventions/leankit-conventions.yml
+- type: RateLimits
+  url: conventions/leankit-conventions.yml
+- type: Webhooks
+  url: asyncapi/leankit-automation-webhooks.yml
+- type: DataModel
+  url: data-model/leankit-data-model.yml
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
