@@ -575,6 +575,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Overlay
+  url: overlays/leankit-agileplace-api-overlay.yaml
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/leankit/overview
 - type: TrustCenter
