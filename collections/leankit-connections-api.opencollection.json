@@ -1,0 +1,193 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Planview AgilePlace API (LeanKit) v2 account connections API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "connections",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Connect cards to child or parent cards",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{account}.leankit.com/io/card/connections",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Connect cards to child or parent cards. Example Request"
+        },
+        {
+          "info": {
+            "name": "Delete one or more parent or child connections",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{account}.leankit.com/io/card/connections"
+          },
+          "docs": "Delete one or more parent or child connections. Example Request"
+        },
+        {
+          "info": {
+            "name": "Get a list of child board connections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/card/:cardId/connection",
+            "params": [
+              {
+                "name": "cardId",
+                "value": "",
+                "type": "path",
+                "description": "cardId identifier"
+              }
+            ]
+          },
+          "docs": "Get a list of child board connections. This is the unique set of child boards related to the parent card. Example Request"
+        },
+        {
+          "info": {
+            "name": "Get a list of child cards for a parent card",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/card/:cardId/connection/children",
+            "params": [
+              {
+                "name": "cardId",
+                "value": "",
+                "type": "path",
+                "description": "cardId identifier"
+              }
+            ]
+          },
+          "docs": "Get a list of child cards for a parent card. Query Params"
+        },
+        {
+          "info": {
+            "name": "Connect a parent card to one or more child cards",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{account}.leankit.com/io/card/:cardId/connection/many",
+            "params": [
+              {
+                "name": "cardId",
+                "value": "",
+                "type": "path",
+                "description": "cardId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Connect a parent card to one or more child cards. Note: This has been deprecated in favor of our"
+        },
+        {
+          "info": {
+            "name": "Get a list of parent board connections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/card/:cardId/connection/parent-boards",
+            "params": [
+              {
+                "name": "cardId",
+                "value": "",
+                "type": "path",
+                "description": "cardId identifier"
+              }
+            ]
+          },
+          "docs": "Get a list of parent board connections. This is the unique set of parent boards related to the parent card. Param"
+        },
+        {
+          "info": {
+            "name": "Get a list of parent cards for a child card",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/card/:cardId/connection/parents",
+            "params": [
+              {
+                "name": "cardId",
+                "value": "",
+                "type": "path",
+                "description": "cardId identifier"
+              }
+            ]
+          },
+          "docs": "Get a list of parent cards for a child card. Query Params"
+        },
+        {
+          "info": {
+            "name": "Delete every connection to child cards on the specified board",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{account}.leankit.com/io/card/:cardId/connection/:boardId",
+            "params": [
+              {
+                "name": "cardId",
+                "value": "",
+                "type": "path",
+                "description": "cardId identifier"
+              },
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ]
+          },
+          "docs": "Delete every connection to child cards on the specified board. Example Request"
+        },
+        {
+          "info": {
+            "name": "Get drill through statistics for child boards",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/card/:cardId/statistics",
+            "params": [
+              {
+                "name": "cardId",
+                "value": "",
+                "type": "path",
+                "description": "cardId identifier"
+              }
+            ]
+          },
+          "docs": "Get drill through statistics for child boards. Example Request"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

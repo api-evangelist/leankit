@@ -5,24 +5,22 @@ type: MCPServer
 name: LeanKit / Planview AgilePlace MCP candidate
 status: candidate
 official_server: none
-notes: >-
-  Searched the official Model Context Protocol registry (no results for leankit, agileplace, or planview),
+notes: Searched the official Model Context Protocol registry (no results for leankit, agileplace, or planview),
   the github.com/LeanKit and LeanKit-Labs organizations, npm, and the Planview AgilePlace documentation.
-  Planview publishes no hosted or remote MCP server for AgilePlace. The one MCP-related artifact found on
-  a Planview host is the SafeBase trust-center MCP advertised via
-  https://trust.planview.com/.well-known/oauth-authorization-server (issuer https://app.safebase.io/api/mcp) —
-  that belongs to the trust-center platform vendor and exposes security documentation, not the AgilePlace
-  API. The tool list below is a candidate derived from real operationIds in the transcribed OpenAPI; it is
-  a design proposal, not a shipped server.
+  Planview publishes no hosted or remote MCP server for AgilePlace. The one MCP-related artifact found
+  on a Planview host is the SafeBase trust-center MCP advertised via https://trust.planview.com/.well-known/oauth-authorization-server
+  (issuer https://app.safebase.io/api/mcp) — that belongs to the trust-center platform vendor and exposes
+  security documentation, not the AgilePlace API. The tool list below is a candidate derived from real
+  operationIds in the transcribed OpenAPI; it is a design proposal, not a shipped server.
 transport_candidate: stdio or streamable-http
 auth:
   scheme: bearer
   credential: AgilePlace API token (POST /io/auth/token, or the "My API Tokens" profile tab)
   host_variable: LEANKIT_DOMAIN, e.g. mycompany.leankit.com
   see_also: authentication/leankit-authentication.yml
-rate_limit_guidance: >-
-  Any MCP server fronting this API must honour X-RateLimit-Remaining / X-RateLimit-Reset and back off on
-  429 with Retry-After. Limits are per authenticated user and shared across all of that user's tokens.
+rate_limit_guidance: Any MCP server fronting this API must honour X-RateLimit-Remaining / X-RateLimit-Reset
+  and back off on 429 with Retry-After. Limits are per authenticated user and shared across all of that
+  user's tokens.
 candidate_tools:
 - name: list_boards
   operationId: boardList
@@ -164,7 +162,12 @@ candidate_tools:
   method: GET
   path: /io/series
   description: List planning series and their increments.
-write_operation_warning: >-
-  create_card, update_card, move_card, delete_card, add_card_comment, create_connection, and the custom
-  event tools mutate customer work-management state and the API documents no idempotency key. Any server
-  implementing them should require explicit confirmation and must not retry a failed write blindly.
+write_operation_warning: create_card, update_card, move_card, delete_card, add_card_comment, create_connection,
+  and the custom event tools mutate customer work-management state and the API documents no idempotency
+  key. Any server implementing them should require explicit confirmation and must not retry a failed write
+  blindly.
+deployment:
+  mode: none
+  verified: derived
+  checked: '2026-08-12'
+  source: catalog MCP census

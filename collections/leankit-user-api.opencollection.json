@@ -1,0 +1,182 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Planview AgilePlace API (LeanKit) v2 account user API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "user",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns a paginated list of users in an organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/user"
+          },
+          "docs": "Returns a paginated list of users in an organization. The list will have a maximum of 1000 results. Requires account administrator access."
+        },
+        {
+          "info": {
+            "name": "Creates a new user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{account}.leankit.com/io/user",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new user. Requires account administrator access."
+        },
+        {
+          "info": {
+            "name": "Returns data for the requesting user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/user/me"
+          },
+          "docs": "Returns data for the requesting user. Example Request"
+        },
+        {
+          "info": {
+            "name": "Update the requesting user",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{account}.leankit.com/io/user/me",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update the requesting user. Request Properties"
+        },
+        {
+          "info": {
+            "name": "Returns a list of the requesting user's favorite and most recently accessed boards",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/user/me/board/recent"
+          },
+          "docs": "Returns a list of the requesting user's favorite and most recently accessed boards. It will return alphabetically-sorted favorite boards first and then recently accessed boards ordered by access date. The list will have a maximum of 10 results. Example Request"
+        },
+        {
+          "info": {
+            "name": "Returns cards to which that the requesting user is either assigned or subscribed",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/user/me/card"
+          },
+          "docs": "Returns cards to which that the requesting user is either assigned or subscribed. Example Request"
+        },
+        {
+          "info": {
+            "name": "Returns data for a single user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/user/:userId",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path",
+                "description": "userId identifier"
+              }
+            ]
+          },
+          "docs": "Returns data for a single user. Requires account administrator access."
+        },
+        {
+          "info": {
+            "name": "Update an existing user",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{account}.leankit.com/io/user/:userId",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path",
+                "description": "userId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing user. Requires account administrator access."
+        },
+        {
+          "info": {
+            "name": "Delete a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{account}.leankit.com/io/user/:userId",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path",
+                "description": "userId identifier"
+              }
+            ]
+          },
+          "docs": "Delete a user. Requires account administrator access."
+        },
+        {
+          "info": {
+            "name": "Change a user's password",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{account}.leankit.com/io/user/:userId/password",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path",
+                "description": "userId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Change a user's password. Requires account administrator access."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

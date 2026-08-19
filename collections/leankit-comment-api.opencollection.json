@@ -1,0 +1,120 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Planview AgilePlace API (LeanKit) v2 account comment API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "comment",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of comments for a card",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/card/:cardId/comment",
+            "params": [
+              {
+                "name": "cardId",
+                "value": "",
+                "type": "path",
+                "description": "cardId identifier"
+              }
+            ]
+          },
+          "docs": "Get a list of comments for a card. Query Params"
+        },
+        {
+          "info": {
+            "name": "Create a comment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{account}.leankit.com/io/card/:cardId/comment",
+            "params": [
+              {
+                "name": "cardId",
+                "value": "",
+                "type": "path",
+                "description": "cardId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a comment. Example Request"
+        },
+        {
+          "info": {
+            "name": "Update a comment",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{account}.leankit.com/io/card/:cardId/comment/:commentId",
+            "params": [
+              {
+                "name": "cardId",
+                "value": "",
+                "type": "path",
+                "description": "cardId identifier"
+              },
+              {
+                "name": "commentId",
+                "value": "",
+                "type": "path",
+                "description": "commentId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a comment. Example Request"
+        },
+        {
+          "info": {
+            "name": "Delete a comment",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{account}.leankit.com/io/card/:cardId/comment/:commentId",
+            "params": [
+              {
+                "name": "cardId",
+                "value": "",
+                "type": "path",
+                "description": "cardId identifier"
+              },
+              {
+                "name": "commentId",
+                "value": "",
+                "type": "path",
+                "description": "commentId identifier"
+              }
+            ]
+          },
+          "docs": "Delete a comment. Example Request"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

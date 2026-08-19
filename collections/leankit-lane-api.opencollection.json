@@ -1,0 +1,53 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Planview AgilePlace API (LeanKit) v2 account lane API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "lane",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Update a lane",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{account}.leankit.com/io/board/:boardId/lane/:laneId",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              },
+              {
+                "name": "laneId",
+                "value": "",
+                "type": "path",
+                "description": "laneId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a lane. Requires authentication with at least board manager role on the board specified."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

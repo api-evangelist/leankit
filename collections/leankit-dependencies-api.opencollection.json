@@ -1,0 +1,84 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Planview AgilePlace API (LeanKit) v2 account dependencies API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "dependencies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create dependencies Request Properties",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{account}.leankit.com/io/card/dependency",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create dependencies Request Properties"
+        },
+        {
+          "info": {
+            "name": "Update dependencies Request Properties",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{account}.leankit.com/io/card/dependency",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update dependencies Request Properties"
+        },
+        {
+          "info": {
+            "name": "Delete dependencies Request Properties",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{account}.leankit.com/io/card/dependency"
+          },
+          "docs": "Delete dependencies Request Properties"
+        },
+        {
+          "info": {
+            "name": "Get a list of dependencies for a card Query Params",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/card/:cardId/dependency",
+            "params": [
+              {
+                "name": "cardId",
+                "value": "",
+                "type": "path",
+                "description": "cardId identifier"
+              }
+            ]
+          },
+          "docs": "Get a list of dependencies for a card Query Params"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

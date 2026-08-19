@@ -1,0 +1,66 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Planview AgilePlace API (LeanKit) v2 account custom-field API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "custom-field",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of custom fields on a board",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/board/:boardId/customfield",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ]
+          },
+          "docs": "Get a list of custom fields on a board. Example Request"
+        },
+        {
+          "info": {
+            "name": "Add, update, or remove custom fields on a board by providing an array of operations to perform",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{account}.leankit.com/io/board/:boardId/customfield",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add, update, or remove custom fields on a board by providing an array of operations to perform. Request Properties"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

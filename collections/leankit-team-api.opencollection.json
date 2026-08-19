@@ -1,0 +1,252 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Planview AgilePlace API (LeanKit) v2 account team API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "team",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of all teams for the organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/team"
+          },
+          "docs": "Get a list of all teams for the organization. Query Params"
+        },
+        {
+          "info": {
+            "name": "Create a team",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{account}.leankit.com/io/team",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a team. Teams are enabled by default. Teams are not associated with any other teams, boards, or users when created. You must add parent teams, subteams, users and boards to the team after it is created. Requires authentication as account administrator or team manager."
+        },
+        {
+          "info": {
+            "name": "Get a team",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/team/:teamId",
+            "params": [
+              {
+                "name": "teamId",
+                "value": "",
+                "type": "path",
+                "description": "teamId identifier"
+              }
+            ]
+          },
+          "docs": "Get a team. Example Request"
+        },
+        {
+          "info": {
+            "name": "Update a team",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{account}.leankit.com/io/team/:teamId",
+            "params": [
+              {
+                "name": "teamId",
+                "value": "",
+                "type": "path",
+                "description": "teamId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a team. The team title, the team description and the enabled status can be updated. Requires authentication as account administrator or team manager who created the team."
+        },
+        {
+          "info": {
+            "name": "Delete a team",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{account}.leankit.com/io/team/:teamId",
+            "params": [
+              {
+                "name": "teamId",
+                "value": "",
+                "type": "path",
+                "description": "teamId identifier"
+              }
+            ]
+          },
+          "docs": "Delete a team. Teams and all associated data such as board memberships, user membership, and subteam relationships are permanantly deleted and cannot be recovered. Requires authentication as account administrator or team manager who created the team."
+        },
+        {
+          "info": {
+            "name": "Get a list of all boards the team has been assigned to either directly or inherited via nested teams",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/team/:teamId/board",
+            "params": [
+              {
+                "name": "teamId",
+                "value": "",
+                "type": "path",
+                "description": "teamId identifier"
+              }
+            ]
+          },
+          "docs": "Get a list of all boards the team has been assigned to either directly or inherited via nested teams. Query Params"
+        },
+        {
+          "info": {
+            "name": "Get a list of subteams assigned directly to the team",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/team/:teamId/subteam",
+            "params": [
+              {
+                "name": "teamId",
+                "value": "",
+                "type": "path",
+                "description": "teamId identifier"
+              }
+            ]
+          },
+          "docs": "Get a list of subteams assigned directly to the team. Query Params"
+        },
+        {
+          "info": {
+            "name": "Add subteams to a team",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{account}.leankit.com/io/team/:teamId/subteam",
+            "params": [
+              {
+                "name": "teamId",
+                "value": "",
+                "type": "path",
+                "description": "teamId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add subteams to a team. All subteams and its members (subteams and users) are granted the same privileges assigned to the team. Requires authentication as account administrator or team manager who created the team."
+        },
+        {
+          "info": {
+            "name": "Remove directly assigned subteams from a team",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{account}.leankit.com/io/team/:teamId/subteam",
+            "params": [
+              {
+                "name": "teamId",
+                "value": "",
+                "type": "path",
+                "description": "teamId identifier"
+              }
+            ]
+          },
+          "docs": "Remove directly assigned subteams from a team. Any permissions granted to the subteams and their members through membership in the parent team are removed. Requires authentication as account administrator or team manager who created the team."
+        },
+        {
+          "info": {
+            "name": "Get a list of users assigned directly to the team - does not include users assigned to subteams",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/team/:teamId/user",
+            "params": [
+              {
+                "name": "teamId",
+                "value": "",
+                "type": "path",
+                "description": "teamId identifier"
+              }
+            ]
+          },
+          "docs": "Get a list of users assigned directly to the team - does not include users assigned to subteams. Query Params"
+        },
+        {
+          "info": {
+            "name": "Add users to a team",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{account}.leankit.com/io/team/:teamId/user",
+            "params": [
+              {
+                "name": "teamId",
+                "value": "",
+                "type": "path",
+                "description": "teamId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add users to a team.  All users of a team are granted the same privileges assigned to the team. Requires authentication as account administrator or team manager who created the team."
+        },
+        {
+          "info": {
+            "name": "Remove users from a team",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{account}.leankit.com/io/team/:teamId/user",
+            "params": [
+              {
+                "name": "teamId",
+                "value": "",
+                "type": "path",
+                "description": "teamId identifier"
+              }
+            ]
+          },
+          "docs": "Remove users from a team. This will only work with direct assignments, it will not remove a user that is part of the team via their assignment to a subteam. Any permissions granted to the user as a member of the team are removed. Requires authentication as account administrator or team manager who c"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

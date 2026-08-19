@@ -1,0 +1,381 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Planview AgilePlace API (LeanKit) v2 account board API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "board",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all boards",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/board"
+          },
+          "docs": "List all boards. Query Params"
+        },
+        {
+          "info": {
+            "name": "Create a new board",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{account}.leankit.com/io/board",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new board. Requires at least Board Creator account role."
+        },
+        {
+          "info": {
+            "name": "Bulk update board members and roles",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{account}.leankit.com/io/board/access",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Bulk update board members and roles. Warning: this endpoint can be destructive to user assignments and user subscriptions. If you reduce a user's role to"
+        },
+        {
+          "info": {
+            "name": "Bulk remove board members and roles",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{account}.leankit.com/io/board/access"
+          },
+          "docs": "Bulk remove board members and roles. Warning: this endpoint can be destructive to user subscriptions. If you remove a user's access to a board they will lose any of their subscriptions to changes on cards, lanes, and boards."
+        },
+        {
+          "info": {
+            "name": "Get the details of a board",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/board/:boardId",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ]
+          },
+          "docs": "Get the details of a board. Example Request"
+        },
+        {
+          "info": {
+            "name": "Update the settings of a board",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{account}.leankit.com/io/board/:boardId",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update the settings of a board. Requires at least Board Manager account role."
+        },
+        {
+          "info": {
+            "name": "Delete a board in your organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{account}.leankit.com/io/board/:boardId",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ]
+          },
+          "docs": "Delete a board in your organization. Requires the Account Administrator account role."
+        },
+        {
+          "info": {
+            "name": "Archive a board",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{account}.leankit.com/io/board/:boardId/archive",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Archive a board. Administrators will retain read-only access. Example Request"
+        },
+        {
+          "info": {
+            "name": "List top 50 assigned users on a board",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/board/:boardId/assignedUsers",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ]
+          },
+          "docs": "List top 50 assigned users on a board. Only assignments to cards on the board or recent archive are counted. If more than 50 users have assigned cards, those with the fewest assignments will be excluded. Return values are sorted first by assignment count, then by full name. Note: This has been depre"
+        },
+        {
+          "info": {
+            "name": "Get cards on a board",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/board/:boardId/card",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ]
+          },
+          "docs": "Get cards on a board. Note: This has been deprecated in favor of our"
+        },
+        {
+          "info": {
+            "name": "Download a board's history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/board/:boardId/export",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ]
+          },
+          "docs": "Download a board's history. This is used by the \"Export Board History\" option on the Board Settings menu. Note: \"Data\" is intentionally null for board exports."
+        },
+        {
+          "info": {
+            "name": "Get the count of cards in a board's lanes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/board/:boardId/laneCount",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ]
+          },
+          "docs": "Get the count of cards in a board's lanes. Query Params"
+        },
+        {
+          "info": {
+            "name": "Update a board's layout by replacing the entire layout object",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{account}.leankit.com/io/board/:boardId/layout",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a board's layout by replacing the entire layout object. Requires at least manager role on the board specified."
+        },
+        {
+          "info": {
+            "name": "Get details about the lanes on a board that can hold cards Example Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/board/:boardId/leafLanes",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ]
+          },
+          "docs": "Get details about the lanes on a board that can hold cards Example Request"
+        },
+        {
+          "info": {
+            "name": "Get parent cards on a board",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/board/:boardId/parent-card",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ]
+          },
+          "docs": "Get parent cards on a board. Query Params"
+        },
+        {
+          "info": {
+            "name": "Get card counts and sizes for planning increments on a board",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/board/:boardId/planningIncrementCardCount",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ]
+          },
+          "docs": "Get card counts and sizes for planning increments on a board. Returns counts per planning increment plus an unplanned"
+        },
+        {
+          "info": {
+            "name": "Create or update board roles for multiple users",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{account}.leankit.com/io/board/:boardId/roles",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create or update board roles for multiple users. Note: This has been deprecated in favor of our"
+        },
+        {
+          "info": {
+            "name": "Restore a board from the board archive",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{account}.leankit.com/io/board/:boardId/unarchive",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Restore a board from the board archive. Requires the Account Administrator account role."
+        },
+        {
+          "info": {
+            "name": "List board users and roles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/board/:boardId/user",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ]
+          },
+          "docs": "List board users and roles. Query Params"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

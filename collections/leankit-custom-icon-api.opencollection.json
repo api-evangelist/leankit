@@ -1,0 +1,145 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Planview AgilePlace API (LeanKit) v2 account custom-icon API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "custom-icon",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of custom icons for a board",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/board/:boardId/customIcon",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ]
+          },
+          "docs": "Get a list of custom icons for a board. Example Request"
+        },
+        {
+          "info": {
+            "name": "Create a custom icon on a board",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{account}.leankit.com/io/board/:boardId/customIcon",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a custom icon on a board. Request Properties"
+        },
+        {
+          "info": {
+            "name": "Get a single custom icon on a board",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/board/:boardId/customIcon/:customIconId",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              },
+              {
+                "name": "customIconId",
+                "value": "",
+                "type": "path",
+                "description": "customIconId identifier"
+              }
+            ]
+          },
+          "docs": "Get a single custom icon on a board. Example Request"
+        },
+        {
+          "info": {
+            "name": "Update a custom icon on a board",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{account}.leankit.com/io/board/:boardId/customIcon/:customIconId",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              },
+              {
+                "name": "customIconId",
+                "value": "",
+                "type": "path",
+                "description": "customIconId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a custom icon on a board. Request Properties"
+        },
+        {
+          "info": {
+            "name": "Delete a custom icon on a board",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{account}.leankit.com/io/board/:boardId/customIcon/:customIconId",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              },
+              {
+                "name": "customIconId",
+                "value": "",
+                "type": "path",
+                "description": "customIconId identifier"
+              }
+            ]
+          },
+          "docs": "Delete a custom icon on a board. Example Request"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

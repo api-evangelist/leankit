@@ -1,0 +1,134 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Planview AgilePlace API (LeanKit) v2 account users API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns a list of paginated users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/Users"
+          },
+          "docs": "Returns a list of paginated users. Supported Querystring Parameters"
+        },
+        {
+          "info": {
+            "name": "Example (minimum) request body: {",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{account}.leankit.com/io/Users",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Example (minimum) request body: {"
+        },
+        {
+          "info": {
+            "name": "Retrieves information about a single user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/Users/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "id identifier"
+              }
+            ]
+          },
+          "docs": "Retrieves information about a single user. Parameters"
+        },
+        {
+          "info": {
+            "name": "Updates a user overwriting all values except for the password even if they are empty or not provided",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{account}.leankit.com/io/Users/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "id identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a user overwriting all values except for the password even if they are empty or not provided. It is recommended that you get the users information first, apply the necessary updates to that result and use it as the body of the PUT request to perform the update. Parameters"
+        },
+        {
+          "info": {
+            "name": "Updates a user with the provided values",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{account}.leankit.com/io/Users/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "id identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a user with the provided values. Values that are not included in the request are not modified. Parameters"
+        },
+        {
+          "info": {
+            "name": "Deletes the user",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{account}.leankit.com/io/Users/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "id identifier"
+              }
+            ]
+          },
+          "docs": "Deletes the user. No request body is required. Parameters"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

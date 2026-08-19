@@ -1,0 +1,145 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Planview AgilePlace API (LeanKit) v2 account card-type API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "card-type",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of card types for a board",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/board/:boardId/cardType",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ]
+          },
+          "docs": "Get a list of card types for a board. Example Request"
+        },
+        {
+          "info": {
+            "name": "Create a card type on a board",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{account}.leankit.com/io/board/:boardId/cardType",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a card type on a board. Request Properties"
+        },
+        {
+          "info": {
+            "name": "Get a single card type on a board",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/board/:boardId/cardType/:cardTypeId",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              },
+              {
+                "name": "cardTypeId",
+                "value": "",
+                "type": "path",
+                "description": "cardTypeId identifier"
+              }
+            ]
+          },
+          "docs": "Get a single card type on a board. Example Request"
+        },
+        {
+          "info": {
+            "name": "Update a card type on a board",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{account}.leankit.com/io/board/:boardId/cardType/:cardTypeId",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              },
+              {
+                "name": "cardTypeId",
+                "value": "",
+                "type": "path",
+                "description": "cardTypeId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a card type on a board. Request Properties"
+        },
+        {
+          "info": {
+            "name": "Delete a card type on a board",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{account}.leankit.com/io/board/:boardId/cardType/:cardTypeId",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              },
+              {
+                "name": "cardTypeId",
+                "value": "",
+                "type": "path",
+                "description": "cardTypeId identifier"
+              }
+            ]
+          },
+          "docs": "Delete a card type on a board. Example Request"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

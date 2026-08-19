@@ -1,0 +1,145 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Planview AgilePlace API (LeanKit) v2 account board-filter API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "board-filter",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of board filters for a board",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/board/:boardId/filter",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ]
+          },
+          "docs": "Get a list of board filters for a board. Example Request"
+        },
+        {
+          "info": {
+            "name": "Create a board filter",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{account}.leankit.com/io/board/:boardId/filter",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a board filter. Request Properties"
+        },
+        {
+          "info": {
+            "name": "Get a board filter by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/board/:boardId/filter/:filterId",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              },
+              {
+                "name": "filterId",
+                "value": "",
+                "type": "path",
+                "description": "filterId identifier"
+              }
+            ]
+          },
+          "docs": "Get a board filter by id. Example Request"
+        },
+        {
+          "info": {
+            "name": "Update a board filter Request Properties",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{account}.leankit.com/io/board/:boardId/filter/:filterId",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              },
+              {
+                "name": "filterId",
+                "value": "",
+                "type": "path",
+                "description": "filterId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a board filter Request Properties"
+        },
+        {
+          "info": {
+            "name": "Delete a board filter",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{account}.leankit.com/io/board/:boardId/filter/:filterId",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              },
+              {
+                "name": "filterId",
+                "value": "",
+                "type": "path",
+                "description": "filterId identifier"
+              }
+            ]
+          },
+          "docs": "Delete a board filter. Example Request"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,216 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Planview AgilePlace API (LeanKit) v2 account automation API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "automation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the list of card automations for a board",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/board/:boardId/automation",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ]
+          },
+          "docs": "Get the list of card automations for a board. Example Request"
+        },
+        {
+          "info": {
+            "name": "Create a card automation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{account}.leankit.com/io/board/:boardId/automation",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a card automation. Request Properties"
+        },
+        {
+          "info": {
+            "name": "Trigger a custom event for a board",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{account}.leankit.com/io/board/:boardId/automation/customevent",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Trigger a custom event for a board. This allows you to execute automations based on something happening outside of your board. For a board-level custom event, the criteria on the automation is used to identify matching cards (this is similar to how scheduled automations run) and the automation is ru"
+        },
+        {
+          "info": {
+            "name": "Get an automation by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/board/:boardId/automation/:automationId",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              },
+              {
+                "name": "automationId",
+                "value": "",
+                "type": "path",
+                "description": "automationId identifier"
+              }
+            ]
+          },
+          "docs": "Get an automation by id. Example Request"
+        },
+        {
+          "info": {
+            "name": "Update a card automation",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{account}.leankit.com/io/board/:boardId/automation/:automationId",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              },
+              {
+                "name": "automationId",
+                "value": "",
+                "type": "path",
+                "description": "automationId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a card automation. Request Properties"
+        },
+        {
+          "info": {
+            "name": "Delete a card automation",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{account}.leankit.com/io/board/:boardId/automation/:automationId",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              },
+              {
+                "name": "automationId",
+                "value": "",
+                "type": "path",
+                "description": "automationId identifier"
+              }
+            ]
+          },
+          "docs": "Delete a card automation. Example Request"
+        },
+        {
+          "info": {
+            "name": "Get a list of audits for the recent runs (last 20) of an automation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/board/:boardId/automation/:automationId/audit",
+            "params": [
+              {
+                "name": "boardId",
+                "value": "",
+                "type": "path",
+                "description": "boardId identifier"
+              },
+              {
+                "name": "automationId",
+                "value": "",
+                "type": "path",
+                "description": "automationId identifier"
+              }
+            ]
+          },
+          "docs": "Get a list of audits for the recent runs (last 20) of an automation. Example Request"
+        },
+        {
+          "info": {
+            "name": "Triggering custom events from this API, allows you to execute automations based on something happening outside of your b",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{account}.leankit.com/io/card/:cardId/automation/customevent",
+            "params": [
+              {
+                "name": "cardId",
+                "value": "",
+                "type": "path",
+                "description": "cardId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Triggering custom events from this API, allows you to execute automations based on something happening outside of your board. For a card-level custom event, any automations that have the custom"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

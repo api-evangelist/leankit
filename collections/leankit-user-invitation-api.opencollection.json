@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Planview AgilePlace API (LeanKit) v2 account user-invitation API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "user-invitation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List your open invitations to new users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/invitation"
+          },
+          "docs": "List your open invitations to new users. Query Params"
+        },
+        {
+          "info": {
+            "name": "Revoke an open user invitation",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{account}.leankit.com/io/invitation/:invitationId",
+            "params": [
+              {
+                "name": "invitationId",
+                "value": "",
+                "type": "path",
+                "description": "invitationId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Revoke an open user invitation. (You can also un-revoke if you like.) Example Request Body"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

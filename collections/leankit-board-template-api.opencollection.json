@@ -1,0 +1,88 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Planview AgilePlace API (LeanKit) v2 account board-template API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "board-template",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List the board templates grouped by category",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/template"
+          },
+          "docs": "List the board templates grouped by category. These include global templates and templates created by your organization. Example Request"
+        },
+        {
+          "info": {
+            "name": "Create a board template from a board",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{account}.leankit.com/io/template",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a board template from a board. Request Properties"
+        },
+        {
+          "info": {
+            "name": "Get a board template by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.leankit.com/io/template/:templateId",
+            "params": [
+              {
+                "name": "templateId",
+                "value": "",
+                "type": "path",
+                "description": "templateId identifier"
+              }
+            ]
+          },
+          "docs": "Get a board template by id. Example Request"
+        },
+        {
+          "info": {
+            "name": "Delete a board template",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{account}.leankit.com/io/template/:templateId",
+            "params": [
+              {
+                "name": "templateId",
+                "value": "",
+                "type": "path",
+                "description": "templateId identifier"
+              }
+            ]
+          },
+          "docs": "Delete a board template. Example Request"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
