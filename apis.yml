@@ -41,6 +41,17 @@ tags:
 - Work Management
 - Collaboration
 - Enterprise Software
+- Portfolio-Management
+- Workflow-Automation
+- Software-as-a-Service
+tags_raw:
+- Company
+- Kanban
+- Project Management
+- Agile
+- Work Management
+- Collaboration
+- Enterprise Software
 - Portfolio Management
 - Workflow Automation
 - SaaS
@@ -71,6 +82,8 @@ apis:
   humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
   baseURL: https://myaccount.leankit.com/io
   tags:
+  - Account
+  tags_raw:
   - account
   properties:
   - type: OpenAPI
@@ -92,6 +105,8 @@ apis:
   humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
   baseURL: https://myaccount.leankit.com/io
   tags:
+  - Attachment
+  tags_raw:
   - attachment
   properties:
   - type: OpenAPI
@@ -113,6 +128,8 @@ apis:
   humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
   baseURL: https://myaccount.leankit.com/io
   tags:
+  - Automation
+  tags_raw:
   - automation
   properties:
   - type: OpenAPI
@@ -134,6 +151,8 @@ apis:
   humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
   baseURL: https://myaccount.leankit.com/io
   tags:
+  - Boards
+  tags_raw:
   - board
   properties:
   - type: OpenAPI
@@ -218,6 +237,8 @@ apis:
   humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
   baseURL: https://myaccount.leankit.com/io
   tags:
+  - Card
+  tags_raw:
   - card
   properties:
   - type: OpenAPI
@@ -281,6 +302,8 @@ apis:
   humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
   baseURL: https://myaccount.leankit.com/io
   tags:
+  - Comment
+  tags_raw:
   - comment
   properties:
   - type: OpenAPI
@@ -302,6 +325,8 @@ apis:
   humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
   baseURL: https://myaccount.leankit.com/io
   tags:
+  - Config
+  tags_raw:
   - config
   properties:
   - type: OpenAPI
@@ -323,6 +348,8 @@ apis:
   humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
   baseURL: https://myaccount.leankit.com/io
   tags:
+  - Connections
+  tags_raw:
   - connections
   properties:
   - type: OpenAPI
@@ -344,6 +371,8 @@ apis:
   humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
   baseURL: https://myaccount.leankit.com/io
   tags:
+  - Custom Field
+  tags_raw:
   - custom-field
   properties:
   - type: OpenAPI
@@ -386,6 +415,8 @@ apis:
   humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
   baseURL: https://myaccount.leankit.com/io
   tags:
+  - Dependencies
+  tags_raw:
   - dependencies
   properties:
   - type: OpenAPI
@@ -449,6 +480,8 @@ apis:
   humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
   baseURL: https://myaccount.leankit.com/io
   tags:
+  - Tags
+  tags_raw:
   - tags
   properties:
   - type: OpenAPI
@@ -470,6 +503,8 @@ apis:
   humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
   baseURL: https://myaccount.leankit.com/io
   tags:
+  - Team
+  tags_raw:
   - team
   properties:
   - type: OpenAPI
@@ -491,6 +526,8 @@ apis:
   humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
   baseURL: https://myaccount.leankit.com/io
   tags:
+  - Token Auth
+  tags_raw:
   - token-auth
   properties:
   - type: OpenAPI
@@ -512,6 +549,8 @@ apis:
   humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
   baseURL: https://myaccount.leankit.com/io
   tags:
+  - User
+  tags_raw:
   - user
   properties:
   - type: OpenAPI
@@ -533,6 +572,8 @@ apis:
   humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
   baseURL: https://myaccount.leankit.com/io
   tags:
+  - User Invitation
+  tags_raw:
   - user-invitation
   properties:
   - type: OpenAPI
@@ -554,6 +595,8 @@ apis:
   humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
   baseURL: https://myaccount.leankit.com/io
   tags:
+  - User
+  tags_raw:
   - users
   properties:
   - type: OpenAPI
