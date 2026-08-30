@@ -117,7 +117,7 @@ apis:
   humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
   baseURL: https://myaccount.leankit.com/io
   tags:
-  - Attachment
+  - attachment
   tags_raw:
   - attachment
   properties:
@@ -140,7 +140,7 @@ apis:
   humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
   baseURL: https://myaccount.leankit.com/io
   tags:
-  - Automation
+  - automation
   tags_raw:
   - automation
   properties:
@@ -163,7 +163,7 @@ apis:
   humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
   baseURL: https://myaccount.leankit.com/io
   tags:
-  - Boards
+  - board
   tags_raw:
   - board
   properties:
@@ -249,7 +249,7 @@ apis:
   humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
   baseURL: https://myaccount.leankit.com/io
   tags:
-  - Card
+  - card
   tags_raw:
   - card
   properties:
@@ -383,7 +383,7 @@ apis:
   humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
   baseURL: https://myaccount.leankit.com/io
   tags:
-  - Custom Field
+  - custom-field
   tags_raw:
   - custom-field
   properties:
@@ -427,7 +427,7 @@ apis:
   humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
   baseURL: https://myaccount.leankit.com/io
   tags:
-  - Dependencies
+  - dependencies
   tags_raw:
   - dependencies
   properties:
@@ -538,7 +538,7 @@ apis:
   humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
   baseURL: https://myaccount.leankit.com/io
   tags:
-  - Token Auth
+  - token-auth
   tags_raw:
   - token-auth
   properties:
@@ -584,7 +584,7 @@ apis:
   humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
   baseURL: https://myaccount.leankit.com/io
   tags:
-  - User Invitation
+  - user-invitation
   tags_raw:
   - user-invitation
   properties:
