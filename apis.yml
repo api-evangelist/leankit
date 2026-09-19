@@ -250,7 +250,7 @@ apis:
   humanURL: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2
   baseURL: https://myaccount.leankit.com/io
   tags:
-  - Card
+  - Cards
   tags_raw:
   - card
   properties:
