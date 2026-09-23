@@ -1,8 +1,8 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Planview AgilePlace API (LeanKit) v2 account user-invitation API
+  title: Planview AgilePlace API (LeanKit) v2 User Invitation API
   version: v2
-  description: RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference — no endpoints invented.
+  description: RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference — no endpoints invented.
   contact:
     name: Planview AgilePlace Support
     url: https://success.planview.com/Planview_AgilePlace/Support
@@ -18,14 +18,14 @@ security:
 - bearerToken: []
 - basicAuth: []
 tags:
-- name: user-invitation
+- name: User Invitation
 paths:
   /invitation:
     get:
       operationId: userInvitationList
       summary: List your open invitations to new users
       tags:
-      - user-invitation
+      - User Invitation
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/user-invitation/list
@@ -59,7 +59,7 @@ paths:
       operationId: userInvitationUpdate
       summary: Revoke an open user invitation
       tags:
-      - user-invitation
+      - User Invitation
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/user-invitation/update

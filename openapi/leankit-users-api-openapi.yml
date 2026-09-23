@@ -1,15 +1,15 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Planview AgilePlace API (LeanKit) v2 account users API
-  version: v2
-  description: RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference — no endpoints invented.
+  title: Planview AgilePlace User Provisioning API (SCIM 1.1) Users…
+  version: '1.1'
+  description: SCIM 1.1-compliant user provisioning API for Planview AgilePlace (formerly LeanKit). Supports adding, retrieving, searching, updating, deactivating, and deleting users. Only administrator users may access it. Extends the SCIM core user with urn:scim:schemas:extension:leankit:user:1.0.
   contact:
     name: Planview AgilePlace Support
     url: https://success.planview.com/Planview_AgilePlace/Support
   x-generated-by: API Evangelist enrichment pipeline — transcribed from the published Planview AgilePlace API reference
 servers:
-- url: https://{account}.leankit.com/io
-  description: Per-account AgilePlace host
+- url: https://{account}.leankit.com/io/scim/v1
+  description: Per-account AgilePlace SCIM host
   variables:
     account:
       default: myaccount
@@ -18,14 +18,14 @@ security:
 - bearerToken: []
 - basicAuth: []
 tags:
-- name: users
+- name: Users
 paths:
   /Users:
     post:
       operationId: scimCreateUser
       summary: 'Example (minimum) request body: {'
       tags:
-      - users
+      - Users
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/User_Provisioning_API%253A_Create_a_User
@@ -69,11 +69,11 @@ paths:
       operationId: scimSearchUsers
       summary: Returns a list of paginated users
       tags:
-      - users
+      - Users
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/User_Provisioning_API%253A_Search_for_a_User
-      description: Returns a list of paginated users. Supported Querystring Parameters
+      description: Returns a list of paginated users. Supported Querystring Parameters
       responses:
         '200':
           description: Success
@@ -103,7 +103,7 @@ paths:
       operationId: scimDeleteUser
       summary: Deletes the user
       tags:
-      - users
+      - Users
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/User_Provisioning_API%253A_Delete_a_User
@@ -145,7 +145,7 @@ paths:
       operationId: scimGetUser
       summary: Retrieves information about a single user
       tags:
-      - users
+      - Users
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/User_Provisioning_API%253A_Get_Information_About_a_User
@@ -185,7 +185,7 @@ paths:
       operationId: scimPatchUser
       summary: Updates a user with the provided values
       tags:
-      - users
+      - Users
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/User_Provisioning_API%253A_Update_A_User_%28PATCH%29
@@ -229,9 +229,9 @@ paths:
           description: Server error on the AgilePlace side
     put:
       operationId: scimReplaceUser
-      summary: Updates a user overwriting all values except for the password even if they are empty or not provided
+      summary: Updates a user overwriting all values except for the password even if they are…
       tags:
-      - users
+      - Users
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/User_Provisioning_API%253A_Update_a_User_%28PUT%29

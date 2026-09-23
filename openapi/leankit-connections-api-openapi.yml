@@ -1,8 +1,8 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Planview AgilePlace API (LeanKit) v2 account connections API
+  title: Planview AgilePlace API (LeanKit) v2 Connections API
   version: v2
-  description: RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference — no endpoints invented.
+  description: RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference — no endpoints invented.
   contact:
     name: Planview AgilePlace Support
     url: https://success.planview.com/Planview_AgilePlace/Support
@@ -18,14 +18,14 @@ security:
 - bearerToken: []
 - basicAuth: []
 tags:
-- name: connections
+- name: Connections
 paths:
   /card/connections:
     post:
       operationId: connectionsCreate
       summary: Connect cards to child or parent cards
       tags:
-      - connections
+      - Connections
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/connections/create
@@ -70,7 +70,7 @@ paths:
       operationId: connectionsDeleteMany
       summary: Delete one or more parent or child connections
       tags:
-      - connections
+      - Connections
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/connections/delete-many
@@ -106,7 +106,7 @@ paths:
       operationId: connectionsChildBoards
       summary: Get a list of child board connections
       tags:
-      - connections
+      - Connections
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/connections/child-boards
@@ -147,7 +147,7 @@ paths:
       operationId: connectionsChildren
       summary: Get a list of child cards for a parent card
       tags:
-      - connections
+      - Connections
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/connections/children
@@ -188,7 +188,7 @@ paths:
       operationId: connectionsConnectMany
       summary: Connect a parent card to one or more child cards
       tags:
-      - connections
+      - Connections
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/connections/connect-many
@@ -241,7 +241,7 @@ paths:
       operationId: connectionsParentBoards
       summary: Get a list of parent board connections
       tags:
-      - connections
+      - Connections
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/connections/parent-boards
@@ -282,7 +282,7 @@ paths:
       operationId: connectionsParents
       summary: Get a list of parent cards for a child card
       tags:
-      - connections
+      - Connections
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/connections/parents
@@ -323,7 +323,7 @@ paths:
       operationId: connectionsDeleteByBoard
       summary: Delete every connection to child cards on the specified board
       tags:
-      - connections
+      - Connections
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/connections/delete-by-board
@@ -372,7 +372,7 @@ paths:
       operationId: connectionsStatistics
       summary: Get drill through statistics for child boards
       tags:
-      - connections
+      - Connections
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/connections/statistics

@@ -1,8 +1,8 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Planview AgilePlace API (LeanKit) v2 account planning-series API
+  title: Planview AgilePlace API (LeanKit) v2 Planning Series API
   version: v2
-  description: RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference — no endpoints invented.
+  description: RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference — no endpoints invented.
   contact:
     name: Planview AgilePlace Support
     url: https://success.planview.com/Planview_AgilePlace/Support
@@ -471,7 +471,7 @@ paths:
   /series/{seriesId}/increment/{incrementId}/status:
     get:
       operationId: planningSeriesGetIncrementStatus
-      summary: Enumerates the total number of cards and the number of blocked cards in the increment by status category
+      summary: Enumerates the total number of cards and the number of blocked cards in the…
       tags:
       - planning-series
       externalDocs:
@@ -518,7 +518,7 @@ paths:
   /series/{seriesId}/increment/{incrementId}/status/{category}:
     get:
       operationId: planningSeriesGetIncrementStatusCategoryCards
-      summary: List the cardIds of cards in the increment that are currently in the increment status category specified by the :categor
+      summary: List the cardIds of cards in the increment that are currently in the increment…
       tags:
       - planning-series
       externalDocs:

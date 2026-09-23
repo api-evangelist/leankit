@@ -1,8 +1,8 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Planview AgilePlace API (LeanKit) v2 account user API
+  title: Planview AgilePlace API (LeanKit) v2 User API
   version: v2
-  description: RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference — no endpoints invented.
+  description: RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference — no endpoints invented.
   contact:
     name: Planview AgilePlace Support
     url: https://success.planview.com/Planview_AgilePlace/Support
@@ -18,14 +18,14 @@ security:
 - bearerToken: []
 - basicAuth: []
 tags:
-- name: user
+- name: User
 paths:
   /user:
     post:
       operationId: userCreate
       summary: Creates a new user
       tags:
-      - user
+      - User
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/user/create
@@ -70,7 +70,7 @@ paths:
       operationId: userList
       summary: Returns a paginated list of users in an organization
       tags:
-      - user
+      - User
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/user/list
@@ -104,7 +104,7 @@ paths:
       operationId: userGetMe
       summary: Returns data for the requesting user
       tags:
-      - user
+      - User
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/user/get-me
@@ -137,7 +137,7 @@ paths:
       operationId: userUpdateMe
       summary: Update the requesting user
       tags:
-      - user
+      - User
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/user/update-me
@@ -175,9 +175,9 @@ paths:
   /user/me/board/recent:
     get:
       operationId: userListMyRecentBoards
-      summary: Returns a list of the requesting user's favorite and most recently accessed boards
+      summary: Returns a list of the requesting user's favorite and most recently accessed…
       tags:
-      - user
+      - User
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/user/list-my-recent-boards
@@ -211,7 +211,7 @@ paths:
       operationId: userListMyCards
       summary: Returns cards to which that the requesting user is either assigned or subscribed
       tags:
-      - user
+      - User
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/user/list-my-cards
@@ -245,7 +245,7 @@ paths:
       operationId: userDelete
       summary: Delete a user
       tags:
-      - user
+      - User
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/user/delete
@@ -287,7 +287,7 @@ paths:
       operationId: userGet
       summary: Returns data for a single user
       tags:
-      - user
+      - User
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/user/get
@@ -327,7 +327,7 @@ paths:
       operationId: userUpdate
       summary: Update an existing user
       tags:
-      - user
+      - User
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/user/update
@@ -374,7 +374,7 @@ paths:
       operationId: userChangePassword
       summary: Change a user's password
       tags:
-      - user
+      - User
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/user/change-password

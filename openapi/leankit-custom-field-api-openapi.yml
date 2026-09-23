@@ -1,8 +1,8 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Planview AgilePlace API (LeanKit) v2 account custom-field API
+  title: Planview AgilePlace API (LeanKit) v2 Custom Field API
   version: v2
-  description: RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference — no endpoints invented.
+  description: RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference — no endpoints invented.
   contact:
     name: Planview AgilePlace Support
     url: https://success.planview.com/Planview_AgilePlace/Support
@@ -18,14 +18,14 @@ security:
 - bearerToken: []
 - basicAuth: []
 tags:
-- name: custom-field
+- name: Custom Field
 paths:
   /board/{boardId}/customfield:
     get:
       operationId: customFieldList
       summary: Get a list of custom fields on a board
       tags:
-      - custom-field
+      - Custom Field
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/custom-field/list
@@ -63,9 +63,9 @@ paths:
           description: Server error on the AgilePlace side
     patch:
       operationId: customFieldUpdate
-      summary: Add, update, or remove custom fields on a board by providing an array of operations to perform
+      summary: Add, update, or remove custom fields on a board by providing an array of…
       tags:
-      - custom-field
+      - Custom Field
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/custom-field/update

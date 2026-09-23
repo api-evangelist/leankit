@@ -1,8 +1,8 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Planview AgilePlace API (LeanKit) v2 account board API
+  title: Planview AgilePlace API (LeanKit) v2 Board API
   version: v2
-  description: RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference — no endpoints invented.
+  description: RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference — no endpoints invented.
   contact:
     name: Planview AgilePlace Support
     url: https://success.planview.com/Planview_AgilePlace/Support
@@ -18,14 +18,14 @@ security:
 - bearerToken: []
 - basicAuth: []
 tags:
-- name: board
+- name: Board
 paths:
   /board:
     post:
       operationId: boardCreate
       summary: Create a new board
       tags:
-      - board
+      - Board
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/create
@@ -70,7 +70,7 @@ paths:
       operationId: boardList
       summary: List all boards
       tags:
-      - board
+      - Board
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/list
@@ -104,7 +104,7 @@ paths:
       operationId: boardRemoveRolesBulk
       summary: Bulk remove board members and roles
       tags:
-      - board
+      - Board
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/remove-roles-bulk
@@ -139,7 +139,7 @@ paths:
       operationId: boardUpdateRolesBulk
       summary: Bulk update board members and roles
       tags:
-      - board
+      - Board
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/update-roles-bulk
@@ -185,7 +185,7 @@ paths:
       operationId: boardDelete
       summary: Delete a board in your organization
       tags:
-      - board
+      - Board
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/delete
@@ -227,7 +227,7 @@ paths:
       operationId: boardGet
       summary: Get the details of a board
       tags:
-      - board
+      - Board
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/get
@@ -267,7 +267,7 @@ paths:
       operationId: boardUpdate
       summary: Update the settings of a board
       tags:
-      - board
+      - Board
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/update
@@ -314,7 +314,7 @@ paths:
       operationId: boardArchive
       summary: Archive a board
       tags:
-      - board
+      - Board
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/archive
@@ -367,7 +367,7 @@ paths:
       operationId: boardAssignedUsers
       summary: List top 50 assigned users on a board
       tags:
-      - board
+      - Board
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/assigned-users
@@ -408,7 +408,7 @@ paths:
       operationId: boardCards
       summary: Get cards on a board
       tags:
-      - board
+      - Board
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/cards
@@ -449,7 +449,7 @@ paths:
       operationId: boardExport
       summary: Download a board's history
       tags:
-      - board
+      - Board
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/export
@@ -490,7 +490,7 @@ paths:
       operationId: boardLaneCount
       summary: Get the count of cards in a board's lanes
       tags:
-      - board
+      - Board
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/lane-count
@@ -531,7 +531,7 @@ paths:
       operationId: boardUpdateLayout
       summary: Update a board's layout by replacing the entire layout object
       tags:
-      - board
+      - Board
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/update-layout
@@ -578,7 +578,7 @@ paths:
       operationId: boardLeafLanes
       summary: Get details about the lanes on a board that can hold cards Example Request
       tags:
-      - board
+      - Board
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/leaf-lanes
@@ -618,7 +618,7 @@ paths:
       operationId: boardParentCards
       summary: Get parent cards on a board
       tags:
-      - board
+      - Board
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/parent-cards
@@ -659,7 +659,7 @@ paths:
       operationId: boardPlanningIncrementCardCount
       summary: Get card counts and sizes for planning increments on a board
       tags:
-      - board
+      - Board
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/planning-increment-card-count
@@ -700,7 +700,7 @@ paths:
       operationId: boardUpdateRoles
       summary: Create or update board roles for multiple users
       tags:
-      - board
+      - Board
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/update-roles
@@ -747,7 +747,7 @@ paths:
       operationId: boardUnarchive
       summary: Restore a board from the board archive
       tags:
-      - board
+      - Board
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/unarchive
@@ -800,7 +800,7 @@ paths:
       operationId: boardUserRoles
       summary: List board users and roles
       tags:
-      - board
+      - Board
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/board/user-roles

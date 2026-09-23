@@ -1,8 +1,8 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Planview AgilePlace API (LeanKit) v2 account team API
+  title: Planview AgilePlace API (LeanKit) v2 Team API
   version: v2
-  description: RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference — no endpoints invented.
+  description: RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference — no endpoints invented.
   contact:
     name: Planview AgilePlace Support
     url: https://success.planview.com/Planview_AgilePlace/Support
@@ -18,14 +18,14 @@ security:
 - bearerToken: []
 - basicAuth: []
 tags:
-- name: team
+- name: Team
 paths:
   /team:
     post:
       operationId: teamCreate
       summary: Create a team
       tags:
-      - team
+      - Team
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/team/create
@@ -70,7 +70,7 @@ paths:
       operationId: teamList
       summary: Get a list of all teams for the organization
       tags:
-      - team
+      - Team
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/team/list
@@ -104,7 +104,7 @@ paths:
       operationId: teamDelete
       summary: Delete a team
       tags:
-      - team
+      - Team
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/team/delete
@@ -146,7 +146,7 @@ paths:
       operationId: teamGet
       summary: Get a team
       tags:
-      - team
+      - Team
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/team/get
@@ -186,7 +186,7 @@ paths:
       operationId: teamUpdate
       summary: Update a team
       tags:
-      - team
+      - Team
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/team/update
@@ -231,9 +231,9 @@ paths:
   /team/{teamId}/board:
     get:
       operationId: teamListBoards
-      summary: Get a list of all boards the team has been assigned to either directly or inherited via nested teams
+      summary: Get a list of all boards the team has been assigned to either directly or…
       tags:
-      - team
+      - Team
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/team/list-boards
@@ -274,7 +274,7 @@ paths:
       operationId: teamAddSubteams
       summary: Add subteams to a team
       tags:
-      - team
+      - Team
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/team/add-subteams
@@ -326,7 +326,7 @@ paths:
       operationId: teamListSubteams
       summary: Get a list of subteams assigned directly to the team
       tags:
-      - team
+      - Team
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/team/list-subteams
@@ -366,7 +366,7 @@ paths:
       operationId: teamRemoveSubteams
       summary: Remove directly assigned subteams from a team
       tags:
-      - team
+      - Team
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/team/remove-subteams
@@ -409,11 +409,11 @@ paths:
       operationId: teamAddUsers
       summary: Add users to a team
       tags:
-      - team
+      - Team
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/team/add-users
-      description: Add users to a team.  All users of a team are granted the same privileges assigned to the team. Requires authentication as account administrator or team manager who created the team.
+      description: Add users to a team. All users of a team are granted the same privileges assigned to the team. Requires authentication as account administrator or team manager who created the team.
       parameters:
       - name: teamId
         in: path
@@ -459,9 +459,9 @@ paths:
                 type: object
     get:
       operationId: teamListUsers
-      summary: Get a list of users assigned directly to the team - does not include users assigned to subteams
+      summary: Get a list of users assigned directly to the team - does not include users…
       tags:
-      - team
+      - Team
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/team/list-users
@@ -501,7 +501,7 @@ paths:
       operationId: teamRemoveUsers
       summary: Remove users from a team
       tags:
-      - team
+      - Team
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/team/remove-users

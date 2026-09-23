@@ -1,15 +1,15 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Planview AgilePlace API (LeanKit) v2 account config API
-  version: v2
-  description: RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference — no endpoints invented.
+  title: Planview AgilePlace User Provisioning API (SCIM 1.1) Config…
+  version: '1.1'
+  description: SCIM 1.1-compliant user provisioning API for Planview AgilePlace (formerly LeanKit). Supports adding, retrieving, searching, updating, deactivating, and deleting users. Only administrator users may access it. Extends the SCIM core user with urn:scim:schemas:extension:leankit:user:1.0.
   contact:
     name: Planview AgilePlace Support
     url: https://success.planview.com/Planview_AgilePlace/Support
   x-generated-by: API Evangelist enrichment pipeline — transcribed from the published Planview AgilePlace API reference
 servers:
-- url: https://{account}.leankit.com/io
-  description: Per-account AgilePlace host
+- url: https://{account}.leankit.com/io/scim/v1
+  description: Per-account AgilePlace SCIM host
   variables:
     account:
       default: myaccount
@@ -18,7 +18,7 @@ security:
 - bearerToken: []
 - basicAuth: []
 tags:
-- name: config
+- name: Config
 paths:
   /ServiceProviderConfigs:
     get:
@@ -26,7 +26,7 @@ paths:
       summary: Service provider configuration
       description: Configuration information about the API including supported operations and authentication. AgilePlace reports patch, bulk, changePassword, etag, and xmlDataFormat as unsupported; filter is supported with maxResults 200 and sort is supported.
       tags:
-      - config
+      - Config
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/User_Provisioning_API/020User_Provisioning_API_Getting_Started

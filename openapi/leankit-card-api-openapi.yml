@@ -1,8 +1,8 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Planview AgilePlace API (LeanKit) v2 account card API
+  title: Planview AgilePlace API (LeanKit) v2 Card API
   version: v2
-  description: RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://<yourhostname>.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference — no endpoints invented.
+  description: RESTful API for Planview AgilePlace (formerly LeanKit) Kanban boards, cards, lanes, connections, automations, teams, and planning increments. All requests use HTTPS against https://.leankit.com/io/. Data is sent and received as JSON. Transcribed from the published Planview AgilePlace API reference — no endpoints invented.
   contact:
     name: Planview AgilePlace Support
     url: https://success.planview.com/Planview_AgilePlace/Support
@@ -18,14 +18,14 @@ security:
 - bearerToken: []
 - basicAuth: []
 tags:
-- name: card
+- name: Card
 paths:
   /card:
     post:
       operationId: cardCreate
       summary: Create a card
       tags:
-      - card
+      - Card
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/card/create
@@ -70,7 +70,7 @@ paths:
       operationId: cardDeleteMany
       summary: Delete multiple cards
       tags:
-      - card
+      - Card
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/card/delete-many
@@ -105,7 +105,7 @@ paths:
       operationId: cardList
       summary: Get a list of cards
       tags:
-      - card
+      - Card
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/card/list
@@ -139,7 +139,7 @@ paths:
       operationId: cardAssignMembers
       summary: Assign or unassign one or more users or teams to cards
       tags:
-      - card
+      - Card
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/card/assign-members
@@ -185,7 +185,7 @@ paths:
       operationId: cardListCards
       summary: Get a list of cards
       tags:
-      - card
+      - Card
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/card/list-cards
@@ -231,7 +231,7 @@ paths:
       operationId: cardMove
       summary: 'This API has a number of uses: Move cards between lanes'
       tags:
-      - card
+      - Card
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/card/move
@@ -276,7 +276,7 @@ paths:
       operationId: cardDelete
       summary: Delete a card by id
       tags:
-      - card
+      - Card
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/card/delete
@@ -318,7 +318,7 @@ paths:
       operationId: cardGet
       summary: Get card details by card id
       tags:
-      - card
+      - Card
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/card/get
@@ -358,7 +358,7 @@ paths:
       operationId: cardUpdate
       summary: Update a card's fields
       tags:
-      - card
+      - Card
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/card/update
@@ -405,7 +405,7 @@ paths:
       operationId: cardActivity
       summary: Get card activity
       tags:
-      - card
+      - Card
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/card/activity
@@ -446,7 +446,7 @@ paths:
       operationId: cardTaskboard
       summary: Get taskboard lanes for a card
       tags:
-      - card
+      - Card
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/card/taskboard
@@ -487,7 +487,7 @@ paths:
       operationId: cardCreateTask
       summary: Create a task card
       tags:
-      - card
+      - Card
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/card/create-task
@@ -539,7 +539,7 @@ paths:
       operationId: cardListTasks
       summary: Get a list of task cards for a card
       tags:
-      - card
+      - Card
       externalDocs:
         description: Provider reference
         url: https://success.planview.com/Planview_AgilePlace/AgilePlace_API/01_v2/card/list-tasks
