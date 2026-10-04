@@ -54,9 +54,9 @@ tags:
 - Work Management
 - Collaboration
 - Enterprise Software
-- Portfolio Management
 - Workflow Automation
 - Software-as-a-Service
+- Project Portfolio Management
 tags_raw:
 - Company
 - Kanban
@@ -65,11 +65,10 @@ tags_raw:
 - Work Management
 - Collaboration
 - Enterprise Software
-- Portfolio Management
 - Workflow Automation
 - SaaS
-- Portfolio-Management
 - Workflow-Automation
+- Project Portfolio Management
 apis:
 - aid: leankit:advanced-reporting-api
   name: Planview AgilePlace Advanced Reporting API
@@ -633,6 +632,9 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: CapabilityMap
+  url: capabilities/leankit-capability-edges.yml
+  name: LeanKit Business Capability Map
 - type: Overlay
   url: overlays/leankit-agileplace-api-overlay.yaml
 - type: PostmanWorkspace
@@ -715,3 +717,5 @@ x-enrichment:
   status: backfilled
   pass: local-v1
   note: backfilled from .gitignore signal + verified work evidence
+x-tags-removed:
+- Portfolio Management
