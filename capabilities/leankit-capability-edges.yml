@@ -1,0 +1,46 @@
+slug: leankit
+provider: LeanKit
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: Board
+  spec_file: leankit-board-api-openapi.yml
+  capability_id: BC-900.30
+  capability_id_l1: BC-900
+  capability_name: Project Management
+  confidence: 0.8
+  evidence: POST /board  boardCreate  Create a new board; GET /board/{boardId}/card  boardCards  Get cards
+    on a board; "visually track and manage the flow of work from strategy to delivery"
+  reason: Boards are the containers in which work items are tracked and managed through lanes — core work/project
+    execution tracking. L2 Project Management fits best, though board hierarchies also touch portfolio
+    views.
+- tag: Card
+  spec_file: leankit-card-api-openapi.yml
+  capability_id: BC-900.30
+  capability_id_l1: BC-900
+  capability_name: Project Management
+  confidence: 0.8
+  evidence: POST /card  cardCreate  Create a card; POST /card/assign  cardAssignMembers  Assign or unassign
+    one or more users or teams to cards; POST /card/move  Move cards between lanes
+  reason: 'Cards are the work items: create, assign to users/teams, move through lanes, create tasks,
+    view activity. This is project/work execution tracking (BC-900.30).'
+- tag: Users
+  spec_file: leankit-users-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.72
+  evidence: SCIM 1.1-compliant user provisioning API ... Supports adding, retrieving, searching, updating,
+    deactivating, and deleting users
+  reason: An explicit SCIM provisioning surface for creating, updating and deactivating user accounts
+    is identity and access management (automated joiner-mover-leaver provisioning).
